@@ -20,12 +20,18 @@ public class ATM {
     public void go() {
         System.out.println("Welcome to online ATM banking\n" +
                 "How much do you want in your account?");
-        atmBalance = myToolbox.readIntegerFromCmd();
-        System.out.println(atmBalance);
+        while (true) {
+            int tmp = myToolbox.readIntegerFromCmd();
+            if (tmp >= 0) {
+                atmBalance = tmp;
+                break;
+            }
+        }
 
-        selectOption();
-        executeOption();
-        return;
+        while (true) {
+            selectOption();
+            executeOption();
+        }
     }
 
     /**
@@ -56,15 +62,22 @@ public class ATM {
                 inquireAmount();
                 break;
             case 4:
-                System.out.println("******************************************\n" +
-                        "         GoodBye!\n" +
-                        "******************************************");
-                //System.exit(0);
+                quit();
                 break;
             default:
                 break;
         }
         return;
+    }
+
+    /**
+     * Quit the program option.
+     */
+    private void quit() {
+        System.out.println("******************************************\n" +
+                "         GoodBye!\n" +
+                "******************************************");
+        System.exit(0);
     }
 
     /**
@@ -75,8 +88,13 @@ public class ATM {
                 "              Withdrawal                 \n" +
                 "*****************************************\n" +
                 "How much would you like to withdraw?");
-        int amount = myToolbox.readIntegerFromCmd();
-        atmBalance -= amount;
+        while (true) {
+            int amount = myToolbox.readIntegerFromCmd();
+            if (amount >= 0 && amount <= atmBalance) {
+                atmBalance -= amount;
+                break;
+            }
+        }
         System.out.println("*****************************************\n" +
                 "         Your new balance is " + atmBalance + "       \n" +
                 "***************************************** ");
@@ -90,8 +108,13 @@ public class ATM {
                 "              Deposit                 \n" +
                 "*****************************************\n" +
                 "How much would you like to deposit?");
-        int amount = myToolbox.readIntegerFromCmd();
-        atmBalance += amount;
+        while (true) {
+            int amount = myToolbox.readIntegerFromCmd();
+            if (amount >= 0) {
+                atmBalance += amount;
+                break;
+            }
+        }
         System.out.println("*****************************************\n" +
                 "         Your new balance is " + atmBalance + "       \n" +
                 "***************************************** ");
