@@ -1,6 +1,10 @@
 //Declaring the object FizzBuzz and the method main
 public class FizzBuzz {
-
+	/**
+	 * Program that prints a number/Fizz/Buzz depending on the number.
+	 *
+	 * @param args Standard terminal input.
+	 */
 	public static void main(String[] args) {
 		//For loop that iterates from 1 to 61
 		for(Integer i = new Integer(1); i < 61; i++) {

@@ -1,5 +1,9 @@
 public class GuessingGame{
-
+	/**
+	 * This is the guessing game implementation.
+	 *
+	 * @param args Standard input from terminal.
+	 */
 	public static void main(String[] args){
 		//Declaring variables and initailizing Toolbox object
 		Integer numberToGuess;
