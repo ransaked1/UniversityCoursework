@@ -1,10 +1,10 @@
-public class GuessingGame{
+public class GuessingGame {
 	/**
 	 * This is the guessing game implementation.
 	 *
 	 * @param args Standard input from terminal.
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		//Declaring variables and initailizing Toolbox object
 		Integer numberToGuess;
 		Integer guessedNumber;
@@ -21,16 +21,14 @@ public class GuessingGame{
 		guessedNumber = myToolbox.readIntegerFromCmd();
 
 		//If guess is right print right
-		if (numberToGuess.equals(guessedNumber)){
+		if (numberToGuess.equals(guessedNumber)) {
 			System.out.println("right");
-		} 
-		else if (numberToGuess > guessedNumber){
+		} else if (numberToGuess > guessedNumber) {
 			System.out.println("too low");			//If guess is lower
-		}
-		else {
+		} else {
 			System.out.println("too high");			//If guess is higher
 		}
 
-		return ;
+		return;
 	}
 }
