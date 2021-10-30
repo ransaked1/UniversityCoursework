@@ -10,15 +10,3 @@ public abstract class Food {
     return name;
   }
 }
-
-class Meat extends Food {
-  public Meat(String meatName) {
-    super(meatName);
-  }
-}
-
-class Plant extends Food {
-  public Plant(String plantName) {
-    super(plantName);
-  }
-}
