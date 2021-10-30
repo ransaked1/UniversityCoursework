@@ -18,25 +18,3 @@ public abstract class Animal {
 
   public abstract void makeNoise();
 }
-
-class Wolf extends Animal {
-  public Wolf(String wolfName, Integer wolfAge) {
-    super(wolfName, wolfAge);
-  }
-
-  @Override
-  public void makeNoise() {
-    System.out.println("wooof");
-  }
-}
-
-class Parrot extends Animal {
-  public Parrot(String parrotName, Integer parrotAge) {
-    super(parrotName, parrotAge);
-  }
-
-  @Override
-  public void makeNoise() {
-    System.out.println("kraaa");
-  }
-}

@@ -16,23 +16,3 @@ public abstract class Animal {
     return age;
   }
 }
-
-class Wolf extends Animal {
-  public Wolf(String wolfName, Integer wolfAge) {
-    super(wolfName, wolfAge);
-  }
-
-  public void makeNoise() {
-    System.out.println("wooof");
-  }
-}
-
-class Parrot extends Animal {
-  public Parrot(String parrotName, Integer parrotAge) {
-    super(parrotName, parrotAge);
-  }
-
-  public void makeNoise() {
-    System.out.println("kraaa");
-  }
-}
