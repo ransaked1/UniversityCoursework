@@ -13,7 +13,7 @@ public class Demo {
 		animalList.add(new Parrot("Parroty", 3));
 
 		// What is an interface? An interface is an abstract class that imposes a certain structure when implemented.
-		// How does it differ from an abstract class? All its methods are abstract and variables final static.
+		// How does it differ from an abstract class? All its methods are abstract and variables final static. Has no contructor.
 
 		for (Animal a : animalList) {
 			System.out.println("Name: " + a.name + " Age: " + a.age);

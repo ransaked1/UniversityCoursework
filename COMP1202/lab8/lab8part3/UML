@@ -1,0 +1,10 @@
+abstract class Transport
+abstract class Refuelable extends Transport
+interface RoadVehicle
+interface Cycle extends RoadVehicle
+
+class Bicycle extends Transport implements Cycle
+class Tricycle extends Transport implements Cycle
+class Car extends Refuelable implements RoadVehicle
+class JetPlane extends Refuelable
+class Train extends Transport
