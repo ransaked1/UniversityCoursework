@@ -1,25 +1,19 @@
 public class Bicycle extends Transport implements Cycle {
-	public Bicycle(String name) {
-		super(name);
-	}
+  public Bicycle(String name) {
+    super(name);
+  }
 
-	public void drift() {
-	}
+  public void drift() {}
 
-	public void start() {
-	}
+  public void start() {}
 
-	public void stop() {
-	}
+  public void stop() {}
 
-	public void liftFrontWheel() {
-	}
+  public void liftFrontWheel() {}
 
-	@Override
-	public void makeSound() {
-	}
+  @Override
+  public void makeSound() {}
 
-	@Override
-	public void setSpeed(int speed) {
-	}
+  @Override
+  public void setSpeed(int speed) {}
 }

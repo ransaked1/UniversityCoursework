@@ -2,7 +2,7 @@ public abstract class Food {
 
   String name;
 
-  public Food(String foodName){
+  public Food(String foodName) {
     name = foodName;
   }
 

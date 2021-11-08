@@ -1,2 +1,1 @@
-public abstract class Carnivore extends Animal {
-}
+public abstract class Carnivore extends Animal {}

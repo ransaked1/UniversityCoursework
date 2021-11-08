@@ -28,12 +28,8 @@ public abstract class Animal implements Comparable<Animal> {
 
   @Override
   public int compareTo(Animal a) {
-    if (this.age == a.age)
-      return 0;
-    else if (this.age > a.age)
-      return 1;
-    else
-      return -1;
+    if (this.age == a.age) return 0;
+    else if (this.age > a.age) return 1;
+    else return -1;
   }
-
 }

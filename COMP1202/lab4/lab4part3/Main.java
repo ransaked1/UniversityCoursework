@@ -4,22 +4,22 @@ import java.util.Iterator;
 
 public class Main {
 
-	public static void main(String[] args) {
-		UserGroup userGroup = new UserGroup();
-		UserGroup administrators = new UserGroup();
-		userGroup.addSampleData();
-		userGroup.printUsernames();
+  public static void main(String[] args) {
+    UserGroup userGroup = new UserGroup();
+    UserGroup administrators = new UserGroup();
+    userGroup.addSampleData();
+    userGroup.printUsernames();
 
-		Iterator<User> it = userGroup.getUserIterator();
+    Iterator<User> it = userGroup.getUserIterator();
 
-		for (int i = 0; i < userGroup.list.size(); i++) {
-			User currentUser = it.next();
-			if (currentUser.userType == "admin") {
-				administrators.list.add(currentUser);
-			}
-		}
+    for (int i = 0; i < userGroup.list.size(); i++) {
+      User currentUser = it.next();
+      if (currentUser.userType == "admin") {
+        administrators.list.add(currentUser);
+      }
+    }
 
-		administrators.getUsers().get(userGroup.getUsers().size() - 1).setUserType("user");
-		administrators.printUsernames();
-	}
+    administrators.getUsers().get(userGroup.getUsers().size() - 1).setUserType("user");
+    administrators.printUsernames();
+  }
 }

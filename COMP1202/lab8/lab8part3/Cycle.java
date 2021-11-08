@@ -1,3 +1,3 @@
 interface Cycle extends RoadVehicle {
-	public void liftFrontWheel();
+  public void liftFrontWheel();
 }

@@ -8,9 +8,7 @@ public abstract class Animal {
     age = animalAge;
   }
 
-  public Animal() {
-
-  }
+  public Animal() {}
 
   public String getName() {
     return name;

@@ -3,7 +3,7 @@ public abstract class Animal {
   String name;
   Integer age;
 
-  public Animal(String animalName, Integer animalAge){
+  public Animal(String animalName, Integer animalAge) {
     name = animalName;
     age = animalAge;
   }
