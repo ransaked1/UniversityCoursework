@@ -4,6 +4,11 @@ import java.util.Iterator;
 
 public class Main {
 
+  /**
+   * Creating a user group object and testing its functionality.
+   *
+   * @param args Standard terminal input.
+   */
   public static void main(String[] args) {
     UserGroup userGroup = new UserGroup();
     UserGroup administrators = new UserGroup();

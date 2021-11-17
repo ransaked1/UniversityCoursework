@@ -33,11 +33,7 @@ clean:
 	@$(RM) $(OBJDIR)
 	@echo "MAKE CLEAN IS DONE"
 
-fclean: clean
-	@$(RM) $(NAME)
-	@echo "MAKE FCLEAN IS DONE"
-
-re: fclean all
+re: clean all
 	@echo "MAKE RE IS DONE"
 
-.PHONY: clean fclean
+.PHONY: clean

@@ -1,22 +1,22 @@
 public abstract class Animal implements Comparable<Animal> {
 
   String name;
-  Integer age;
-
-  public Animal(String animalName, Integer animalAge) {
-    name = animalName;
-    age = animalAge;
-  }
+  int age;
 
   public Animal() {
     this("newborn", 0);
+  }
+
+  public Animal(String animalName, int animalAge) {
+    name = animalName;
+    age = animalAge;
   }
 
   public String getName() {
     return name;
   }
 
-  public Integer getAge() {
+  public int getAge() {
     return age;
   }
 
@@ -28,8 +28,12 @@ public abstract class Animal implements Comparable<Animal> {
 
   @Override
   public int compareTo(Animal a) {
-    if (this.age == a.age) return 0;
-    else if (this.age > a.age) return 1;
-    else return -1;
+    if (this.age == a.age) {
+      return 0;
+    } else if (this.age > a.age) {
+      return 1;
+    } else {
+      return -1;
+    }
   }
 }

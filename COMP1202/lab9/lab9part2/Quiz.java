@@ -6,16 +6,20 @@ public class Quiz {
   ArrayList<FlashCard> cardList;
   Toolbox toolbox = new Toolbox();
 
+  /**
+   * Get filename and start a game with a cardlist.
+   *
+   * @param filename The filename to start a game with.
+   */
   public Quiz(String filename) {
     reader = new FlashCardReader(filename);
     cardList = reader.getFlashCards();
     this.play();
   }
 
-  public static void main(String[] args) {
-    Quiz quiz = new Quiz("Questions.txt");
-  }
-
+  /**
+   * Start a game.
+   */
   public void play() {
     for (FlashCard card : cardList) {
       System.out.println(card.getQuestion());
@@ -24,8 +28,18 @@ public class Quiz {
       if (userAnswer.equals(card.getAnswer())) {
         System.out.println("Your answer is right!");
       } else {
-        System.out.println("Your answer is wrong, the right answer is " + card.getAnswer());
+        System.out.println("Your answer is wrong, the right answer is "
+            + card.getAnswer());
       }
     }
+  }
+
+  /**
+   * Build a quiz object. Starts a game automatically.
+   *
+   * @param args Standard input string list.
+   */
+  public static void main(String[] args) {
+    Quiz quiz = new Quiz("Questions.txt");
   }
 }

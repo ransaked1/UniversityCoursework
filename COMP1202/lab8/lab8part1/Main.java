@@ -1,4 +1,11 @@
 public class Main {
+
+  /**
+   * Create a sample wolf, parrot, girrafe, meat and plant object. Test make noises methods for
+   * animals. Test the eat method for herbivores and carnivores.
+   *
+   * @param args Standard terminal input.
+   */
   public static void main(String[] args) {
     Wolf wolf = new Wolf();
     Parrot parrot = new Parrot(2);

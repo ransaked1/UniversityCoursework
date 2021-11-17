@@ -1,8 +1,15 @@
 public class Main {
+
+  /**
+   * Creating a word group object with sample data and print it word by word.
+   *
+   * @param args Standard terminal input.
+   */
   public static void main(String[] args) {
     WordGroup wg1 =
         new WordGroup(
-            "You can discover more about a person in an hour of play than in a year of conversation");
+            "You can discover more about a person in an hour "
+                + "of play than in a year of conversation");
     WordGroup wg2 = new WordGroup("When you play play hard when you work dont play at all");
     String[] s1 = wg1.getWordArray();
     String[] s2 = wg2.getWordArray();

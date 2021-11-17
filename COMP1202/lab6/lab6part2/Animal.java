@@ -1,9 +1,9 @@
 public abstract class Animal {
 
   String name;
-  Integer age;
+  int age;
 
-  public Animal(String animalName, Integer animalAge) {
+  public Animal(String animalName, int animalAge) {
     name = animalName;
     age = animalAge;
   }
@@ -12,7 +12,7 @@ public abstract class Animal {
     return name;
   }
 
-  public Integer getAge() {
+  public int getAge() {
     return age;
   }
 

@@ -8,10 +8,20 @@ public class FlashCard {
     this.answer = answer;
   }
 
+  /**
+   * Return the questions.
+   *
+   * @return The questions in the form of a string.
+   */
   public String getQuestion() {
     return question;
   }
 
+  /**
+   * Return the answer.
+   *
+   * @return The answer in the form of a string.
+   */
   public String getAnswer() {
     return answer;
   }

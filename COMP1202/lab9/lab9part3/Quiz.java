@@ -1,8 +1,8 @@
-import java.io.IOException;
-import java.util.ArrayList;
 import java.io.File;
-import java.io.PrintStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class Quiz {
 
@@ -12,12 +12,20 @@ public class Quiz {
   PrintStream ps;
   int score = 0;
 
+  /**
+   * Get filename and start a game with a cardlist.
+   *
+   * @param filename The filename to start a game with.
+   */
   public Quiz(String filename) {
     reader = new FlashCardReader(filename);
     cardList = reader.getFlashCards();
     this.play();
   }
 
+  /**
+   * Start a game.
+   */
   public void play() {
     System.out.println("Do you wish to save your answers?");
     String saveOption = toolbox.readStringFromCmd();
@@ -30,7 +38,8 @@ public class Quiz {
         if (userAnswer.equals(card.getAnswer())) {
           System.out.println("Your answer is right!");
         } else {
-          System.out.println("Your answer is wrong, the right answer is " + card.getAnswer() + ".");
+          System.out.println("Your answer is wrong, the right answer is "
+              + card.getAnswer() + ".");
         }
       }
     } else {
@@ -43,17 +52,22 @@ public class Quiz {
           ps.println(card.getQuestion() + "," + userAnswer + "," + "right");
           score += 1;
         } else {
-          System.out.println("Your answer is wrong, the right answer is " + card.getAnswer() + ".");
+          System.out.println("Your answer is wrong, the right answer is "
+              + card.getAnswer() + ".");
           ps.println(card.getQuestion() + "," + userAnswer + "," + "wrong");
         }
       }
       float percentage = score * 100 / cardList.size();
       ps.println(
-          Integer.toString(score) + "," + cardList.size() + "," + Float.toString(percentage));
+          Integer.toString(score) + "," + cardList.size() + ","
+              + Float.toString(percentage));
       ps.flush();
     }
   }
 
+  /**
+   * Save the game state to file "save.txt".
+   */
   public void save() {
     File file = new File("save.txt");
     if (file.exists() && file.isFile()) {
@@ -73,6 +87,11 @@ public class Quiz {
     }
   }
 
+  /**
+   * Build a quiz object. Starts a game automatically.
+   *
+   * @param args Standard input string list.
+   */
   public static void main(String[] args) {
     Quiz quiz = new Quiz("Questions.txt");
   }
