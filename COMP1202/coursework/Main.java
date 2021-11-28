@@ -9,7 +9,8 @@ public class Main {
     building.addBug(new NoneTerminationBug("TermBug", 2, 4));
     building.addBug(new NullPointerBug("PointerBug", 2, 2));
     building.addBug(new ConcurrentModificationBug("ConcBug2", 3, 1));
-    building.addBug(new NullPointerBug("PointerBug2", 2, 2));
+    building.addBug(new NullPointerBug("PointerBug2", 2, 3));
+    building.addBug(new NullPointerBug("PointerBug2", 2, 3));
     building.printGameState();
 
     AiStudent student = new AiStudent(2);
@@ -18,6 +19,7 @@ public class Main {
       student.defence(building);
       building.bugsMove();
       building.printGameState();
+      //System.out.println(building.getAllBugsReal().size() + " " + building.getConstructionPoints());
     }
   }
 }

@@ -25,12 +25,21 @@ public class Building {
   }
 
   public int addBug(Bug bug) {
-    if (bugList.contains(bug)) {
-      return -1;
-    } else {
-      bugList.add(bug);
-      return bugList.size();
+    for (Bug bugInList : bugList) {
+      if (checkBugsEqual(bug, bugInList)) {
+        return -1;
+      }
     }
+    bugList.add(bug);
+    return bugList.size();
+  }
+
+  public boolean checkBugsEqual(Bug bug1, Bug bug2) {
+    if (bug1.getBaseSteps() == bug2.getBaseSteps() && bug1.getLevel() == bug2.getLevel()
+        && bug1.getName() == bug2.getName() && bug1.getCurrentHP() == bug2.getCurrentHP()) {
+      return true;
+    }
+    return false;
   }
 
   public void bugsMove() {
@@ -59,11 +68,11 @@ public class Building {
   }
 
   public void printGameState() {
-    for (Bug bug : this.getAllBugs()) {
+    for (Bug bug : this.getAllBugsReal()) {
       System.out.println(
           "Name: "
               + bug.getName()
-              + "Bug current floor: "
+              + " Bug current floor: "
               + bug.getCurrentFloor()
               + " Bug current step: "
               + bug.getCurrentSteps()
@@ -74,16 +83,20 @@ public class Building {
     System.out.println();
   }
 
-  public ArrayList<Bug> getAllBugs() {
-    ArrayList<Bug> tmpList = bugList;
-    Collections.sort(bugList);
-    Collections.sort(tmpList);
-    tmpList.removeIf(bug -> bug.getCurrentFloor() == -1);
-    return tmpList;
-  }
-
   public ArrayList<Bug> getAllBugsReal() {
     Collections.sort(bugList);
     return bugList;
+  }
+
+  public ArrayList<Bug> getAllBugs() {
+    ArrayList<Bug> tmpList = new ArrayList<Bug>();
+    Collections.sort(bugList);
+    for (Bug bug : bugList) {
+      if (bug.getCurrentFloor() != -1) {
+        tmpList.add(bug);
+      }
+    }
+    Collections.sort(tmpList);
+    return tmpList;
   }
 }
