@@ -9,9 +9,9 @@ public class Building {
 
   int constructionPoints;
   int topFloor;
-  ArrayList<Bug> bugList = new ArrayList<Bug>();
+  ArrayList<Bug> bugs = new ArrayList<Bug>();
 
-  public Building(int constructionPoints, int topFloor) {
+  public Building(int topFloor, int constructionPoints) {
     this.constructionPoints = constructionPoints;
     this.topFloor = topFloor;
   }
@@ -25,26 +25,30 @@ public class Building {
   }
 
   public int addBug(Bug bug) {
-    for (Bug bugInList : bugList) {
-      if (checkBugsEqual(bug, bugInList)) {
+    for (Bug bug1 : bugs) {
+      if (compareBugsEqual(bug1, bug)) {
         return -1;
       }
     }
-    bugList.add(bug);
-    return bugList.size();
+    bugs.add(bug);
+    return bugs.size();
   }
 
-  public boolean checkBugsEqual(Bug bug1, Bug bug2) {
-    if (bug1.getBaseSteps() == bug2.getBaseSteps() && bug1.getLevel() == bug2.getLevel()
-        && bug1.getName() == bug2.getName() && bug1.getCurrentHP() == bug2.getCurrentHP()) {
+  public boolean compareBugsEqual(Bug bug1, Bug bug2) {
+    if (bug1.getBaseSteps() == bug2.getBaseSteps()
+        && bug1.getName() == bug2.getName()
+        && (int) bug1.getCurrentHp() == (int) bug2.getCurrentHp()
+        && bug1.getCurrentSteps() == bug2.getCurrentSteps()
+        && bug1.getCurrentFloor() == bug2.getCurrentFloor()) {
       return true;
     }
     return false;
   }
 
   public void bugsMove() {
-    for (int i = 0; i < bugList.size(); i++) {
-      Bug bug = bugList.get(i);
+    ArrayList<Bug> bugsToRemove = new ArrayList<Bug>();
+
+    for (Bug bug : bugs) {
       bug.move();
       if (bug.getCurrentFloor() == this.topFloor) {
         if (bug instanceof ConcurrentModificationBug) {
@@ -54,20 +58,33 @@ public class Building {
         } else {
           constructionPoints = constructionPoints - 1;
         }
-        this.removeBug(bug);
+        bugsToRemove.add(bug);
       }
       if (constructionPoints <= 0) {
+        removeMultipleBugs(bugsToRemove);
         constructionPoints = 0;
         break;
       }
     }
+    removeMultipleBugs(bugsToRemove);
+  }
+
+  public void removeMultipleBugs(ArrayList<Bug> bugsToRemove) {
+    for (Bug bug : bugsToRemove) {
+      this.bugs.remove(bug);
+    }
   }
 
   public void removeBug(Bug bug) {
-    bugList.remove(bug);
+    bugs.remove(bug);
   }
 
-  public void printGameState() {
+  public void printGameState(int attackNumber, int knowledgePoints) {
+    if (attackNumber == 0) {
+      System.out.println("Initial state of the game: ");
+    } else {
+      System.out.println("Attack number: " + attackNumber);
+    }
     for (Bug bug : this.getAllBugsReal()) {
       System.out.println(
           "Name: "
@@ -76,27 +93,30 @@ public class Building {
               + bug.getCurrentFloor()
               + " Bug current step: "
               + bug.getCurrentSteps()
-              + " Bug current HP: "
-              + bug.getCurrentHP());
+              + " Bug current Hp: "
+              + bug.getCurrentHp());
     }
+    System.out.println("Knowledge points gained: " + knowledgePoints);
     System.out.println("Building construction points: " + this.constructionPoints);
     System.out.println();
   }
 
   public ArrayList<Bug> getAllBugsReal() {
-    Collections.sort(bugList);
-    return bugList;
+    Collections.sort(bugs);
+    return bugs;
   }
 
-  public ArrayList<Bug> getAllBugs() {
-    ArrayList<Bug> tmpList = new ArrayList<Bug>();
-    Collections.sort(bugList);
-    for (Bug bug : bugList) {
-      if (bug.getCurrentFloor() != -1) {
-        tmpList.add(bug);
-      }
+  public Bug[] getAllBugs() {
+    ArrayList<Bug> tmpList = new ArrayList<Bug>(bugs.size());
+    Collections.sort(bugs);
+    for (Bug item : bugs) {
+      tmpList.add(item);
     }
-    Collections.sort(tmpList);
-    return tmpList;
+    tmpList.removeIf(bug -> bug.getCurrentFloor() == -1);
+    Bug[] result = new Bug[tmpList.size()];
+    for (int i = 0; i < tmpList.size(); i++) {
+      result[i] = tmpList.get(i);
+    }
+    return result;
   }
 }

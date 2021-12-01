@@ -5,17 +5,17 @@ import java.lang.Math;
 public abstract class Bug implements Comparable<Bug> {
 
   String name;
-  int baseHP;
+  int baseHp;
   int baseSteps;
   int level;
 
-  int currentHP;
+  int currentHp;
   int currentSteps;
   int currentFloor = -1;
 
-  public Bug(String name, int baseHP, int baseSteps, int level, int initialSteps) {
+  public Bug(String name, int baseHp, int baseSteps, int level, int initialSteps) {
     this.name = name;
-    this.baseHP = baseHP;
+    this.baseHp = baseHp;
     this.baseSteps = baseSteps;
     this.level = level;
     this.currentSteps = initialSteps;
@@ -23,12 +23,12 @@ public abstract class Bug implements Comparable<Bug> {
     double dblLevel = level;
     double coefficient = 1.5;
     double tmpPower = Math.pow(dblLevel, coefficient);
-    this.currentHP = (int) Math.round(baseHP * tmpPower);
+    this.currentHp = (int) Math.round(baseHp * tmpPower);
   }
 
-  public Bug(String name, int baseHP, int baseSteps, int level) {
+  public Bug(String name, int baseHp, int baseSteps, int level) {
     this.name = name;
-    this.baseHP = baseHP;
+    this.baseHp = baseHp;
     this.baseSteps = baseSteps;
     this.level = level;
   }
@@ -41,8 +41,9 @@ public abstract class Bug implements Comparable<Bug> {
     return level;
   }
 
-  public int getCurrentHP() {
-    return currentHP;
+  public Integer getCurrentHp() {
+    Integer currentHpObject = Integer.valueOf(currentHp);
+    return currentHp;
   }
 
   public int getCurrentSteps() {
@@ -67,9 +68,9 @@ public abstract class Bug implements Comparable<Bug> {
   }
 
   public void damage(int damage) {
-    currentHP = currentHP - damage;
-    if (currentHP < 0) {
-      currentHP = 0;
+    currentHp = currentHp - damage;
+    if (currentHp < 0) {
+      currentHp = 0;
     }
   }
 

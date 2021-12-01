@@ -17,7 +17,7 @@ SRC = *.java
 
 CLASS = *.class
 
-all: $(NAME)
+demo: clean
 	@$(CC) $(FLAGS) $(BUILDINGPATH) $(BUGSSRC)
 	@$(CC) $(FLAGS) $(STUDENTSPATH) $(BUGSSRC)
 	@$(CC) $(BUGSSRC)
@@ -26,6 +26,8 @@ all: $(NAME)
 	@$(CC) $(STUDENTSRC)
 	@$(CC) Main.java
 	@echo "MAKE ALL IS DONE"
+	@java Main
+	@make clean
 
 clean:
 	@$(RM) bugs/$(CLASS)
@@ -34,10 +36,54 @@ clean:
 	@$(RM) building/bugs
 	@$(RM) students/bugs
 	@$(RM) students/building
-	@$(RM) Main.class
+	@$(RM) *.class
 	@echo "MAKE CLEAN IS DONE"
 
-re: clean all
-	@echo "MAKE RE IS DONE"
+test1: re
+	@cp tests/junit-platform-console-standalone-1.8.1.jar .
+	@cp tests/TestPart1.java .
+	@cp tests/AbstractTestClass.java .
+	@cp tests/TestCoursework.java .
+	@cp bugs/*.class .
+	@javac -cp .:junit-platform-console-standalone-1.8.1.jar TestPart1.java
+	@java -jar junit-platform-console-standalone-1.8.1.jar -cp . -c TestPart1
 
-.PHONY: clean
+	@$(RM) junit-platform-console-standalone-1.8.1.jar
+	@$(RM) TestPart1.java
+	@$(RM) AbstractTestClass.java
+	@$(RM) TestCoursework.java
+	@$(RM) *.class
+
+test2: re
+	@cp tests/junit-platform-console-standalone-1.8.1.jar .
+	@cp tests/TestPart2.java .
+	@cp tests/AbstractTestClass.java .
+	@cp tests/TestCoursework.java .
+	@cp bugs/*.class .
+	@cp building/*.class .
+	@javac -cp .:junit-platform-console-standalone-1.8.1.jar TestPart2.java
+	@java -jar junit-platform-console-standalone-1.8.1.jar -cp . -c TestPart2
+
+	@$(RM) junit-platform-console-standalone-1.8.1.jar
+	@$(RM) TestPart2.java
+	@$(RM) AbstractTestClass.java
+	@$(RM) TestCoursework.java
+	@$(RM) *.class
+
+test3: re
+	@cp tests/junit-platform-console-standalone-1.8.1.jar .
+	@cp tests/TestPart3.java .
+	@cp tests/AbstractTestClass.java .
+	@cp tests/TestCoursework.java .
+	@cp bugs/*.class .
+	@cp building/*.class .
+	@javac -cp .:junit-platform-console-standalone-1.8.1.jar TestPart3.java
+	@java -jar junit-platform-console-standalone-1.8.1.jar -cp . -c TestPart3
+
+	@$(RM) junit-platform-console-standalone-1.8.1.jar
+	@$(RM) TestPart3.java
+	@$(RM) AbstractTestClass.java
+	@$(RM) TestCoursework.java
+	@$(RM) *.class
+
+.PHONY: clean demo
