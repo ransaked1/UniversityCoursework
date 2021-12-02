@@ -96,7 +96,7 @@ public class Building {
               + " Bug current Hp: "
               + bug.getCurrentHp());
     }
-    System.out.println("Knowledge points gained: " + knowledgePoints);
+    System.out.println("Team knowledge points: " + knowledgePoints);
     System.out.println("Building construction points: " + this.constructionPoints);
     System.out.println();
   }

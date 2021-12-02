@@ -25,6 +25,10 @@ public class SeStudent implements Student {
 		return  100 * (int) Math.pow(2, level);
 	}
 
+	public void upgrade() {
+		level += 1;
+	}
+
 	public int defence(Building building) {
 		int totalKnowledgePts = 0;
 
