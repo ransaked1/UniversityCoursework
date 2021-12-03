@@ -31,6 +31,7 @@ public class Battle {
   }
 
   private void manageTeam() {
+    boolean NoDecisionMade = true;
     ArrayList<Decision> decisionRank = new ArrayList<Decision>();
     decisionRank.add(new Decision(team));
     for (Student student : team.getStudents()) {
@@ -46,6 +47,7 @@ public class Battle {
       if (decision.getDecisionCost() <= team.getKnowledgePoints()) {
         if (decision.getStudentToUpgrade() == null) {
           try {
+            NoDecisionMade = false;
             team.recruitNewStudent();
             break;
           } catch (Exception e) {
@@ -53,6 +55,7 @@ public class Battle {
           }
         } else {
           try {
+            NoDecisionMade = false;
             team.upgrade(decision.getStudentToUpgrade());
             break;
           } catch (Exception e) {
@@ -60,6 +63,10 @@ public class Battle {
           }
         }
       }
+    }
+
+    if (NoDecisionMade) {
+      //TO DO: if not enough money for decision calculate what to make money for.
     }
   }
 
@@ -79,7 +86,9 @@ public class Battle {
     }
     for (Bug bug : building.getAllBugsReal()) {
       System.out.println(
-          "Bug name: "
+          "Bug type: "
+              + bug.getClass().getSimpleName()
+              + " Bug name: "
               + bug.getName()
               + " Bug current floor: "
               + bug.getCurrentFloor()
@@ -115,14 +124,9 @@ public class Battle {
     }
   }
 
-  public void addBugs() {
-    building.addBug(new ConcurrentModificationBug("ConcBug1", 2, 0));
-    building.addBug(new NoneTerminationBug("TermBug1", 1, 0));
-    building.addBug(new NullPointerBug("PointerBug1", 3, 0));
-    building.addBug(new ConcurrentModificationBug("ConcBug2", 1, 3));
-    building.addBug(new NoneTerminationBug("TermBug2", 1, 2));
-    building.addBug(new NullPointerBug("PointerBug2", 1, 4));
-    building.addBug(new NullPointerBug("PointerBug3", 2, 3));
-    building.addBug(new NullPointerBug("PointerBug3", 2, 3));
+  public void addBugs(ArrayList<Bug> bugWave) {
+    for (Bug bug : bugWave) {
+      building.addBug(bug);
+    }
   }
 }
