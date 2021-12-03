@@ -29,9 +29,32 @@ public class AiStudent implements Student {
     return level;
   }
 
+  public int getDamage() {
+    double dblBaseAtk = baseAtk;
+    return (int) Math.round(dblBaseAtk * Math.pow(level, 1.2));
+  }
+
+  public int getDelayCounter() {
+    return delayCounter;
+  }
+
+  public int getDelay() {
+    return delay;
+  }
+
   public int upgradeCost() {
     double dblLevel = level;
     return  100 * (int) Math.pow(2, level);
+  }
+
+  public int levelUpDamage() {
+    if (delayCounter + 1 != delay) {
+      double dblBaseAtk = baseAtk;
+      return (int) Math.round(dblBaseAtk * Math.pow(level + 1, 1.2));
+    } else {
+      double dblBaseAtk = baseAtk;
+      return (int) Math.round(dblBaseAtk * Math.pow(level + 1, 1.2)) * 3;
+    }
   }
 
   public void upgrade() {
@@ -59,7 +82,6 @@ public class AiStudent implements Student {
       return totalKnowledgePts;
     } else {
       delayCounter = 1;
-      System.out.println("Super attack!");
       Bug[] bugList = building.getAllBugs();
 
       int stopIndex = 2;
@@ -68,7 +90,6 @@ public class AiStudent implements Student {
       }
 
       for (int i = 0; i <= stopIndex; i++) {
-        //System.out.println(bugList[i]);
         Bug bug = bugList[i];
         double dblLevel = level;
         double dblBaseAtk = baseAtk;

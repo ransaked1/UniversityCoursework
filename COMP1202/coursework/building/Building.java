@@ -79,28 +79,6 @@ public class Building {
     bugs.remove(bug);
   }
 
-  public void printGameState(int attackNumber, int knowledgePoints) {
-    if (attackNumber == 0) {
-      System.out.println("Initial state of the game: ");
-    } else {
-      System.out.println("Attack number: " + attackNumber);
-    }
-    for (Bug bug : this.getAllBugsReal()) {
-      System.out.println(
-          "Name: "
-              + bug.getName()
-              + " Bug current floor: "
-              + bug.getCurrentFloor()
-              + " Bug current step: "
-              + bug.getCurrentSteps()
-              + " Bug current Hp: "
-              + bug.getCurrentHp());
-    }
-    System.out.println("Team knowledge points: " + knowledgePoints);
-    System.out.println("Building construction points: " + this.constructionPoints);
-    System.out.println();
-  }
-
   public ArrayList<Bug> getAllBugsReal() {
     Collections.sort(bugs);
     return bugs;

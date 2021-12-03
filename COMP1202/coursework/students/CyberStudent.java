@@ -21,9 +21,32 @@ public class CyberStudent implements Student {
     return level;
   }
 
+  public int getDamage() {
+    double dblBaseAtk = baseAtk;
+    return (int) Math.round(dblBaseAtk * Math.pow(level, 1.2));
+  }
+
+  public int getDelay() {
+    return delay;
+  }
+
+  public int getDelayCounter() {
+    return delayCounter;
+  }
+
   public int upgradeCost() {
     double dblLevel = level;
     return 100 * (int) Math.pow(2, level);
+  }
+
+  public int levelUpDamage() {
+    if (delayCounter + 1 != delay) {
+      double dblBaseAtk = baseAtk;
+      return (int) Math.round(dblBaseAtk * Math.pow(level + 1, 1.2));
+    } else {
+      double dblBaseAtk = baseAtk;
+      return (int) Math.round(dblBaseAtk * Math.pow(level + 1, 1.2)) * 2;
+    }
   }
 
   public void upgrade() {
@@ -51,7 +74,6 @@ public class CyberStudent implements Student {
       return totalKnowledgePts;
     } else {
       delayCounter = 1;
-      System.out.println("Super attack!");
       int randomInteger = new Random().nextInt(100);
       Bug[] bugList = building.getAllBugs();
       Bug bug = bugList[0];
@@ -60,8 +82,6 @@ public class CyberStudent implements Student {
       if (probability > 50) {
         probability = 50;
       }
-
-      System.out.println(randomInteger + " " + probability);
 
       if (randomInteger < probability) {
         totalKnowledgePts = totalKnowledgePts + bug.getLevel() * 20;

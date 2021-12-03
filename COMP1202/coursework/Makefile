@@ -24,10 +24,20 @@ demo: clean
 	@$(CC) $(FLAGS) $(STUDENTSPATH) $(BUILDINGSRC)
 	@$(CC) $(BUILDINGSRC)
 	@$(CC) $(STUDENTSRC)
-	@$(CC) Main.java
-	@echo "MAKE ALL IS DONE"
-	@java Main
+	@$(CC) EcsBuildingDefence.java
+	@echo "MAKE DEMO IS DONE"
+	@java EcsBuildingDefence 4 5 bugs.txt 1000
 	@make clean
+
+all:
+	@$(CC) $(FLAGS) $(BUILDINGPATH) $(BUGSSRC)
+	@$(CC) $(FLAGS) $(STUDENTSPATH) $(BUGSSRC)
+	@$(CC) $(BUGSSRC)
+	@$(CC) $(FLAGS) $(STUDENTSPATH) $(BUILDINGSRC)
+	@$(CC) $(BUILDINGSRC)
+	@$(CC) $(STUDENTSRC)
+	@$(CC) EcsBuildingDefence.java
+	@echo "MAKE ALL IS DONE"
 
 clean:
 	@$(RM) bugs/$(CLASS)
@@ -39,7 +49,7 @@ clean:
 	@$(RM) *.class
 	@echo "MAKE CLEAN IS DONE"
 
-test1: re
+test1: all
 	@cp tests/junit-platform-console-standalone-1.8.1.jar .
 	@cp tests/TestPart1.java .
 	@cp tests/AbstractTestClass.java .
@@ -54,7 +64,7 @@ test1: re
 	@$(RM) TestCoursework.java
 	@$(RM) *.class
 
-test2: re
+test2: all
 	@cp tests/junit-platform-console-standalone-1.8.1.jar .
 	@cp tests/TestPart2.java .
 	@cp tests/AbstractTestClass.java .
@@ -70,7 +80,7 @@ test2: re
 	@$(RM) TestCoursework.java
 	@$(RM) *.class
 
-test3: re
+test3: all
 	@cp tests/junit-platform-console-standalone-1.8.1.jar .
 	@cp tests/TestPart3.java .
 	@cp tests/AbstractTestClass.java .
