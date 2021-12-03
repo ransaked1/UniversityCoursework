@@ -9,11 +9,9 @@ public class EcsBuildingDefence {
 		int knowledgePoints = Integer.valueOf(args[3]);
 		String fileName = args[2];
 
-		int nextWaveSteps = topFloor * 4;
+		int nextWaveSteps = topFloor * 8;
 		int steps = 1;
 		int waveCount = 0;
-
-		System.out.println(nextWaveSteps);
 
 		Building building = new Building(topFloor, constructionPoints);
 		ConfigReader bugWaves = new ConfigReader(fileName);
@@ -24,7 +22,7 @@ public class EcsBuildingDefence {
 		waveCount++;
 		battle.printGameState(0);
 
-		while (battle.step()) {
+		while (battle.step(waveCount, bugWaves.getBugWaves().size())) {
 			steps++;
 			if (steps == nextWaveSteps && waveCount < bugWaves.getBugWaves().size()) {
 				battle.addBugs(bugWaves.getBugWaves().get(waveCount));

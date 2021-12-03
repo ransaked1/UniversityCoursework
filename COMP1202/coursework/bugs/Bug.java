@@ -41,11 +41,6 @@ public abstract class Bug implements Comparable<Bug> {
     return level;
   }
 
-  public Integer getCurrentHp() {
-    Integer currentHpObject = Integer.valueOf(currentHp);
-    return currentHp;
-  }
-
   public int getCurrentSteps() {
     return currentSteps;
   }
@@ -56,6 +51,11 @@ public abstract class Bug implements Comparable<Bug> {
 
   public String getName() {
     return name;
+  }
+
+  public Integer getCurrentHp() {
+    Integer currentHpObject = Integer.valueOf(currentHp);
+    return currentHp;
   }
 
   public void move() {

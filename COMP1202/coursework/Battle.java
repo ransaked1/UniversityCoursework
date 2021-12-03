@@ -16,22 +16,30 @@ public class Battle {
     this.team = team;
   }
 
-  public boolean step() {
+  public boolean step(int waveCount, int numberOfWaves) {
     boolean gameNotEnded = true;
-    if (building.getConstructionPoints() == 0 || building.getAllBugsReal().size() == 0) {
+    boolean noMoreConstructionPoints = building.getConstructionPoints() == 0;
+    boolean noMoreBugs = waveCount == numberOfWaves && building.getAllBugsReal().size() == 0;
+    boolean moreBugsInWave = building.getAllBugsReal().size() != 0;
+
+    if (noMoreConstructionPoints || noMoreBugs) {
       gameNotEnded = false;
       return gameNotEnded;
     }
+
     manageTeam();
     building.bugsMove();
     team.studentsAct(building);
-    printGameState(attackNumber);
+
+    if (moreBugsInWave || noMoreBugs) {
+      printGameState(attackNumber);
+    }
+
     attackNumber++;
     return gameNotEnded;
   }
 
   private void manageTeam() {
-    boolean NoDecisionMade = true;
     ArrayList<Decision> decisionRank = new ArrayList<Decision>();
     decisionRank.add(new Decision(team));
     for (Student student : team.getStudents()) {
@@ -39,51 +47,62 @@ public class Battle {
     }
     Collections.sort(decisionRank);
 
-//    for (Decision decision : decisionRank) {
-//      System.out.println(decision.getOverallDecisionWeight());
-//    }
-
     for (Decision decision : decisionRank) {
-      if (decision.getDecisionCost() <= team.getKnowledgePoints()) {
-        if (decision.getStudentToUpgrade() == null) {
-          try {
-            NoDecisionMade = false;
-            team.recruitNewStudent();
-            break;
-          } catch (Exception e) {
-            System.out.println(e);
-          }
-        } else {
-          try {
-            NoDecisionMade = false;
-            team.upgrade(decision.getStudentToUpgrade());
-            break;
-          } catch (Exception e) {
-            System.out.println(e);
-          }
+      if (makeDecision(decision)) break;
+    }
+  }
+
+  private boolean makeDecision(Decision decision) {
+    if (decision.getDecisionCost() <= team.getKnowledgePoints()) {
+      if (decision.getStudentToUpgrade() == null) {
+        try {
+          team.recruitNewStudent();
+          return true;
+        } catch (Exception e) {
+          System.out.println(e);
+        }
+      } else {
+        try {
+          team.upgrade(decision.getStudentToUpgrade());
+          return true;
+        } catch (Exception e) {
+          System.out.println(e);
         }
       }
     }
-
-    if (NoDecisionMade) {
-      //TO DO: if not enough money for decision calculate what to make money for.
-    }
+    return false;
   }
 
   public void printGameState(int attackNumber) {
     System.out.println();
     System.out.println();
+
+    printTurnNumber(attackNumber);
+    printBugsState();
+
+    System.out.println();
+
+    printStudentsState();
+    printGeneralInfo();
+    try {
+      Thread.sleep(500);
+    } catch (InterruptedException e) {
+      System.out.println(e);
+    }
+  }
+
+  private void printTurnNumber(int attackNumber) {
+    System.out.println(
+        "<-------------------------------------------------------"
+            + "--------------------------------------------------------------->");
     if (attackNumber == 0) {
-      System.out.println(
-          "<-------------------------------------------------------"
-              + "--------------------------------------------------------------->");
       System.out.println("INITIAL GAME STATE: ");
     } else {
-      System.out.println(
-          "<-------------------------------------------------------"
-              + "--------------------------------------------------------------->");
       System.out.println("Attack number: " + attackNumber);
     }
+  }
+
+  private void printBugsState() {
     for (Bug bug : building.getAllBugsReal()) {
       System.out.println(
           "Bug type: "
@@ -97,7 +116,9 @@ public class Battle {
               + " Bug current Hp: "
               + bug.getCurrentHp());
     }
-    System.out.println();
+  }
+
+  private void printStudentsState() {
     for (Student student : team.getStudents()) {
       System.out.println(
           "Student: "
@@ -111,17 +132,15 @@ public class Battle {
               + " Student power-up counter: "
               + student.getDelayCounter());
     }
+  }
+
+  private void printGeneralInfo() {
     System.out.println("Team knowledge points: " + team.getKnowledgePoints());
     System.out.println("Recruitment cost: " + team.getNewStudentCost());
     System.out.println("Building construction points: " + building.getConstructionPoints());
     System.out.println(
         "<-------------------------------------------------------"
             + "--------------------------------------------------------------->");
-    try {
-      Thread.sleep(500);
-    } catch (InterruptedException e) {
-
-    }
   }
 
   public void addBugs(ArrayList<Bug> bugWave) {

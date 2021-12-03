@@ -7,21 +7,21 @@ import bugs.*;
 
 public class Building {
 
+  ArrayList<Bug> bugs = new ArrayList<Bug>();
   int constructionPoints;
   int topFloor;
-  ArrayList<Bug> bugs = new ArrayList<Bug>();
 
   public Building(int topFloor, int constructionPoints) {
     this.constructionPoints = constructionPoints;
     this.topFloor = topFloor;
   }
 
-  public int getTopFloor() {
-    return topFloor;
-  }
-
   public int getConstructionPoints() {
     return constructionPoints;
+  }
+
+  public int getTopFloor() {
+    return topFloor;
   }
 
   public int addBug(Bug bug) {
@@ -32,17 +32,6 @@ public class Building {
     }
     bugs.add(bug);
     return bugs.size();
-  }
-
-  public boolean compareBugsEqual(Bug bug1, Bug bug2) {
-    if (bug1.getBaseSteps() == bug2.getBaseSteps()
-        && bug1.getName() == bug2.getName()
-        && (int) bug1.getCurrentHp() == (int) bug2.getCurrentHp()
-        && bug1.getCurrentSteps() == bug2.getCurrentSteps()
-        && bug1.getCurrentFloor() == bug2.getCurrentFloor()) {
-      return true;
-    }
-    return false;
   }
 
   public void bugsMove() {
@@ -69,12 +58,6 @@ public class Building {
     removeMultipleBugs(bugsToRemove);
   }
 
-  public void removeMultipleBugs(ArrayList<Bug> bugsToRemove) {
-    for (Bug bug : bugsToRemove) {
-      this.bugs.remove(bug);
-    }
-  }
-
   public void removeBug(Bug bug) {
     bugs.remove(bug);
   }
@@ -86,15 +69,34 @@ public class Building {
 
   public Bug[] getAllBugs() {
     ArrayList<Bug> tmpList = new ArrayList<Bug>(bugs.size());
+
     Collections.sort(bugs);
     for (Bug item : bugs) {
       tmpList.add(item);
     }
+
     tmpList.removeIf(bug -> bug.getCurrentFloor() == -1);
     Bug[] result = new Bug[tmpList.size()];
     for (int i = 0; i < tmpList.size(); i++) {
       result[i] = tmpList.get(i);
     }
     return result;
+  }
+
+  private boolean compareBugsEqual(Bug bug1, Bug bug2) {
+    if (bug1.getBaseSteps() == bug2.getBaseSteps()
+        && bug1.getName() == bug2.getName()
+        && (int) bug1.getCurrentHp() == (int) bug2.getCurrentHp()
+        && bug1.getCurrentSteps() == bug2.getCurrentSteps()
+        && bug1.getCurrentFloor() == bug2.getCurrentFloor()) {
+      return true;
+    }
+    return false;
+  }
+
+  private void removeMultipleBugs(ArrayList<Bug> bugsToRemove) {
+    for (Bug bug : bugsToRemove) {
+      this.bugs.remove(bug);
+    }
   }
 }

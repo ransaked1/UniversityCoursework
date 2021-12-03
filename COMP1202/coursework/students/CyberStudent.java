@@ -1,42 +1,16 @@
 package students;
 
-import java.lang.Math;
 import building.*;
 import bugs.*;
+
+import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CyberStudent implements Student {
-
-  int level;
-  int baseAtk = 7;
-  int delay = 8;
-  int delayCounter = 1;
+public class CyberStudent extends AbstractStudent implements Student {
 
   public CyberStudent(int level) {
-    this.level = level;
-  }
-
-  public int getLevel() {
-    return level;
-  }
-
-  public int getDamage() {
-    double dblBaseAtk = baseAtk;
-    return (int) Math.round(dblBaseAtk * Math.pow(level, 1.2));
-  }
-
-  public int getDelay() {
-    return delay;
-  }
-
-  public int getDelayCounter() {
-    return delayCounter;
-  }
-
-  public int upgradeCost() {
-    double dblLevel = level;
-    return 100 * (int) Math.pow(2, level);
+    super(7, 8, level);
   }
 
   public int levelUpDamage() {
@@ -49,10 +23,6 @@ public class CyberStudent implements Student {
     }
   }
 
-  public void upgrade() {
-    level += 1;
-  }
-
   public int defence(Building building) {
     int totalKnowledgePts = 0;
 
@@ -60,41 +30,40 @@ public class CyberStudent implements Student {
       return 0;
     }
 
+    Bug[] bugList = building.getAllBugs();
+    Bug bug = bugList[0];
     if (delayCounter < delay) {
-      delayCounter = delayCounter + 1;
-      Bug[] bugList = building.getAllBugs();
-      Bug bug = bugList[0];
-
-      double dblBaseAtk = baseAtk;
-      bug.damage((int) Math.round(dblBaseAtk * Math.pow(level, 1.2)));
-      if (bug.getCurrentHp() == 0) {
-        totalKnowledgePts = totalKnowledgePts + bug.getLevel() * 20;
-        building.removeBug(bug);
-      }
-      return totalKnowledgePts;
+      delayCounter += 1;
+      return damageBug(building, totalKnowledgePts, bug, 1);
     } else {
       delayCounter = 1;
-      int randomInteger = new Random().nextInt(100);
-      Bug[] bugList = building.getAllBugs();
-      Bug bug = bugList[0];
+      return damageBugSuper(building, totalKnowledgePts, bug);
+    }
+  }
 
-      int probability = 20 + level;
-      if (probability > 50) {
-        probability = 50;
-      }
+  private int damageBug(Building building, int totalKnowledgePts, Bug bug, int multiplier) {
+    double dblBaseAtk = baseAtk;
+    bug.damage((int) Math.round(dblBaseAtk * Math.pow(level, 1.2)) * multiplier);
+    if (bug.getCurrentHp() == 0) {
+      totalKnowledgePts += bug.getLevel() * 20;
+      building.removeBug(bug);
+    }
+    return totalKnowledgePts;
+  }
 
-      if (randomInteger < probability) {
-        totalKnowledgePts = totalKnowledgePts + bug.getLevel() * 20;
-        building.removeBug(bug);
-      } else {
-        double dblBaseAtk = baseAtk * 2;
-        bug.damage((int) Math.round(dblBaseAtk * Math.pow(level, 1.2)));
-        if (bug.getCurrentHp() == 0) {
-          totalKnowledgePts = totalKnowledgePts + bug.getLevel() * 20;
-          building.removeBug(bug);
-        }
-      }
-      return totalKnowledgePts;
+  private int damageBugSuper(Building building, int totalKnowledgePts, Bug bug) {
+    int randomInteger = new Random().nextInt(100);
+
+    int probability = 20 + level;
+    if (probability > 50) {
+      probability = 50;
+    }
+
+    if (randomInteger < probability) {
+      building.removeBug(bug);
+      return totalKnowledgePts + bug.getLevel() * 20;
+    } else {
+      return damageBug(building, totalKnowledgePts, bug, 2);
     }
   }
 }

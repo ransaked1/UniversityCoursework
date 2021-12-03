@@ -26,7 +26,7 @@ demo: clean
 	@$(CC) $(STUDENTSRC)
 	@$(CC) EcsBuildingDefence.java
 	@echo "MAKE DEMO IS DONE"
-	@java EcsBuildingDefence 4 5 bugs.txt 1000
+	@java EcsBuildingDefence 4 20 bugs.txt 210
 	@make clean
 
 all:
@@ -62,7 +62,7 @@ test1: all
 	@$(RM) TestPart1.java
 	@$(RM) AbstractTestClass.java
 	@$(RM) TestCoursework.java
-	@$(RM) *.class
+	@make clean
 
 test2: all
 	@cp tests/junit-platform-console-standalone-1.8.1.jar .
@@ -78,7 +78,7 @@ test2: all
 	@$(RM) TestPart2.java
 	@$(RM) AbstractTestClass.java
 	@$(RM) TestCoursework.java
-	@$(RM) *.class
+	@make clean
 
 test3: all
 	@cp tests/junit-platform-console-standalone-1.8.1.jar .
@@ -94,6 +94,6 @@ test3: all
 	@$(RM) TestPart3.java
 	@$(RM) AbstractTestClass.java
 	@$(RM) TestCoursework.java
-	@$(RM) *.class
+	@make clean
 
 .PHONY: clean demo
