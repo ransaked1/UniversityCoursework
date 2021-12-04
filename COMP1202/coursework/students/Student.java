@@ -1,22 +1,28 @@
 package students;
 
-import building.*;
 import bugs.*;
+import building.*;
 
+/**
+ * Student interface specifying signatures for obligatory functions to be implemented in a Student
+ * object.
+ */
 public interface Student {
+  // Specification methods for the interface
   public int getLevel();
 
+  public int upgradeCost();
+
+  public int defence(Building building);
+
+  // Added method signatures
   public int getDamage();
 
   public int getDelay();
 
   public int getDelayCounter();
 
-  public int upgradeCost();
-
   public int levelUpDamage();
-
-  public int defence(Building building);
 
   public void upgrade();
 }
