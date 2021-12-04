@@ -15,7 +15,7 @@ public interface Student {
 
   public int defence(Building building);
 
-  // Added method signatures
+  // Additional method signatures
   public int getDamage();
 
   public int getDelay();

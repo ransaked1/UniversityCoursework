@@ -33,7 +33,7 @@ public abstract class Bug implements Comparable<Bug> {
     this.level = level;
     this.currentSteps = initialSteps;
 
-    //Calculating the HP of the bug with the formula: Round(baseHP * (level^1.5))
+    // Calculating the HP of the bug with the formula: Round(baseHP * (level^1.5))
     double dblLevel = level;
     double coefficient = 1.5;
     double tmpPower = Math.pow(dblLevel, coefficient);
@@ -107,7 +107,7 @@ public abstract class Bug implements Comparable<Bug> {
   public void damage(int damage) {
     currentHp = currentHp - damage; // Take the damage out of the bug's HP
 
-    //Making sure the HP of the bug is non-negative
+    // Making sure the HP of the bug is non-negative
     if (currentHp < 0) {
       currentHp = 0;
     }
@@ -119,7 +119,8 @@ public abstract class Bug implements Comparable<Bug> {
    * @param steps The number of steps to push back.
    */
   public void slowDown(int steps) {
-    this.currentSteps = this.currentSteps + steps; // Increasing the step count moves the bug backwards
+    this.currentSteps =
+        this.currentSteps + steps; // Increasing the step count moves the bug backwards
   }
 
   /**

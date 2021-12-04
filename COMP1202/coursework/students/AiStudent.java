@@ -62,8 +62,8 @@ public class AiStudent extends AbstractStudent implements Student {
   }
 
   /**
-   * Helper method that applies a special attack to a bug and removes it if it's killed.
-   * The special attack applies standard damage to the top 3 bugs.
+   * Helper method that applies a special attack to a bug and removes it if it's killed. The special
+   * attack applies standard damage to the top 3 bugs.
    *
    * @param building The builidng to remove the bug from.
    * @param totalKnowledgePts The knowledge points gained so far.
