@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 /**
- * EtronicStudent class that implements the Student interface and extends the AbstractStudent class
+ * EtricalStudent class that implements the Student interface and extends the AbstractStudent class
  * with functions for calculating the damage on level up and defence of the building. Its special
- * power repairs the construction 2 + level construction points.
+ * power repairs the * construction 2 + level construction points.
  */
 public class EtricalStudent extends AbstractStudent implements Student {
 

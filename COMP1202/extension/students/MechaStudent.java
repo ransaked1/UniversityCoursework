@@ -19,7 +19,7 @@ public class MechaStudent extends AbstractStudent implements Student {
    * @param level The level of the student to create.
    */
   public MechaStudent(int level) {
-    super(10, 9, level);
+    super(10, 8, level);
   }
 
   /**

@@ -108,6 +108,8 @@ public class Building {
     // Go through each bug and move it one step and apply its damage if necessary
     for (Bug bug : bugs) {
       bug.move();
+      
+      //Check if the guilding is immune. Apply damage or remove immunity.
       if (immune == false) {
         applyBuildingDamage(bugsToRemove, bug); // Apply the bugs damage if needed
       } else {

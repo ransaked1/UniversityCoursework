@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 /**
- * EtricalStudent class that implements the Student interface and extends the AbstractStudent class
+ * EtronicStudent class that implements the Student interface and extends the AbstractStudent class
  * with functions for calculating the damage on level up and defence of the building. Its special
- * power gives the building immunity to damage for a round. The dealy for the special power
- * decreases with level.
+ * power gives the building immunity to damage for a round. The power is triggered every 16 - level
+ * rounds.
  */
 public class EtronicStudent extends AbstractStudent implements Student {
 
