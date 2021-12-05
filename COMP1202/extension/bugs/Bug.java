@@ -123,6 +123,11 @@ public abstract class Bug implements Comparable<Bug> {
         this.currentSteps + steps; // Increasing the step count moves the bug backwards
   }
 
+  public void pushOut() {
+    currentSteps = 0;
+    currentFloor = -1;
+  }
+
   /**
    * Comparator method that compares the floors and steps to the end of the floor of two bugs.
    *

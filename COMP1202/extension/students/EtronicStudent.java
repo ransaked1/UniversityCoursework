@@ -20,7 +20,7 @@ public class EtronicStudent extends AbstractStudent implements Student {
    * @param level The level of the student to create.
    */
   public EtronicStudent(int level) {
-    super(6, 10, level);
+    super(6, 15, level);
   }
 
   /**
@@ -29,16 +29,11 @@ public class EtronicStudent extends AbstractStudent implements Student {
    * @return The damage.
    */
   public int levelUpDamage() {
-    // Check if the next defence is a special attack
-    if (delayCounter + 1 != delay) {
-      return this.getDamage();
-    } else {
-      return this.getDamage(); // Not worth upgrading before the special power is triggered
-    }
+    return this.getDamage(); // No special changes
   }
 
   /**
-   * Defending the building by attacking the top bug or repairing the building.
+   * Defending the building by attacking the top bug or making the building immune.
    *
    * @param building The building object to defend.
    * @return The knowledge points gained after defending.
@@ -59,7 +54,7 @@ public class EtronicStudent extends AbstractStudent implements Student {
       delayCounter += 1;
       return damageBug(building, totalKnowledgePts, bug, 1); // Simple attack
     } else {
-      return specialPower(building, totalKnowledgePts); // Special power
+      return specialPower(building); // Special power
     }
   }
 
@@ -67,8 +62,9 @@ public class EtronicStudent extends AbstractStudent implements Student {
    * Makes the building immune to bug damage every (16 - level) rounds
    *
    * @param building The builidng to apply immunity to.
+   * @return The total knowledge points after the attack.
    */
-  public int specialPower(Building building, int totalKnowledgePts) {
+  public int specialPower(Building building) {
     delayCounter = 1;
     building.setImmune(true);
     return 0;

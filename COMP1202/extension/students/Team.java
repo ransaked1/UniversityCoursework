@@ -65,14 +65,26 @@ public class Team {
       // Generate a random number and check which type of student with 25% chance it generates, add
       // the new student to the team
       int randomInteger = new Random().nextInt(100);
-      if (randomInteger < 25) {
+      if (randomInteger < 10) {
         students.add(new AiStudent(1));
-      } else if (randomInteger < 50) {
+      } else if (randomInteger < 20) {
         students.add(new CsStudent(1));
-      } else if (randomInteger < 75) {
+      } else if (randomInteger < 30) {
         students.add(new SeStudent(1));
-      } else {
+      } else if (randomInteger < 40) {
         students.add(new CyberStudent(1));
+      } else if (randomInteger < 50) {
+        students.add(new EtronicStudent(1));
+      } else if (randomInteger < 60) {
+        students.add(new EtricalStudent(1));
+      } else if (randomInteger < 70) {
+        students.add(new EeeStudent(1));
+      } else if (randomInteger < 80) {
+        students.add(new AeeStudent(1));
+      } else if (randomInteger < 90) {
+        students.add(new BeStudent(1));
+      } else {
+        students.add(new MechaStudent(1));
       }
     }
   }

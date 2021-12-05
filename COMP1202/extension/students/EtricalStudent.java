@@ -28,12 +28,7 @@ public class EtricalStudent extends AbstractStudent implements Student {
    * @return The damage.
    */
   public int levelUpDamage() {
-    // Check if the next defence is a special attack
-    if (delayCounter + 1 != delay) {
-      return this.getDamage();
-    } else {
-      return 0; // Zero damage, repairs building
-    }
+    return this.getDamage(); // No special changes
   }
 
   /**
@@ -65,6 +60,7 @@ public class EtricalStudent extends AbstractStudent implements Student {
    * Helper method that repairs the building by 2 * level construction points.
    *
    * @param building The builidng to repair.
+   * @return 0 knowledge points earned.
    */
   public int specialPower(Building building) {
     delayCounter = 1;

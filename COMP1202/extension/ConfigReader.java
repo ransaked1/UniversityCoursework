@@ -97,19 +97,19 @@ public class ConfigReader {
     }
 
     // Identify bug type and create its object with the characteristics provided
-    if (bugType.equals("CMB")) {
+    if (bugType.equals("CMB") || bugType.equals("ConcurrentModificationBug")) {
       return new ConcurrentModificationBug(bugName, bugLevel, bugSteps);
-    } else if (bugType.equals("NPB")) {
+    } else if (bugType.equals("NPB") || bugType.equals("NullPointerBug")) {
       return new NullPointerBug(bugName, bugLevel, bugSteps);
-    } else if (bugType.equals("NPB")) {
+    } else if (bugType.equals("NTB") || bugType.equals("NoneTerminationBug")) {
       return new NoneTerminationBug(bugName, bugLevel, bugSteps);
     } else {
       System.out.println();
       System.err.println("Unrecognized bug type in config file"); // Wrong bug name
       System.out.println();
       System.exit(0);
+      return null;
     }
-    return null;
   }
 
   /**

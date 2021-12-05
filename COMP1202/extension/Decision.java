@@ -23,7 +23,7 @@ public class Decision implements Comparable<Decision> {
    */
   public Decision(Team team) {
     decisionCost = team.getNewStudentCost();
-    decisionDamageIncrease = 6.25; // Potential average damage after recruiting a new student
+    decisionDamageIncrease = 6.1; // Potential average damage after recruiting a new student
     overallDecisionWeight = decisionDamageIncrease / decisionCost * 100;
     studentToUpgrade = null; // No student is upgraded when recruiting one
   }
