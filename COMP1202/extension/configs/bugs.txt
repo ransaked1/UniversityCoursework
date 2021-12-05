@@ -1,0 +1,6 @@
+Ardyn(CMB,1,1);Bahamut(NPB,2,2);Gilgamesh(NTB,1,3);Necron(CMB,1,4);Ultimecia(NTB,1,5)
+Ardyn(CMB,2,1);Bahamut(NPB,2,2);Gilgamesh(NTB,1,3);Necron(CMB,1,4);Ultimecia(NTB,1,5)
+Ardyn(CMB,2,1);Bahamut(NPB,3,2);Gilgamesh(NTB,2,3);Necron(CMB,1,4);Ultimecia(NTB,2,5)
+Ardyn(CMB,3,1);Bahamut(NPB,3,2);Gilgamesh(NTB,2,3);Necron(CMB,2,4);Ultimecia(NTB,2,5)
+Ardyn(CMB,3,1);Bahamut(NPB,4,2);Gilgamesh(NTB,2,3);Necron(CMB,2,4);Ultimecia(NTB,3,5)
+Ardyn(CMB,4,1);Bahamut(NPB,4,2);Gilgamesh(NTB,3,3);Necron(CMB,2,4);Ultimecia(NTB,3,5)
