@@ -1,61 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uk.ac.soton.comp1206.AppTest" time="0.156" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uk.ac.soton.comp1206.AppTest" time="0.035" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="H:\maven\app\target\test-classes;H:\maven\app\target\classes;C:\Users\ddb1u20\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\ddb1u20\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ddb1u20\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.1\log4j-api-2.17.1.jar;C:\Users\ddb1u20\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.1\log4j-core-2.17.1.jar;"/>
-    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/test-classes:/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/classes:/home/ddb1u20/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/ddb1u20/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/ddb1u20/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar:/home/ddb1u20/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
-    <property name="user.timezone" value="Europe/London"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="os.name" value="Linux"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="GB"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.0_35\bin"/>
-    <property name="sun.java.command" value="C:\Users\ddb1u20\AppData\Local\Temp\surefire6650503823207793439\surefirebooter10851370693238656818.jar C:\Users\ddb1u20\AppData\Local\Temp\surefire6650503823207793439 2022-02-01T12-27-46_709-jvmRun1 surefire18376163487157890391tmp surefire_03776108546770909911tmp"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/home/ddb1u20/Java17/jdk-17.0.2+8/lib"/>
+    <property name="sun.java.command" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/surefire/surefirebooter5719262171532539089.jar /home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/surefire 2022-02-01T15-34-14_208-jvmRun1 surefire5370712072466311662tmp surefire_015435447869643815423tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="H:\maven\app\target\test-classes;H:\maven\app\target\classes;C:\Users\ddb1u20\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\ddb1u20\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ddb1u20\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.1\log4j-api-2.17.1.jar;C:\Users\ddb1u20\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.1\log4j-core-2.17.1.jar;"/>
+    <property name="surefire.test.class.path" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/test-classes:/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/classes:/home/ddb1u20/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/ddb1u20/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/ddb1u20/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar:/home/ddb1u20/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\ddb1u20"/>
+    <property name="user.home" value="/home/ddb1u20"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2021-09-14"/>
-    <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk17.0.0_35"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="H:\maven\app"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.home" value="/home/ddb1u20/Java17/jdk-17.0.2+8"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ddb1u20\AppData\Local\Temp\surefire6650503823207793439\surefirebooter10851370693238656818.jar"/>
-    <property name="user.script" value=""/>
+    <property name="surefire.real.class.path" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app/target/surefire/surefirebooter5719262171532539089.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="17+35-LTS"/>
+    <property name="java.runtime.version" value="17.0.2+8"/>
     <property name="user.name" value="ddb1u20"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="3.10.0-1160.49.1.el7.x86_64"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="Cp1252"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Corretto-17.0.0.35.1"/>
-    <property name="localRepository" value="C:\Users\ddb1u20\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-17/issues/"/>
-    <property name="java.io.tmpdir" value="C:\Users\ddb1u20\AppData\Local\Temp\"/>
-    <property name="java.version" value="17"/>
-    <property name="user.dir" value="H:\maven\app"/>
+    <property name="java.vendor.version" value="Temurin-17.0.2+8"/>
+    <property name="localRepository" value="/home/ddb1u20/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.2"/>
+    <property name="user.dir" value="/home/ddb1u20/UniversityCoursework/COMP1206/lab1/app"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.0_35\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Git\bin;C:\Apps\Apache Software Foundation\apache-maven\bin\;C:\Program Files\National Instruments\Shared\OpenVINO\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Amazon Corretto\jdk17.0.0_35\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\cabal\bin;C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\local\bin;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\rtools40\usr\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\MATLAB 2021a\runtime\win64;C:\Program Files\MATLAB 2021a\bin;C:\Program Files\Common Files\ThinPrint\;C:\Users\Default\AppData\Local\Microsoft\WindowsApps;C:\Apps\Altera\16.1\modelsim_ase\win32aloem;C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\npm;C:\Users\Default\.dotnet\tools;C:\Program Files\CMake\bin;C:\Program Files\Rust stable MSVC 1.57\bin;C:\Users\ddb1u20\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Amazon.com Inc."/>
-    <property name="java.vm.version" value="17+35-LTS"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.2+8"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="uk.ac.soton.comp1206.AppTest" time="0"/>
+  <testcase name="shouldAnswerWithTrue" classname="uk.ac.soton.comp1206.AppTest" time="0.002"/>
 </testsuite>
