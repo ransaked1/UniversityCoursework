@@ -21,7 +21,7 @@ public class Battle {
    * @param building The building object to use.
    * @param team The student object to use.
    */
-  public Battle(Building building, Team team) {
+  public Battle(Team team, Building building) {
     this.building = building;
     this.team = team;
   }

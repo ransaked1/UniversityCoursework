@@ -8,14 +8,14 @@ import java.lang.Math;
  */
 public abstract class Bug implements Comparable<Bug> {
 
-  String name;
-  int baseHp;
-  int baseSteps;
-  int level;
+  private String name;
+  private int baseHp;
+  private int baseSteps;
+  private int level;
 
-  int currentHp;
-  int currentSteps;
-  int currentFloor = -1;
+  private int currentHp;
+  private int currentSteps;
+  private int currentFloor = -1;
 
   /**
    * Bug constructor that provides the initial steps.

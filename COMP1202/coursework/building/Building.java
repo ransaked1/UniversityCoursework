@@ -17,9 +17,9 @@ public class Building {
   static final int NTB_DAMAGE = 4;
   static final int NPB_DAMAGE = 1;
 
-  ArrayList<Bug> bugs = new ArrayList<Bug>(); // The list of bugs loaded
-  int constructionPoints;
-  int topFloor;
+  private ArrayList<Bug> bugs = new ArrayList<Bug>(); // The list of bugs loaded
+  private int constructionPoints;
+  private int topFloor;
 
   /**
    * Building constructor taking the top floor and construction points (building HP) it has.

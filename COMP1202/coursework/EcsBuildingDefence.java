@@ -7,6 +7,10 @@ import students.*;
  * game flow.
  */
 public class EcsBuildingDefence {
+  /**
+   * Default main function.
+   * @param args
+   */
   public static void main(String[] args) {
     // Store all input arguments
     int topFloor = Integer.valueOf(args[0]);
@@ -25,7 +29,7 @@ public class EcsBuildingDefence {
     Team team = new Team(knowledgePoints);
 
     // Initializing a new battle and loading/printing the first wave
-    Battle battle = new Battle(building, team);
+    Battle battle = new Battle(team, building);
     battle.addBugs(bugWaves.getBugWaves().get(waveCount));
     waveCount++;
     battle.printGameState(0);

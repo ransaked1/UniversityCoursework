@@ -18,10 +18,10 @@ public class Building {
   static final int NPB_DAMAGE = 1;
 
   final int initialConstructionPoints;
-  ArrayList<Bug> bugs = new ArrayList<Bug>(); // The list of bugs loaded
-  int constructionPoints;
-  int topFloor;
-  boolean immune = false; //gives building damage imunityto damage when set to true
+  private ArrayList<Bug> bugs = new ArrayList<Bug>(); // The list of bugs loaded
+  private int constructionPoints;
+  private int topFloor;
+  private boolean immune = false; //gives building damage imunityto damage when set to true
 
   /**
    * Building constructor taking the top floor and construction points (building HP) it has.
