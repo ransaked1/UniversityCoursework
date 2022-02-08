@@ -1,0 +1,27 @@
+A system must be specified for the automated purchase of train tickets from a ticket distributor.
+It is possible for the traveller to buy single or return tickets to available destinations,
+as well as weekly and monthly season tickets. The traveller will interact with the machine to specify
+ticket type, select destination, select payment mode (cash or credit card).
+A ticket purchase transaction may fail for various reasons: the distributor is out of change,
+out of ticket paper, credit card fails to validate, etc.
+
+Need: Convenient way to purchase train tickets without making contact with another person.
+
+Goals: Machine for purchasing and printing train tickets.
+
+Business case: - COVID safe solution with minimal contact.
+               - Faster than purchasing from a teller.
+               - Cheaper to maintain than paying a teller.
+               - Can have more machines than ticket booths.
+
+Stakeholders: Train companies, train station staff, travelers, ticket distributors, payment providers.
+
+High-level operational concepts:
+               - Picking the language.
+               - Train destinations and timetable.
+               - Picking the type of ticket.
+               - Picking the payment method.
+               - Completing a ticket purchase.
+               - Printing the ticket for the traveller.
+
+Success criteria: System becomes profitable after 3 years of operation.

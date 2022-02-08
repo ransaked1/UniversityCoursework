@@ -1,0 +1,12 @@
+1. Users can send emails to each other - Functional
+2. A user should be able to read emails that have been sent to them - Functional
+3. The average delivery time for emails should be less than 5 seconds - Non-functional
+4. Emails are sent and received via mail servers - Design
+5. Mail servers are connected via SMTP messages - Design
+6. Users must provide a password to access their email - Functional
+7. Inform the user if a message transmission fails - Functional
+8. In case of transmission failure, sending should be re-tried after 4 hours - Functional
+9. Messages can be composed in plain text or in formatted text - Functional
+10. The format of an SMTP message is - Design
+• 1 or more headers (recipient, return address, routing, etc)
+• Body of message in text or html

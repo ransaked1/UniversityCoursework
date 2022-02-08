@@ -1,0 +1,43 @@
+A system must be specified for the automated purchase of train tickets from a ticket distributor.
+It is possible for the traveller to buy single or return tickets to available destinations,
+as well as weekly and monthly season tickets. The traveller will interact with the machine to specify
+ticket type, select destination, select payment mode (cash or credit card).
+A ticket purchase transaction may fail for various reasons: the distributor is out of change,
+out of ticket paper, credit card fails to validate, etc.
+
+Successful:
+    Name: Single card purchase.
+
+    Actors: Traveller, payment provider, ticket distributor.
+
+    1. Traveller selects the single ticket option on the screen.
+    2. Traveller selects the destination.
+    3. Traveller selects the payment method.
+    4. Traveller selects the payment provider.
+    5. Price including fees is calculated and displayed.
+    6. Traveller confirms the purchase.
+    7. Machine asks the traveller to insert their card.
+    8. Payment provider successfully verifies the card.
+    9. Payment is approved.
+    10. Payment provider processes the payment.
+    11. Ticket distributor's database is updated.
+    12. Success message is displayed.
+    13. Ticket is printed.
+    14. Machine goes to the main menu.
+
+Failed:
+    Name: Credit card fails to validate.
+
+    Actors: Traveller, payment provider.
+
+    1. Traveller selects the ticket option on the screen.
+    2. Traveller selects the destination.
+    3. Traveller selects the payment method.
+    4. Traveller selects the payment provider.
+    5. Price including fees is calculated and displayed.
+    6. Traveller confirms the purchase.
+    7. Machine asks the traveller to insert their card.
+    8. Payment provider fails to verify the card.
+    9. Failure message is displayed.
+    10. Machine returns to the payment provider page.
+

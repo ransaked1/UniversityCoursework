@@ -1,0 +1,30 @@
+A system must be specified for the automated purchase of train tickets from a ticket distributor.
+It is possible for the traveller to buy single or return tickets to available destinations,
+as well as weekly and monthly season tickets. The traveller will interact with the machine to specify
+ticket type, select destination, select payment mode (cash or credit card).
+A ticket purchase transaction may fail for various reasons: the distributor is out of change,
+out of ticket paper, credit card fails to validate, etc.
+
+FUN1: System should have a "Select ticket-type" screen with the options for one-way, return,
+      weekly, monthly tickets.
+FUN2: System should have a "Select destination" screen with a search bar to input the name of
+      the destination and available options are displayed.
+FUN3: System should have a screen with two options for card and cash payments.
+FUN4: Should have a payment provider.
+FUN5: System requests fees from the server.
+FUN6: Confirmation screen with purchase information is displayed with a "Confirm purchase" button.
+FUN7: "Insert your credit card" is displayed and the card slot's lights starts blinking.
+FUN8: Request for approval is sent to payment provider server.
+FUN9: Response from payment provider is processed.
+FUN10: Payment request is sent and payment is processed.
+FUN11: Request to ticket provider is sent to update the database.
+FUN12: On success the ticket is printed and a success screen is displayed.
+
+NONFUN1: All actions should not take more than 5 seconds.
+NONFUN2: Responsive screens with less than a second wait.
+NONFUN3: Buttons with less than a second wait.
+
+DESIGN1: Machine should be in standby when not in use.
+DESIGN2: Connect to payment providers and ticket providers APIs.
+DESIGN3: All requests should be in JSON format.
+DESIGN4: Message is displayed and request to HQ is sent when printing paper runs out.
