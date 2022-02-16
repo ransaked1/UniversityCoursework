@@ -12,7 +12,7 @@ Successful:
 
     1. Traveller selects the single ticket option on the screen.
     2. Traveller selects the destination.
-    3. Traveller selects the payment method.
+    3. Traveller selects the card payment method.
     4. Traveller selects the payment provider.
     5. Price including fees is calculated and displayed.
     6. Traveller confirms the purchase.

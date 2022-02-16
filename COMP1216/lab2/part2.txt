@@ -1,0 +1,9 @@
+Draw a use case diagram for a Train Ticket system. The system includes two actors: a traveller,
+who purchases different types of tickets, and a central computer system, which maintains a
+reference database for the tariff.
+Use cases should include: BuyOneWayTicket, BuyWeeklyCard, BuyMonthlyCard, UpdateTariff.
+Also include the following exceptional cases: Time-Out (i.e., the traveller took too long
+to insert the right amount), TransactionAborted (i.e., the traveller selected the cancel button
+without completing the transaction), DistributorOutOfChange and DistributorOutOfPaper, and
+other exception cases that we have from the previous question.
+NB: Identify the right abstraction in this example to avoid an unnecessarily complex diagram.
