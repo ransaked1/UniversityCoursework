@@ -1,0 +1,25 @@
+A system must be specified for the automated purchase of train tickets from a ticket distributor.
+It is possible for the traveller to buy single or return tickets to available destinations, as well
+as weekly and monthly season tickets. The traveller will interact with the machine to specify
+ticket type, select destination, select payment mode (cash or credit card). A ticket purchase
+transaction may fail for various reasons: the distributor is out of change, out of ticket paper,
+credit card fails to validate, etc.
+
+Draw a class diagram representing the information related to the traveller’s basket (allowing
+the traveller to buy multiple tickets), tickets, and payment.
+
+• Specify classes, associations and multiplicities.
+• Extend the class diagram to include the following information:
+– Price of the tickets
+– Origin and destination of the tickets
+– Date(s) of travel for the tickets
+– Amount, date, and type of payment
+
+Noun and verb parsing:
+[Nouns] and <Verbs>
+A system must be specified for the automated <purchase> of [train tickets] from a [ticket distributor].
+It is possible for the [traveller] to <buy> [single or return tickets] to available [destinations], as well
+as [weekly and monthly season tickets]. The [traveller] will <interact> with the [machine] to <specify>
+[ticket type], <select> [destination], <select> [payment mode (cash or credit card)]. A [ticket] purchase
+transaction may <fail> for various reasons: the [distributor] is <out of> [change], <out of> [ticket paper],
+[credit card] <fails to validate>, etc.

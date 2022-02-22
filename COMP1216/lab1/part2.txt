@@ -24,4 +24,7 @@ High-level operational concepts:
                - Completing a ticket purchase.
                - Printing the ticket for the traveller.
 
-Success criteria: System becomes profitable after 3 years of operation.
+Success criteria:
+               - System becomes profitable after 3 years of operation.
+               - Enhance customer satisfaction.
+               - Increase the revenue.

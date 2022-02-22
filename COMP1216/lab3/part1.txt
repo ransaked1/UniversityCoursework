@@ -1,0 +1,23 @@
+Here at ACME Aircraft Company we are proud of the specialist teams that create our futuristic aircraft.
+Each team employs both engineers and mathematicians. We know them all by name, and its also important that
+we know the specialism of our engineers. The engineers build the planes, but it’s the mathematicians that
+make all the calculations. The teams have a codename too. The aircraft are of course made of many thousands
+of complex components, and each has its own part number! Our planes are special to us, they each have a model
+number, but also an affectionate nickname. Our latest is called the Thunderbus!
+
+Noun and verb parsing:
+[Nouns] and <Verbs>
+Here at [ACME Aircraft Company] we are proud of the [specialist teams] that <create> our futuristic [aircraft].
+Each [team] <employs> both [engineers] and [mathematicians]. We <know> them all by [name], and its also important that
+we <know> the [specialism] of our [engineers]. The [engineers] <build> the [planes], but it’s the [mathematicians] that
+<make> all the [calculations]. The [teams] <have> a [codename] too. The [aircraft] are of course <made of> many thousands
+of complex [components], and each <has> its own [part number]! Our [planes] are special to us, they each <have> a [model
+number], but also an [affectionate nickname]. Our latest is <called> the [Thunderbus]!
+
+Actors: Specialist teams, Engineers, Mathematicians.
+
+Use Cases:
+    - create aircraft
+    - employs engineers and mathematicians
+    - build planes
+    - make calculations

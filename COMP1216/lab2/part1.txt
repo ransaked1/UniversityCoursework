@@ -14,39 +14,44 @@ Write use cases for:
    Scope: Ticket Distributor
    Primary Actor: Traveller
    Stakeholders: Traveller, payment provider, ticket distributor, ticket database
-   Preconditions: Traveller has to start a session
+   Preconditions: Traveller has to start a session, sees the main menu options
    Main success scenario:
        1. Traveller selects the single ticket option on the screen.
        2. Traveller selects the destination.
        3. Traveller selects the payment method.
+      if credit card then:
        4. Traveller selects the payment provider.
        5. Price including fees is calculated and displayed.
        6. Traveller confirms the purchase.
-       7. Machine asks the traveller to insert their card.
-       8. Payment provider successfully verifies the card.
+       7. Machine asks the traveller to insert their card. [InvalidCard]
+       8. Payment provider successfully verifies the card. [InvalidPIN]
        9. Payment is approved.
        10. Payment provider processes the payment.
        11. Ticket distributor's database is updated.
        12. Success message is displayed.
        13. Ticket is printed.
        14. Machine goes to the main menu.
+      if cash then:
+       15. Machine asks the traveller to insert cash [Cash]
    Extensions: Traveller pays in cash
                Distributor out of change
                Traveller doesn't have enough money on card
                Machine out of ticket paper
+               Invalid card
+               Invalid card PIN
 
 2. Use case name: Cash Payment
    Scope: Ticket Distributor
    Primary Actor: Traveller
    Stakeholders: Traveller, ticket distributor, ticket database
-   Preconditions: Select the cash payment in the payment options
+   Preconditions: Machine displays "Please insert cash" screen
    Main success scenario:
        1. Traveller selects the single ticket option on the screen.
        2. Traveller selects the destination.
        3. Traveller selects the cash payment method.
        4. Price including fees is calculated and displayed.
        5. Traveller confirms the purchase.
-       6. Machine asks the traveller to insert the cash and coins.
+       6. Machine asks the traveller to insert the cash and coins. [InvalidCash]
        7. Machine displays the amount left
        8. Payment is approved.
        9. Ticket distributor's database is updated.
@@ -56,12 +61,13 @@ Write use cases for:
    Extensions: Traveller cancels cash payment
                Distributor out of change
                Machine out of ticket paper
+               Cash is returned and transaction is aborted
 
 3. Use case name: Distributor out of change
    Scope: Ticket Distributor
-   Primary Actor: Ticket Distributor
+   Primary Actor: Traveller
    Stakeholders: Traveller, ticket distributor, ticket database
-   Preconditions: Traveller tries to pay cash
+   Preconditions: Traveller selects the pay with cash option
    Main success scenario:
        1. An error message is displayed.
        2. Cash inserted is returned.
