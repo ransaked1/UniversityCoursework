@@ -1,0 +1,62 @@
+root {
+    display: block;
+}
+.scroll-pane {
+    -fx-background: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
+.scroll-pane .viewport {
+    -fx-padding: 10px;
+    -fx-background-image: url('background.jpg');
+    -fx-background-size: cover;
+}
+.messages {
+    -fx-line-spacing: 2px;
+    -fx-padding: 10 10 10 10;
+}
+.messages Text {
+    -fx-font-size: 16px;
+}
+.root {
+    -fx-background-image: url("background.jpg");
+}
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#welcome-text {
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#2c9ddd, #7fd0fd);
+}
+.timestamp {
+    -fx-fill: #4b4b4b;
+}
+.nickname {
+    -fx-font-weight: bold;
+    -fx-fill: blue;
+}
+.my_nickname {
+    -fx-font-weight: bold;
+    -fx-fill: red;
+}
+.userlist {
+    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px, #b7e5ff, #d1eefe);
+}
+
+.userlist-pane .viewport {
+    -fx-background-color: white;
+}
+
+.user {
+
+}
