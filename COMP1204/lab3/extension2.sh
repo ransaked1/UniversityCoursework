@@ -20,4 +20,4 @@ len=$(echo "${INPUT}" | wc -l)
  done <<< "$INPUT"
 
 echo -e "\n"
-echo -e "${REZ}" | sort -nr -k2
+echo -e "${REZ}" | sort -nrk2
