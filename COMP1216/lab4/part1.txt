@@ -1,0 +1,23 @@
+A system must be specified for the automated purchase of train tickets from a ticket distributor.
+It is possible for the traveller to buy single or return tickets to available destinations, as
+well as weekly and monthly season tickets. The traveller will interact with the machine to specify
+ticket type, select destination, select payment mode (cash or credit card). A ticket purchase
+transaction may fail for various reasons: the distributor is out of change, out of ticket paper,
+credit card fails to validate, etc.
+
+Scenario:
+• The customer selects “Buy weekly card” and is taken to the “Select destinations” screen
+• The customer selects a destination and the “Add to Basket” button is enabled.
+• The customer selects “Add to Basket” and is taken to the “Basket” screen
+• The customer selects “Pay” and is take to the “Select payment type” screen.
+• The customer selects “Credit Card” and enters his card
+• The distributor validates the card and requests his PIN
+• The customer enters a PIN and the distributor validates it by reference to the bank
+• The distributor takes payment and returns the credit card to the customer
+• The weekly season card is printed and the customer takes it
+
+Boundary objects: BuyWeeklyCardScreen, DestinationsScreen, BasketScreen, PayScreen
+
+Control objects: AddToBasket, SelectCreditCard, ValidateCard, ValidatePIN, MakePayment, ReturnCard, TicketPrinted
+
+Entity objects: Destination, Basket, CardNumber, CardPIN, Ticket
