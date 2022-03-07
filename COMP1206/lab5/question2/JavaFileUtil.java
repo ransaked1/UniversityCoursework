@@ -27,7 +27,7 @@ public class JavaFileUtil implements ConcatenateJavaFiles {
             line = br.readLine();
           }
           out.flush();
-				}
+        }
       }
 
     } catch (Exception e) {
