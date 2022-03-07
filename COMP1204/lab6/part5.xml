@@ -1,0 +1,47 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Order">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element type="xs:string" name="Created"/>
+                <xs:element type="xs:string" name="Updated"/>
+                <xs:element type="xs:string" name="Status"/>
+
+                <xs:element name="Customer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Name"/>
+                            <xs:element type="xs:string" name="Address"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Pizzas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Pizza" type="Pizza"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Pizza">
+        <xs:sequence>
+            <xs:element type="xs:string" name="Base"/>
+            <xs:element type="xs:string" name="Cheese"/>
+            <xs:element name="Toppings">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="Topping" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="name"/>
+    </xs:complexType>
+
+</xs:schema>

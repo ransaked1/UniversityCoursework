@@ -1,0 +1,11 @@
+<Pizza name="Le Special" base="Pizza Stone">
+    <cheese type="mozzarella"><amount>A LOT</amount></cheese>
+    <toppings>
+        <topping name="Mushroom" extra="false"></topping>
+        <topping name="Chorizo" extra="false"></topping>
+        <topping name="Pepperoni" extra="true"></topping>
+        <topping name="Smoked Bacon" extra="false"></topping>
+        <topping name="Jalapeno" extra="true"></topping>
+        <topping name="Special Herbs" extra="false"></topping>
+    </toppings>
+</Pizza>

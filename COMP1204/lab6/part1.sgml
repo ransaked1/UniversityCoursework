@@ -1,0 +1,29 @@
+<recipe>
+<step>Make the base:</step> <action>Put</action> <ingredient><amount>300g</amount> <name>strong bread flour</name>
+</ingredient> into a <equipment>large bowl</equipment>, then <action>stir</action> in <ingredient>
+<amount>1 tsp</amount> <name>instant yeast</name></ingredient> and <ingredient><amount>1 tsp</amount>
+<name>salt</name></ingredient>. <action>Make a well</action>, <action>pour in</action> <ingredient>
+<amount>200ml</amount> <name>warm water</name></ingredient> and <ingredient><amount>1 tbsp</amount>
+<name>olive oil</name></ingredient> and <action>bring together</action> with a wooden spoon until you have a soft,
+fairly wet dough. Turn onto a lightly floured surface and <action>knead</action> for <duration>5 mins</duration>
+until smooth. <action>Cover</action> with a <equipment>tea towel</equipment> and <action>set aside</action>. You can
+<action>leave</action> the dough to rise if you like, but it’s not essential for a thin crust.
+
+<step>Make the sauce:</step> Mix <ingredient><amount>100ml</amount> <name>passata</name></ingredient>,
+<ingredient><amount>1 tsp</amount> <name>basil</name></ingredient> and crushed <ingredient>
+<amount>1 clove</amount> of <name>garlic</name></ingredient> together, then <action>season</action> to taste.
+Leave to stand at room temperature while you get on with shaping the base.
+
+<step>Roll out the dough:</step>if you’ve let the dough rise, give it a quick knead, then <action>split</action>
+into two balls. On a floured surface, <action>roll out</action> the dough into large rounds, about 25cm across,
+using a <equipment>rolling pin</equipment>. The dough needs to be very thin as it will rise in the
+<equipment>oven</equipment>. Lift the rounds onto two floured <equipment>baking sheets</equipment>.
+
+<step>Top and bake:</step> heat the oven to 240C/220C fan/gas 8. <action>Put</action> another baking sheet or
+an upturned <equipment>baking tray</equipment> in the oven on the top shelf. <action>Smooth</action> sauce over bases
+with the back of a <equipment>spoon</equipment>. <action>Scatter</action> with <ingredient><amount>125g</amount> sliced
+<name>ball mozzarella cheese</name></ingredient> and <ingredient><amount>6</amount> sliced <name>cherry tomatoes</name>
+</ingredient>, <action>drizzle</action> with <ingredient><amount>1 tbsp</amount> <name>olive oil</name></ingredient>
+and <action>season</action>. <action>Put</action> one pizza, still on its baking sheet, on top of the preheated
+sheet or tray. <action>Bake</action> for <duration>10 mins</duration> until crisp.
+</recipe>

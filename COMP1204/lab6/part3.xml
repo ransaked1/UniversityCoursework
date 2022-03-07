@@ -1,0 +1,12 @@
+<Pizza name="Le Special">
+    <Base>Pizza Stone</Base>
+    <Cheese>Mozzarella</Cheese>
+    <Toppings>
+        <Topping>Mushroom</Topping>
+        <Topping>Chorizo</Topping>
+        <Topping>Pepperoni</Topping>
+        <Topping>Smoked Bacon</Topping>
+        <Topping>Jalapeno</Topping>
+        <Topping>Special Herbs</Topping>
+    </Toppings>
+</Pizza>
