@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.seesContext name="_L77JYJ8tEeyVAvPe8nyPnw" org.eventb.core.target="CollegeContext"/>
+    <org.eventb.core.variable name="_L77JYZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="staff"/>
+    <org.eventb.core.variable name="_L77JYp8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="student"/>
+    <org.eventb.core.variable name="_L77wcJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="login"/>
+    <org.eventb.core.invariant name="_L77wcZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="inv1" org.eventb.core.predicate="staff ⊆ USER"/>
+    <org.eventb.core.invariant name="_L78XgJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="inv2" org.eventb.core.predicate="student ⊆ USER"/>
+    <org.eventb.core.invariant name="_L78XgZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="inv3" org.eventb.core.predicate="staff ∩ student = ∅"/>
+    <org.eventb.core.invariant name="_L78-kJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="inv4" org.eventb.core.predicate="login ⊆ staff ∪ student"/>
+    <org.eventb.core.event name="_L78-kZ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_L79loJ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="staff, student ≔ ∅, ∅" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_L79loZ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="login ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L7-MsJ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Login">
+        <org.eventb.core.parameter name="_L7-MsZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_L7-zwJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ staff ∪ student"/>
+        <org.eventb.core.guard name="_L7-zwZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∉ login"/>
+        <org.eventb.core.action name="_L7_a0J8tEeyVAvPe8nyPnw" org.eventb.core.assignment="login ≔ login ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L7_a0Z8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="RegisterStudent">
+        <org.eventb.core.parameter name="_L8AB4J8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="person"/>
+        <org.eventb.core.guard name="_L8AB4Z8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="person ∉ USER"/>
+        <org.eventb.core.action name="_L8Ao8J8tEeyVAvPe8nyPnw" org.eventb.core.assignment="student ≔ student ∪ {person}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L8Ao8Z8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="RegisterStaff">
+        <org.eventb.core.parameter name="_L8BQAJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="person"/>
+        <org.eventb.core.guard name="_L8BQAZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="person ∉ USER"/>
+        <org.eventb.core.action name="_L8B3EJ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="staff ≔ staff ∪ {person}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L8B3EZ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="StudentToStaff">
+        <org.eventb.core.parameter name="_L8CeIJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="stnd"/>
+        <org.eventb.core.guard name="_L8CeIZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="stnd ∈ student"/>
+        <org.eventb.core.guard name="_L8DFMJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="stnd ∉ login"/>
+        <org.eventb.core.guard name="_L8DFMZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="stnd ∉ staff"/>
+        <org.eventb.core.action name="_L8DsQJ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="student ≔ student ∖ {stnd}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_L8DsQZ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="staff ≔ staff ∪ {stnd}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L8ETUJ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="LoginStudent">
+        <org.eventb.core.parameter name="_L8ETUZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="stnd"/>
+        <org.eventb.core.guard name="_L8E6YJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="stnd ∈ student"/>
+        <org.eventb.core.guard name="_L8E6YZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="stnd ∉ login"/>
+        <org.eventb.core.guard name="_L8FhcJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="stnd ∉ staff"/>
+        <org.eventb.core.action name="_L8GIgJ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="login ≔ login ∪ {stnd}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L8GIgZ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="LoginStaff">
+        <org.eventb.core.parameter name="_L8GvkJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="stff"/>
+        <org.eventb.core.guard name="_L8GvkZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="stff ∈ staff"/>
+        <org.eventb.core.guard name="_L8HWoJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="stff ∉ login"/>
+        <org.eventb.core.guard name="_L8HWoZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="stff ∉ student"/>
+        <org.eventb.core.action name="_L8H9sJ8tEeyVAvPe8nyPnw" org.eventb.core.assignment="login ≔ login ∪ {stff}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_L8H9sZ8tEeyVAvPe8nyPnw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Unregister">
+        <org.eventb.core.parameter name="_L8IkwJ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_L8IkwZ8tEeyVAvPe8nyPnw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ staff ∪ student"/>
+        <org.eventb.core.action name="_L8JL0J8tEeyVAvPe8nyPnw" org.eventb.core.assignment="login ≔ login ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_L8Jy4J8tEeyVAvPe8nyPnw" org.eventb.core.assignment="staff ≔ staff ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_L8Jy4Z8tEeyVAvPe8nyPnw" org.eventb.core.assignment="student ≔ student ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

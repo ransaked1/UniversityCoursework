@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.seesContext name="_dlgH0J8wEeyoOuSA8I1wrw" org.eventb.core.target="BuildingContext"/>
+    <org.eventb.core.variable name="_dlgu4J8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="register"/>
+    <org.eventb.core.variable name="_dlhV8J8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="in"/>
+    <org.eventb.core.variable name="_dlh9AJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="out"/>
+    <org.eventb.core.invariant name="_dlikEJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="inv1" org.eventb.core.predicate="register ⊆ USER"/>
+    <org.eventb.core.invariant name="_dljyMJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="inv2" org.eventb.core.predicate="register = in ∪ out"/>
+    <org.eventb.core.invariant name="_dlkZQJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="inv3" org.eventb.core.predicate="in ∩ out = ∅"/>
+    <org.eventb.core.event name="_dllAUJ8wEeyoOuSA8I1wrw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_dllnYJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="register, in, out ≔ ∅, ∅, ∅" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_dlm1gJ8wEeyoOuSA8I1wrw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="NewUser">
+        <org.eventb.core.parameter name="_dlnckJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="s"/>
+        <org.eventb.core.guard name="_dloDoJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s ∉ register"/>
+        <org.eventb.core.action name="_dloqsJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="register ≔ register ∪ {s}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_dlpRwJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="out ≔ out ∪ {s}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_dlp40J8wEeyoOuSA8I1wrw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Enter">
+        <org.eventb.core.parameter name="_dlqf4J8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_dlrG8J8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ register ∩ out"/>
+        <org.eventb.core.guard name="_dlruAJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∉ in"/>
+        <org.eventb.core.action name="_dlsVEJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="in ≔ in ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_dltjMJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="out ≔ out ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_dluKQJ8wEeyoOuSA8I1wrw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Exit">
+        <org.eventb.core.parameter name="_dluxUJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_dluxUZ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ in"/>
+        <org.eventb.core.guard name="_dlvYYJ8wEeyoOuSA8I1wrw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∉ out"/>
+        <org.eventb.core.action name="_dlv_cJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="out ≔ out ∪ {user}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_dlwmgJ8wEeyoOuSA8I1wrw" org.eventb.core.assignment="in ≔ in ∖ {user}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

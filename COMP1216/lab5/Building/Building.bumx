@@ -1,0 +1,43 @@
+machine Building
+sees BuildingContext
+variables
+	register
+	in
+	out
+invariants
+	@inv1: register ⊆ USER
+	@inv2: register = in ∪ out
+	@inv3: in ∩ out = ∅
+events
+	event INITIALISATION
+	then
+		@act1: register, in, out ≔ ∅, ∅, ∅
+	end
+	
+	event NewUser
+	any s where
+		@grd1: s ∉ register
+	then
+		@act1: register ≔ register ∪ {s}
+		@act2: out ≔ out ∪ {s}
+	end
+	
+	event Enter
+	any user where
+		@grd1: user ∈ register ∩ out
+		@grd2: user ∉ in
+	then
+		@act1: in ≔ in ∪ {user}
+		@act2: out ≔ out ∖ {user}
+	end
+	
+	event Exit
+	any user where
+		@grd1: user ∈ in
+		@grd2: user ∉ out
+	then
+		@act1: out ≔ out ∪ {user}
+		@act2: in ≔ in ∖ {user}
+	end
+	
+end

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="21">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="login" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="staff" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="student" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContexy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))∩(∅ ⦂ ℙ(USER))=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L78-kZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContexy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))⊆(∅ ⦂ ℙ(USER))∪(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L78-kZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContexy" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="5">
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContexy" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContexy" org.eventb.core.poStamp="5"/>
+    <org.eventb.core.poSequent name="Login/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContexz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login∪{user}⊆staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7-MsJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#Login\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContexz" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContexz" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContexz" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7-MsJ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L7-zwJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∉login" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7-MsJ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L7-zwZ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="RegisterStudent/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex{"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="staff∩(student∪{person})=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7_a0Z8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#RegisterStudent\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterStudent/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex{"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login⊆staff∪(student∪{person})" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7_a0Z8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#RegisterStudent\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContex{" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="person" org.eventb.core.type="USER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContex{" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContex{" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="person∉USER" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L7_a0Z8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8AB4Z8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="RegisterStaff/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex\|"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(staff∪{person})∩student=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8Ao8Z8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#RegisterStaff\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterStaff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex\|"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login⊆(staff∪{person})∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8Ao8Z8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#RegisterStaff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContex|" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="person" org.eventb.core.type="USER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContex|" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContex\|" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="person∉USER" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8Ao8Z8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8BQAZ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="StudentToStaff/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(staff∪{stnd})∩(student ∖ {stnd})=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8B3EZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#StudentToStaff\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StudentToStaff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login⊆(staff∪{stnd})∪(student ∖ {stnd})" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8B3EZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#StudentToStaff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContex}" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="stnd" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContex}" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContex}" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="stnd∈student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8B3EZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8CeIZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="stnd∉login" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8B3EZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8DFMJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="stnd∉staff" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8B3EZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8DFMZ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LoginStudent/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContex~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login∪{stnd}⊆staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8ETUJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#LoginStudent\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContex~" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="stnd" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContex~" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContex~" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="stnd∈student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8ETUJ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8E6YJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="stnd∉login" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8ETUJ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8E6YZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="stnd∉staff" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8ETUJ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8FhcJ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LoginStaff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContey'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login∪{stff}⊆staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8GIgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#LoginStaff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContey'" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="stff" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContey'" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContey'" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="stff∈staff" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8GIgZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8GvkZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="stff∉login" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8GIgZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8HWoJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="stff∉student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8GIgZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8HWoZ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Unregister/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContey("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(staff ∖ {user})∩(student ∖ {user})=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8H9sZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#Unregister\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Unregister/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContey("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="login ∖ {user}⊆(staff ∖ {user})∪(student ∖ {user})" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8H9sZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poSequent#Unregister\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContey(" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContey(" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#EVTIDENTCollegeContey(" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_L8H9sZ8tEeyVAvPe8nyPnw|org.eventb.core.guard#_L8IkwZ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/College/College.bpo|org.eventb.core.poFile#College|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="staff⊆USER" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L77wcZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="student⊆USER" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgJ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="staff∩student=(∅ ⦂ ℙ(USER))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78XgZ8tEeyVAvPe8nyPnw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="login⊆staff∪student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_L78-kJ8tEeyVAvPe8nyPnw"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

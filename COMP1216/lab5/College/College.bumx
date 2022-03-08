@@ -1,0 +1,76 @@
+machine College
+sees CollegeContext // See the relevant context
+variables
+	staff student login
+invariants
+	@inv1: staff ⊆ USER
+	@inv2: student ⊆ USER
+	@inv3: staff ∩ student = ∅
+	@inv4: login ⊆ staff ∪ student
+events
+
+event INITIALISATION
+begin
+	@act1: staff, student ≔ ∅, ∅
+	@act2: login ≔ ∅
+end
+
+event Login
+	any user where
+		@grd1: user ∈ staff ∪ student
+		@grd2: user ∉ login
+	then
+		@act1: login ≔ login ∪ {user}
+	end
+	
+event RegisterStudent
+	any person where
+		@grd1: person ∉ USER
+	then
+		@act1: student ≔ student ∪ {person}
+	end
+	
+event RegisterStaff
+	any person where
+		@grd1: person ∉ USER
+	then
+		@act1: staff ≔ staff ∪ {person}
+	end
+
+event StudentToStaff
+	any stnd where
+		@grd1: stnd ∈ student
+		@grd2: stnd ∉ login
+		@grd3: stnd ∉ staff
+	then
+		@act1: student ≔ student ∖ {stnd}
+		@act2: staff ≔ staff ∪ {stnd}
+	end
+	
+event LoginStudent
+	any stnd where
+		@grd1: stnd ∈ student
+		@grd2: stnd ∉ login
+		@grd3: stnd ∉ staff
+	then
+		@act1: login ≔ login ∪ {stnd}
+	end
+	
+event LoginStaff
+	any stff where
+		@grd1: stff ∈ staff
+		@grd2: stff ∉ login
+		@grd3: stff ∉ student
+	then
+		@act1: login ≔ login ∪ {stff}
+	end
+	
+event Unregister
+	any user where
+		@grd1: user ∈ staff ∪ student
+	then
+		@act1: login ≔ login ∖ {user}
+		@act2: staff ≔ staff ∖ {user}
+		@act3: student ≔ student ∖ {user}
+	end
+end
