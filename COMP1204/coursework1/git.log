@@ -1,0 +1,24 @@
+* 5ddd2d5 - Tue, 1 Mar 2022 20:56:58 +0000 (17 minutes ago) (HEAD, origin/master, origin/HEAD, master)
+|           Organised in folders - ddb1u20@soton.ac.uk
+* a6eeb21 - Tue, 1 Mar 2022 20:54:20 +0000 (20 minutes ago)
+|           Report done in overleaf - ddb1u20@soton.ac.uk
+* 0733e8a - Tue, 1 Mar 2022 18:29:52 +0000 (3 hours ago)
+|           Generated storm plots - ddb1u20@soton.ac.uk
+* 10bba9d - Sun, 20 Feb 2022 21:02:05 +0000 (9 days ago)
+|           Small fixes in comments - ddb1u20@soton.ac.uk
+* 2081b7d - Sun, 20 Feb 2022 20:58:48 +0000 (9 days ago)
+|           fixed sed and commented - ddb1u20@soton.ac.uk
+* 0cf05ce - Thu, 17 Feb 2022 15:26:12 +0000 (12 days ago)
+|           replace 1 in awk to print for clarity - ddb1u20@soton.ac.uk
+* c2e6e24 - Tue, 15 Feb 2022 10:20:48 +0000 (2 weeks ago)
+|           Added support for South and East values for location - ddb1u20@srv02094.soton.ac.uk
+* 5ea716f - Fri, 11 Feb 2022 00:49:40 +0000 (3 weeks ago)
+|           gnuplot doesnt work - ddb1u20@srv02094.soton.ac.uk
+* c978d14 - Fri, 11 Feb 2022 00:09:30 +0000 (3 weeks ago)
+|           Added a progress bar while script running - ddb1u20@srv02094.soton.ac.uk
+* e321f9c - Fri, 11 Feb 2022 00:06:03 +0000 (3 weeks ago)
+|           Generating clean and final result - ddb1u20@srv02094.soton.ac.uk
+* 000fe82 - Thu, 10 Feb 2022 20:17:31 +0000 (3 weeks ago)
+|           init - ddb1u20@srv02094.soton.ac.uk
+* 204a113 - Thu, 10 Feb 2022 19:16:29 +0000 (3 weeks ago)
+            Initial commit - ddb1u20@soton.ac.uk

@@ -1,0 +1,40 @@
+#gnuplot code courtesy of https://github.com/balakrishnanc/gnugeoplot
+
+set terminal pdfcairo transparent enhanced font "Clear Sans, 16" linewidth 2 rounded dashed
+
+set style line 80 lc rgb "#404040" lt 1 lw 1
+set border 0 back ls 80
+
+set style line 81 lc rgb "#909090" lt 0 lw 0.4
+set style line 82 lc rgb "#a4a4a4" lt 0 lw 0.2
+
+# NOTE: Grid lines can be distracting on a map.
+# set grid back xtics ytics ls 81, ls 82
+# set grid back ls 81
+
+set tics in
+set xtics nomirror
+set ytics nomirror
+
+# Colors chosen from colorbrewer; print- and photocopy-friendly.
+set style line 1 lt 1 lc rgb "#20808080"   lw 0.5 pt  6 ps 0.5
+#set style line 2 lt 1 lc rgb "#99cc0000"   lw 0.1 pt  5 ps 0.3
+
+set key top left
+
+set tmargin 0.5
+set rmargin 1
+set bmargin 0.5
+set lmargin 1
+
+unset xlabel
+unset xtics
+
+unset ylabel
+unset ytics
+
+set term png
+set output image_output_path
+plot 'world-50m.txt' not w l ls 1, \
+     line_csv_path u 2:1 not w lp ls 2 lc rgb "red" pt 8 ps .3 
+unset output
