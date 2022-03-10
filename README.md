@@ -13,14 +13,14 @@ All code was developed using Java version 1.8.0_191.
 #### COMP1204
 Data Management course in my second semester. Contains...
 
-Code was developed for Bash 4.2.46.
+Code was developed for Bash version 4.2.46.
 
 #### COMP1206
 Computer Programming II course in my second semester. Contains...
 
-All code was developed using Java 17.0.2.
+All code was developed using Java version 17.0.2.
 
 #### COMP1216
 Software Modelling & Design course in my second semester. Contains...
 
-Event-B Modelling done in Rodin 3.6.0. Reports done in LaTeX version 3.141592653.
+Event-B Modelling done in Rodin version 3.6.0. Reports done in LaTeX version 3.141592653.
