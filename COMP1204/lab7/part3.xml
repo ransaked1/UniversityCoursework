@@ -1,0 +1,47 @@
+<Pizzas>
+    <Pizza name="MyPizza">
+        <Base>Deep Pan Stuffed Crust</Base>
+        <Cheese>Mozarella</Cheese>
+        <Toppings>
+            <Topping>sweetcorn</Topping>
+            <Topping>Bacon</Topping>
+        </Toppings>
+    </Pizza>
+
+    <Pizza name="Chicken and Ham Pizza">
+        <Base>Deep Pan</Base>
+        <Cheese>Mozzarella</Cheese>
+        <Toppings>
+            <Topping>Tomato Sauce</Topping>
+            <Topping>Ham</Topping>
+            <Topping>Chicken</Topping>
+        </Toppings>
+    </Pizza>
+
+    <Pizza name="American Dream">
+        <Base>
+            Freedom
+        </Base>
+        <Cheese>
+            American singles
+        </Cheese>
+        <Toppings>
+            <Topping>
+                2nd Ammendment
+            </Topping>
+        </Toppings>
+    </Pizza>
+
+    <Pizza name="Meat">
+        <Base>Pizza Base</Base>
+        <Cheese>Two</Cheese>
+        <Toppings>
+            <Topping>Ham</Topping>
+            <Topping>Ham</Topping>
+            <Topping>Ham</Topping>
+            <Topping>Ham</Topping>
+            <Topping>Ham</Topping>
+            <Topping>Ham</Topping>
+        </Toppings>
+    </Pizza>
+</Pizzas>

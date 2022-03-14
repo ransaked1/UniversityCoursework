@@ -1,0 +1,103 @@
+<Menu>
+  <Category name="Chicken">
+    <Dish>
+      <Name>Chicken Chinese Style</Name>
+      <Spicy>false</Spicy>
+      <Price>5</Price>
+    </Dish>
+    <Dish>
+      <Name>Chicken with Sweetcorn</Name>
+      <Spicy>false</Spicy>
+      <Price>4.70</Price>
+    </Dish>
+    <Dish>
+      <Name>Kung Po Chicken</Name>
+      <Spicy>true</Spicy>
+      <Price>4.70</Price>
+    </Dish>
+  </Category>
+  <Category name="Beef">
+    <Dish>
+      <Name>Crispy Shredded Beef with Chilli</Name>
+      <Spicy>true</Spicy>
+      <Price>5.20</Price>
+    </Dish>
+  </Category>
+</Menu>
+
+Get the first spicy dish: (//Dish[Spicy[text() = "true"]])[1]
+
+Get the whole chicken category: //Category[@name = "Chicken"]
+
+Get all the beef dishes: //Category[@name = "Beef"]//Dish
+
+Get all the text: //text()
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF>
+  <Description about="semester2">
+    <label datatype="string">Semester 2, 2018-2019</label>
+    <beginsAtDateTime datatype="dateTime">2019-01-28T00:00:00Z</beginsAtDateTime>
+    <endsAtDateTime datatype="dateTime">2019-06-15T23:59:59Z</endsAtDateTime>
+    <after resource="semester1"/>
+  </Description>
+
+  <Description about="springterm">
+    <label datatype="string">Spring Term, 2018-2019</label>
+    <beginsAtDateTime datatype="dateTime">2019-01-07T00:00:00Z</beginsAtDateTime>
+    <endsAtDateTime datatype="dateTime">2019-03-30T23:59:59Z</endsAtDateTime>
+    <after resource="autumnterm"/>
+    <before resource="summerterm"/>
+  </Description>
+
+  <Description about="summerterm">
+    <label datatype="string">Summer Term, 2018-2019</label>
+    <beginsAtDateTime datatype="dateTime">2019-04-29T00:00:00Z</beginsAtDateTime>
+    <endsAtDateTime datatype="dateTime">2019-06-15T23:59:59Z</endsAtDateTime>
+    <after resource="springterm"/>
+    <before resource="autumnterm"/>
+  </Description>
+</RDF>
+
+Get all the label text: //label/text()
+
+Get all beginsAtDateTime: //beginsAtDateTime
+
+Get all beginsAtDateTime and endsAtDateTime: //beginsAtDateTime | //endsAtDateTime
+
+Get the Description which has before summerterm: //Description[before[@resource = "summerterm"]]
+
+Get the beginsAtDateTime text string for the Description which has before summerterm:
+//Description[before[@resource = "summerterm"]]/beginsAtDateTime/text()
+
+
+<tr>
+<td>1</td>
+<td>Unix Fundamentals</td>
+<td>
+<ul>
+<li>Monday 1pm:
+<a rel="nofollow" class="external" href="https://secure.ecs.soton.ac.uk/notes/comp1204/2019/Introduction.pptx">Introduction</a>
+</li>
+<li>Tuesday 2pm:
+<a rel="nofollow" class="external" href="https://secure.ecs.soton.ac.uk/notes/comp1204/2019/dst/UNIX1.pdf">Lecture on UNIX philosophy</a>
+</li>
+<li>Thursday 2pm:
+<a rel="nofollow" class="external" href="https://secure.ecs.soton.ac.uk/notes/comp1204/2019/dst/UNIX2.pdf">Tutorial on UNIX file system</a>
+</li>
+</ul>
+</td>
+<td>
+<a href="/noteswiki/w/COMP1204/Labs/Lab1" title="COMP1204/Labs/Lab1">Lab 1 - Getting started!</a>
+</td>
+<td>Introduction to the module and overview of UNIX philosophy and file system.</td>
+</tr>
+
+Get all the href values of all links: //a/@href
+
+Get all the href values of all external links: //a[@class = "external"]/@href
+
+Get the href attribute of the link with the COMP1204/Labs/Lab1 title: //a[@title = "COMP1204/Labs/Lab1"]/@href
+
+Get all the td elements that don't have a ul child: //td[not(ul)]
