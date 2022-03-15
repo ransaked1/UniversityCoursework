@@ -1,0 +1,58 @@
+machine College
+sees CollegeContext
+variables
+	student course register
+	
+invariants
+	@inv1: student ⊆ STUDENT
+	@inv2: course ⊆ COURSE
+	@inv3: register ∈ student ↔ course
+	
+events
+	
+	event INITIALISATION
+	begin
+		@act1: course, student, register ≔ ∅, ∅, ∅
+	end
+	
+	event addCourse
+	any crs where
+		@grd1: crs ∉ course
+	then
+		@act1: course ≔ course ∪ {crs}
+	end
+	
+	event addStudent
+	any person where
+		@grd1: person ∉ student
+	then
+		@act1: student ≔ student ∪ {person}
+	end
+	
+	event Enroll
+	any stnd crs where
+		@grd1: stnd ∈ student
+		@grd2: crs ∈ course
+		@grd3: {stnd ↦ crs} ∩ register = ∅
+	then
+		@act1: register ≔ register ∪ {stnd ↦ crs}
+	end
+	
+	event Deroll
+	any stnd crs where
+		@grd1: stnd ∈ student
+		@grd2: crs ∈ course
+		@grd3: {stnd ↦ crs} ⊆ register
+	then
+		@act1: register ≔ register ∖ {stnd ↦ crs}
+	end
+	
+	event removeCourse
+	any crs where
+		@grd1: crs ∈ course
+	then
+		@act1: course ≔ course ∖ {crs}
+		@act2: register ≔ register ⩥ {crs} 
+	end
+	
+end

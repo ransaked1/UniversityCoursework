@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.seesContext name="_2zNWsKRwEeyxAbzlxF-GFg" org.eventb.core.target="CollegeContext"/>
+    <org.eventb.core.variable name="_2zNWsaRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="student"/>
+    <org.eventb.core.variable name="_2zNWsqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="course"/>
+    <org.eventb.core.variable name="_2zNWs6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="register"/>
+    <org.eventb.core.invariant name="_2zNWtKRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="inv1" org.eventb.core.predicate="student ⊆ STUDENT"/>
+    <org.eventb.core.invariant name="_2zNWtaRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="inv2" org.eventb.core.predicate="course ⊆ COURSE"/>
+    <org.eventb.core.invariant name="_2zNWtqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="inv3" org.eventb.core.predicate="register ∈ student ↔ course"/>
+    <org.eventb.core.event name="_2zNWt6RwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_2zNWuKRwEeyxAbzlxF-GFg" org.eventb.core.assignment="course, student, register ≔ ∅, ∅, ∅" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2zNWuaRwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="addCourse">
+        <org.eventb.core.parameter name="_2zNWuqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_2zNWu6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="crs ∉ course"/>
+        <org.eventb.core.action name="_2zNWvKRwEeyxAbzlxF-GFg" org.eventb.core.assignment="course ≔ course ∪ {crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2zNWvaRwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="addStudent">
+        <org.eventb.core.parameter name="_2zNWvqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="person"/>
+        <org.eventb.core.guard name="_2zNWv6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="person ∉ student"/>
+        <org.eventb.core.action name="_2zNWwKRwEeyxAbzlxF-GFg" org.eventb.core.assignment="student ≔ student ∪ {person}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2zNWwaRwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Enroll">
+        <org.eventb.core.parameter name="_2zNWwqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="stnd"/>
+        <org.eventb.core.parameter name="_2zNWw6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_2zNWxKRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="stnd ∈ student"/>
+        <org.eventb.core.guard name="_2zNWxaRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="crs ∈ course"/>
+        <org.eventb.core.guard name="_2zNWxqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="{stnd ↦ crs} ∩ register = ∅"/>
+        <org.eventb.core.action name="_2zNWx6RwEeyxAbzlxF-GFg" org.eventb.core.assignment="register ≔ register ∪ {stnd ↦ crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2zNWyKRwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Deroll">
+        <org.eventb.core.parameter name="_2zNWyaRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="stnd"/>
+        <org.eventb.core.parameter name="_2zNWyqRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_2zNWy6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="stnd ∈ student"/>
+        <org.eventb.core.guard name="_2zNWzKRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="crs ∈ course"/>
+        <org.eventb.core.guard name="_2zXHsKRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="{stnd ↦ crs} ⊆ register"/>
+        <org.eventb.core.action name="_2zXHsaRwEeyxAbzlxF-GFg" org.eventb.core.assignment="register ≔ register ∖ {stnd ↦ crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2zXHsqRwEeyxAbzlxF-GFg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="removeCourse">
+        <org.eventb.core.parameter name="_2zXHs6RwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_2zXHtKRwEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="crs ∈ course"/>
+        <org.eventb.core.action name="_2zXHtaRwEeyxAbzlxF-GFg" org.eventb.core.assignment="course ≔ course ∖ {crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_2zXHtqRwEeyxAbzlxF-GFg" org.eventb.core.assignment="register ≔ register ⩥ {crs}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

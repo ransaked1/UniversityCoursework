@@ -1,7 +1,6 @@
 package zoo;
 
-import zoo.Counter;
-import zoo.Gate;
+import zoo.*;
 
 public class Zoo {
   public static void main(String[] args) {

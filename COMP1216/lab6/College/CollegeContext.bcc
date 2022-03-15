@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scCarrierSet name="COURSE" org.eventb.core.source="/College/CollegeContext.buc|org.eventb.core.contextFile#CollegeContext|org.eventb.core.carrierSet#_UADh0KRlEeyxAbzlxF-GFg" org.eventb.core.type="ℙ(COURSE)"/>
+    <org.eventb.core.scCarrierSet name="STUDENT" org.eventb.core.source="/College/CollegeContext.buc|org.eventb.core.contextFile#CollegeContext|org.eventb.core.carrierSet#_UACTsKRlEeyxAbzlxF-GFg" org.eventb.core.type="ℙ(STUDENT)"/>
+</org.eventb.core.scContextFile>
