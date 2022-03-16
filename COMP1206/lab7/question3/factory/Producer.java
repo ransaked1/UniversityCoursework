@@ -4,11 +4,13 @@ import uk.ac.soton.ecs.comp1206.labtestlibrary.interfaces.threading.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Producer extends FactoryWorker {
-    NumberQueue queue;
-    int id;
+    private NumberQueue queue;
+    private final int id;
 
     public Producer(NumberQueue queue, int id) {
         super("Producer", id, queue);
+        this.queue = queue;
+        this.id = id;
     }
 
     @Override
@@ -33,7 +35,6 @@ public class Producer extends FactoryWorker {
             try {
                 message(action());
             } catch (Exception e) {
-                e.printStackTrace();
                 messageError();
             }
         }
