@@ -1,0 +1,75 @@
+machine College2 refines College
+sees CollegeContext2
+variables
+	student course register
+	programmes
+	prog_courses
+	enrollment
+invariants
+	@typeof-programmes: programmes ⊆ PROGRAMME
+	@typeof-prog_courses: prog_courses ∈ programmes  course
+	@enrollment-total_func: enrollment ∈ student → programmes
+	@register_enrollment_consist: ∀prog, crs, stnd · stnd ↦ prog ∈ enrollment ∧ stnd ↦ crs ∈ register ⇒ prog ↦ crs ∈ prog_courses
+	
+events
+	
+	event INITIALISATION
+	begin
+		@act1: course, student, register, programmes, prog_courses, enrollment ≔ ∅, ∅, ∅, ∅, ∅, ∅
+	end
+	
+	event Register extends Enroll
+		any prog where
+			@grd4: stnd ↦ prog ∈ enrollment
+			@grd5: prog ↦ crs ∈ prog_courses
+		end
+		
+	event addStudent extends addStudent
+		any prog where
+			@grd2: prog ∈ programmes
+		then
+			@act2: enrollment(person) ≔ prog
+		end
+		
+	event addCourse extends addCourse
+		any prog where
+			@grd2: prog ∈ programmes
+		then
+			@act2: prog_courses ≔ prog_courses ∪ {prog ↦ crs}
+		end
+		
+	event openProgramme
+		any prog where
+			@grd1: prog ∉ programmes
+		then
+			@act1: programmes ≔ programmes ∪ {prog}
+		end
+		
+	event closeProgramme
+		any prog where
+			@grd1: prog ∈ programmes
+			@grd2: prog ∉ ran(enrollment)
+			@grd3: prog ∉ dom(prog_courses)
+		then
+			@act1: programmes ≔ programmes ∖ {prog}
+		end
+		
+	event extendProgramme
+		any prog crs where
+			@grd1: prog ∈ programmes
+			@grd2: crs ∈ course
+			@grd3: prog ↦ crs ∉ prog_courses
+		then
+			@act1: prog_courses ≔ prog_courses ∪ {prog ↦ crs}
+		end
+		
+	event shrinkProgramme
+		any prog crs where
+			@grd1: ∀s·s ↦ crs ∈ register ⇒ s ↦ prog ∉ enrollment
+			@grd2: prog ↦ crs ∈ prog_courses
+			@grd3: ∃op·op ≠ prog ∧ op ↦ crs ∈ prog_courses
+		then
+			@act1: prog_courses ≔ prog_courses ∖ {prog ↦ crs}
+		end
+	
+end

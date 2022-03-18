@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/College/CollegeContext.bcc|org.eventb.core.scContextFile#CollegeContext" org.eventb.core.source="/College/CollegeContext2.buc|org.eventb.core.contextFile#CollegeContext2|org.eventb.core.extendsContext#_qIqroKa-EeyuqN9YdcWX2g"/>
+    <org.eventb.core.scInternalContext name="CollegeContext">
+        <org.eventb.core.scCarrierSet name="COURSE" org.eventb.core.source="/College/CollegeContext.buc|org.eventb.core.contextFile#CollegeContext|org.eventb.core.carrierSet#_dljl0Ka9EeyuqN9YdcWX2g" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.scCarrierSet name="STUDENT" org.eventb.core.source="/College/CollegeContext.buc|org.eventb.core.contextFile#CollegeContext|org.eventb.core.carrierSet#_dli-wKa9EeyuqN9YdcWX2g" org.eventb.core.type="ℙ(STUDENT)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scCarrierSet name="PROGRAMME" org.eventb.core.source="/College/CollegeContext2.buc|org.eventb.core.contextFile#CollegeContext2|org.eventb.core.carrierSet#_qIrSsKa-EeyuqN9YdcWX2g" org.eventb.core.type="ℙ(PROGRAMME)"/>
+</org.eventb.core.scContextFile>

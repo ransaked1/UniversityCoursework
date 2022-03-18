@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_XNivUKbHEeyuqN9YdcWX2g" org.eventb.core.target="College"/>
+    <org.eventb.core.seesContext name="_XNivUabHEeyuqN9YdcWX2g" org.eventb.core.target="CollegeContext2"/>
+    <org.eventb.core.variable name="_XNivUqbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="student"/>
+    <org.eventb.core.variable name="_XNjWYKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="course"/>
+    <org.eventb.core.variable name="_XNjWYabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="register"/>
+    <org.eventb.core.variable name="_XNjWYqbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="programmes"/>
+    <org.eventb.core.variable name="_XNj9cKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog_courses"/>
+    <org.eventb.core.variable name="_XNj9cabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="enrollment"/>
+    <org.eventb.core.invariant name="_XNkkgKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="typeof-programmes" org.eventb.core.predicate="programmes ⊆ PROGRAMME"/>
+    <org.eventb.core.invariant name="_XNkkgabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="typeof-prog_courses" org.eventb.core.predicate="prog_courses ∈ programmes  course"/>
+    <org.eventb.core.invariant name="_XNlLkKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="enrollment-total_func" org.eventb.core.predicate="enrollment ∈ student → programmes"/>
+    <org.eventb.core.invariant name="_XNlLkabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="register_enrollment_consist" org.eventb.core.predicate="∀prog, crs, stnd · stnd ↦ prog ∈ enrollment ∧ stnd ↦ crs ∈ register ⇒ prog ↦ crs ∈ prog_courses"/>
+    <org.eventb.core.event name="_XNlyoKbHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_XNmZsKbHEeyuqN9YdcWX2g" org.eventb.core.assignment="course, student, register, programmes, prog_courses, enrollment ≔ ∅, ∅, ∅, ∅, ∅, ∅" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNmZsabHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Register">
+        <org.eventb.core.refinesEvent name="_XNnAwKbHEeyuqN9YdcWX2g" org.eventb.core.target="Enroll"/>
+        <org.eventb.core.parameter name="_XNnAwabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.guard name="_XNnAwqbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="stnd ↦ prog ∈ enrollment"/>
+        <org.eventb.core.guard name="_XNnn0KbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="prog ↦ crs ∈ prog_courses"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNoO4KbHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addStudent">
+        <org.eventb.core.refinesEvent name="_XNoO4abHEeyuqN9YdcWX2g" org.eventb.core.target="addStudent"/>
+        <org.eventb.core.parameter name="_XNoO4qbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.guard name="_XNo18KbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="prog ∈ programmes"/>
+        <org.eventb.core.action name="_XNo18abHEeyuqN9YdcWX2g" org.eventb.core.assignment="enrollment(person) ≔ prog" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNpdAKbHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addCourse">
+        <org.eventb.core.refinesEvent name="_XNpdAabHEeyuqN9YdcWX2g" org.eventb.core.target="addCourse"/>
+        <org.eventb.core.parameter name="_XNqEEKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.guard name="_XNqEEabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="prog ∈ programmes"/>
+        <org.eventb.core.action name="_XNqrIKbHEeyuqN9YdcWX2g" org.eventb.core.assignment="prog_courses ≔ prog_courses ∪ {prog ↦ crs}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNqrIabHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="openProgramme">
+        <org.eventb.core.parameter name="_XNrSMKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.guard name="_XNrSMabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="prog ∉ programmes"/>
+        <org.eventb.core.action name="_XNr5QKbHEeyuqN9YdcWX2g" org.eventb.core.assignment="programmes ≔ programmes ∪ {prog}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNr5QabHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="closeProgramme">
+        <org.eventb.core.parameter name="_XNsgUKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.guard name="_XNsgUabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="prog ∈ programmes"/>
+        <org.eventb.core.guard name="_XNtHYKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="prog ∉ ran(enrollment)"/>
+        <org.eventb.core.guard name="_XNtHYabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="prog ∉ dom(prog_courses)"/>
+        <org.eventb.core.action name="_XNtucKbHEeyuqN9YdcWX2g" org.eventb.core.assignment="programmes ≔ programmes ∖ {prog}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNtucabHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="extendProgramme">
+        <org.eventb.core.parameter name="_XNuVgKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.parameter name="_XNuVgabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_XNu8kKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="prog ∈ programmes"/>
+        <org.eventb.core.guard name="_XNu8kabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="crs ∈ course"/>
+        <org.eventb.core.guard name="_XNvjoKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="prog ↦ crs ∉ prog_courses"/>
+        <org.eventb.core.action name="_XNvjoabHEeyuqN9YdcWX2g" org.eventb.core.assignment="prog_courses ≔ prog_courses ∪ {prog ↦ crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_XNwKsKbHEeyuqN9YdcWX2g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="shrinkProgramme">
+        <org.eventb.core.parameter name="_XNwxwKbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="prog"/>
+        <org.eventb.core.parameter name="_XNwxwabHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="crs"/>
+        <org.eventb.core.guard name="_XNwxwqbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="∀s·s ↦ crs ∈ register ⇒ s ↦ prog ∉ enrollment"/>
+        <org.eventb.core.guard name="_XNxY0KbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="prog ↦ crs ∈ prog_courses"/>
+        <org.eventb.core.guard name="_XNx_4KbHEeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="∃op·op ≠ prog ∧ op ↦ crs ∈ prog_courses"/>
+        <org.eventb.core.action name="_XNx_4abHEeyuqN9YdcWX2g" org.eventb.core.assignment="prog_courses ≔ prog_courses ∖ {prog ↦ crs}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

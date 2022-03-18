@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
-    <org.eventb.core.carrierSet name="_UACTsKRlEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="STUDENT"/>
-    <org.eventb.core.carrierSet name="_UADh0KRlEeyxAbzlxF-GFg" org.eventb.core.generated="false" org.eventb.core.identifier="COURSE"/>
+    <org.eventb.core.carrierSet name="_dli-wKa9EeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="STUDENT"/>
+    <org.eventb.core.carrierSet name="_dljl0Ka9EeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="COURSE"/>
 </org.eventb.core.contextFile>

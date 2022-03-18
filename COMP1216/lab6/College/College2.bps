@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Register/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="addStudent/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="addStudent/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="addCourse/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="addCourse/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="openProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="openProgramme/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="closeProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="closeProgramme/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="extendProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="extendProgramme/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="shrinkProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="shrinkProgramme/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

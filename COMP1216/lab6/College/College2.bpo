@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="31">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="COURSE" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.poIdentifier name="STUDENT" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.poIdentifier name="PROGRAMME" org.eventb.core.type="ℙ(PROGRAMME)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="27">
+        <org.eventb.core.poIdentifier name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.poIdentifier name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.poIdentifier name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.poIdentifier name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.poIdentifier name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.poIdentifier name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.poPredicate name="prog_courset" org.eventb.core.predicate="student⊆STUDENT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_7XhZwaa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="prog_courseu" org.eventb.core.predicate="course⊆COURSE" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_7XiA0Ka9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="prog_coursev" org.eventb.core.predicate="register∈student ↔ course" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.invariant#_7Xin4Ka9EeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext7"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PROGRAMME×COURSE))∈(∅ ⦂ ℙ(PROGRAMME))  (∅ ⦂ ℙ(COURSE))" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNlyoKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#INITIALISATION\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/enrollment-total_func/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext7"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(STUDENT×PROGRAMME))∈(∅ ⦂ ℙ(STUDENT)) → (∅ ⦂ ℙ(PROGRAMME))" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNlyoKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#INITIALISATION\/enrollment-total_func\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext7"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈(∅ ⦂ ℙ(STUDENT×PROGRAMME))∧stnd ↦ crs∈(∅ ⦂ ℙ(STUDENT×COURSE))⇒prog ↦ crs∈(∅ ⦂ ℙ(PROGRAMME×COURSE))" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNlyoKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#INITIALISATION\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext7"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(COURSE))=(∅ ⦂ ℙ(COURSE))∧(∅ ⦂ ℙ(STUDENT))=(∅ ⦂ ℙ(STUDENT))∧(∅ ⦂ ℙ(STUDENT×COURSE))=(∅ ⦂ ℙ(STUDENT×COURSE))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g|org.eventb.core.action#_7XjO8Ka9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xin4aa9EeyuqN9YdcWX2g|org.eventb.core.action#_7XjO8Ka9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNlyoKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#INITIALISATION\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext7" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="27">
+        <org.eventb.core.poIdentifier name="enrollment'" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.poIdentifier name="course'" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.poIdentifier name="programmes'" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.poIdentifier name="prog_courses'" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(STUDENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext7" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext7" org.eventb.core.poStamp="27"/>
+    <org.eventb.core.poSequent name="Register/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext8"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs0⦂COURSE,stnd0⦂STUDENT·stnd0 ↦ prog∈enrollment∧stnd0 ↦ crs0∈register∪{stnd ↦ crs}⇒prog ↦ crs0∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xm5UKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNmZsabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#Register\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext8" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="stnd" org.eventb.core.type="STUDENT"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.poIdentifier name="crs" org.eventb.core.type="COURSE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext8" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext8" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="stnd∈student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xm5UKa9EeyuqN9YdcWX2g|org.eventb.core.guard#_7XngYaa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="crs∈course" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xm5UKa9EeyuqN9YdcWX2g|org.eventb.core.guard#_7XoHcKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="{stnd ↦ crs}∩register=(∅ ⦂ ℙ(STUDENT×COURSE))" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xm5UKa9EeyuqN9YdcWX2g|org.eventb.core.guard#_7XougKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="stnd ↦ prog∈enrollment" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNmZsabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNnAwqbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="prog ↦ crs∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNmZsabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNnn0KbHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="addStudent/enrollment-total_func/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="enrollment{person ↦ prog}∈student∪{person} → programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7XlEIKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNoO4KbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#addStudent\/enrollment-total_func\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="addStudent/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog0∈enrollment{person ↦ prog}∧stnd ↦ crs∈register⇒prog0 ↦ crs∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7XlEIKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNoO4KbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#addStudent\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext9" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="enrollment'" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="student'" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.poIdentifier name="person" org.eventb.core.type="STUDENT"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext9" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext9" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="person∉student" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7XlEIKa9EeyuqN9YdcWX2g|org.eventb.core.guard#_7XlrMaa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prog∈programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNoO4KbHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNo18KbHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="addCourse/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext:"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prog_courses∪{prog ↦ crs}∈programmes  course∪{crs}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xj2AKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNpdAKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#addCourse\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="addCourse/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext:"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,stnd⦂STUDENT·stnd ↦ prog0∈enrollment∧stnd ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xj2AKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNpdAKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#addCourse\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext:" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="course'" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.poIdentifier name="prog_courses'" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.poIdentifier name="crs" org.eventb.core.type="COURSE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext:" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext:" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="crs∉course" org.eventb.core.source="/College/College.bum|org.eventb.core.machineFile#College|org.eventb.core.event#_7Xj2AKa9EeyuqN9YdcWX2g|org.eventb.core.guard#_7XkdEKa9EeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prog∈programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNpdAKbHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNqEEabHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="openProgramme/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prog_courses∈programmes∪{prog}  course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNqrIabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#openProgramme\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="openProgramme/enrollment-total_func/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="enrollment∈student → programmes∪{prog}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNqrIabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#openProgramme\/enrollment-total_func\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext;" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="programmes'" org.eventb.core.type="ℙ(PROGRAMME)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext;" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext;" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="prog∉programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNqrIabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNrSMabHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="closeProgramme/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext="/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prog_courses∈programmes ∖ {prog}  course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNr5QabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#closeProgramme\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="closeProgramme/enrollment-total_func/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext="/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="enrollment∈student → programmes ∖ {prog}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNr5QabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#closeProgramme\/enrollment-total_func\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext=" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="programmes'" org.eventb.core.type="ℙ(PROGRAMME)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext=" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext=" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="prog∈programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNr5QabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNsgUabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prog∉ran(enrollment)" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNr5QabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNtHYKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="prog∉dom(prog_courses)" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNr5QabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNtHYabHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="extendProgramme/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext&gt;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prog_courses∪{prog ↦ crs}∈programmes  course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNtucabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#extendProgramme\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="extendProgramme/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext&gt;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,stnd⦂STUDENT·stnd ↦ prog0∈enrollment∧stnd ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNtucabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#extendProgramme\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext&gt;" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="prog_courses'" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.poIdentifier name="crs" org.eventb.core.type="COURSE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext&gt;" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext&gt;" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="prog∈programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNtucabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNu8kKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="crs∈course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNtucabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNu8kabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="prog ↦ crs∉prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNtucabHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNvjoKbHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="shrinkProgramme/typeof-prog_courses/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext?"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prog_courses ∖ {prog ↦ crs}∈programmes  course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNwKsKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#shrinkProgramme\/typeof-prog_courses\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="shrinkProgramme/register_enrollment_consist/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTALLHYPCollegeContext?"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,stnd⦂STUDENT·stnd ↦ prog0∈enrollment∧stnd ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses ∖ {prog ↦ crs}" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNwKsKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poSequent#shrinkProgramme\/register_enrollment_consist\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTCollegeContext?" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poIdentifier name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.poIdentifier name="prog_courses'" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.poIdentifier name="crs" org.eventb.core.type="COURSE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPCollegeContext?" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#EVTIDENTCollegeContext?" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="∀s⦂STUDENT·s ↦ crs∈register⇒s ↦ prog∉enrollment" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNwKsKbHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNwxwqbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prog ↦ crs∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNwKsKbHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNxY0KbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∃op⦂PROGRAMME·op≠prog∧op ↦ crs∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.event#_XNwKsKbHEeyuqN9YdcWX2g|org.eventb.core.guard#_XNx_4KbHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/College/College2.bpo|org.eventb.core.poFile#College2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="31">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="programmes⊆PROGRAMME" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prog_courses∈programmes  course" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNkkgabHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="enrollment∈student → programmes" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkKbHEeyuqN9YdcWX2g"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses" org.eventb.core.source="/College/College2.bum|org.eventb.core.machineFile#College2|org.eventb.core.invariant#_XNlLkabHEeyuqN9YdcWX2g"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

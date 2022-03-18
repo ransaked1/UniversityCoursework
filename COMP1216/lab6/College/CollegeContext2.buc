@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.extendsContext name="_qIqroKa-EeyuqN9YdcWX2g" org.eventb.core.target="CollegeContext"/>
+    <org.eventb.core.carrierSet name="_qIrSsKa-EeyuqN9YdcWX2g" org.eventb.core.generated="false" org.eventb.core.identifier="PROGRAMME"/>
+</org.eventb.core.contextFile>

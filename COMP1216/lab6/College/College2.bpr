@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="openProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p5,p4"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p6,p1,p5,p4">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog∉programmes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬prog∈programmes"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prog_courses∈programmes∪{prog}  course"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="closeProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p7,p6"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p4,p8,p9,p1,p7,p6">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬prog∈dom(prog_courses)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prog∉ran(enrollment)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬prog∈ran(enrollment)"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prog_courses∈programmes ∖ {prog}  course"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog∉dom(prog_courses)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="extendProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p7,p6"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p5,p1,p8,p2,p7,p6">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="crs∈course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog ↦ crs∉prog_courses"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prog_courses∪{prog ↦ crs}∈programmes  course"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="shrinkProgramme/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p7,p6"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p8,p9,p1,p7,p6">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prog_courses ∖ {prog ↦ crs}∈programmes  course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀s⦂STUDENT·s ↦ crs∈register⇒s ↦ prog∉enrollment"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∃op⦂PROGRAMME·¬op=prog∧op ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀s⦂STUDENT·s ↦ crs∈register⇒¬s ↦ prog∈enrollment"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∃op⦂PROGRAMME·op≠prog∧op ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addCourse/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p6,p5"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p4,p7,p1,p6,p5">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬crs∈course"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="crs∉course"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prog_courses∪{prog ↦ crs}∈programmes  course∪{crs}"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Enroll/enrollment-total_func/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬person∈student">
+            <org.eventb.core.prIdent name="STUDENT" org.eventb.core.type="ℙ(STUDENT)"/>
+            <org.eventb.core.prIdent name="person" org.eventb.core.type="STUDENT"/>
+            <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="course⊆COURSE">
+            <org.eventb.core.prIdent name="COURSE" org.eventb.core.type="ℙ(COURSE)"/>
+            <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="person∉student">
+            <org.eventb.core.prIdent name="STUDENT" org.eventb.core.type="ℙ(STUDENT)"/>
+            <org.eventb.core.prIdent name="person" org.eventb.core.type="STUDENT"/>
+            <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="student⊆STUDENT">
+            <org.eventb.core.prIdent name="STUDENT" org.eventb.core.type="ℙ(STUDENT)"/>
+            <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="programmes⊆PROGRAMME">
+            <org.eventb.core.prIdent name="PROGRAMME" org.eventb.core.type="ℙ(PROGRAMME)"/>
+            <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="openProgramme/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p4,p5">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="enrollment∈student → programmes∪{prog}"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog∉programmes"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬prog∈programmes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="closeProgramme/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p6,p4,p7,p8">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬prog∈dom(prog_courses)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog∉dom(prog_courses)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prog∉ran(enrollment)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬prog∈ran(enrollment)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="enrollment∈student → programmes ∖ {prog}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Register/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="crs0,stnd0,prog0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees prog0,crs0,stnd0)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+                                <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+                                <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+                                <org.eventb.core.prIdent name="stnd0" org.eventb.core.type="STUDENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p11,p12">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p14,p15,p4"/>
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="veriT" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p1,p2,p11,p12,p3,p4">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="veriT"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="stnd" org.eventb.core.type="STUDENT"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="register∈student ↔ course">
+            <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="stnd0 ↦ prog0∈enrollment∧stnd0 ↦ crs0∈register∪{stnd ↦ crs}⇒prog0 ↦ crs0∈prog_courses">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="stnd0" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="prog_courses∈programmes  course">
+            <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="stnd0 ↦ crs0∈register∪{stnd ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="stnd0" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs0⦂COURSE,stnd0⦂STUDENT·stnd0 ↦ prog∈enrollment∧stnd0 ↦ crs0∈register∪{stnd ↦ crs}⇒prog ↦ crs0∈prog_courses"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="stnd ↦ prog∈enrollment"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="course⊆COURSE">
+            <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="{stnd ↦ crs}∩register=(∅ ⦂ ℙ(STUDENT×COURSE))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬stnd ↦ crs∈register"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="stnd0 ↦ prog0∈enrollment">
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="stnd0" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="prog0 ↦ crs0∈prog_courses">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="extendProgramme/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="st,crs0,prog0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees prog0,crs0,st)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+                                <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+                                <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+                                <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p13,p14">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p2,p4,p7,p6,p5,p1,p8,p13,p14">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="st ↦ crs0∈register">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog ↦ crs∉prog_courses"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="st ↦ prog0∈enrollment">
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,st⦂STUDENT·st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,st⦂STUDENT·st ↦ prog∈enrollment∧st ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="crs∈course"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="shrinkProgramme/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="st,crs0,prog0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees prog0,crs0,st)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+                                <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+                                <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+                                <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p11,p12">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p4,p1,p5,p6,p11,p12">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="prog0 ↦ crs0∈prog_courses ∖ {prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="st ↦ crs0∈register">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="st ↦ prog0∈enrollment">
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀s⦂STUDENT·s ↦ crs∈register⇒s ↦ prog∉enrollment"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,st⦂STUDENT·st ↦ prog∈enrollment∧st ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="programmes⊆PROGRAMME">
+            <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,st⦂STUDENT·st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses ∖ {prog ↦ crs}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∃op⦂PROGRAMME·¬op=prog∧op ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀s⦂STUDENT·s ↦ crs∈register⇒¬s ↦ prog∈enrollment"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="course⊆COURSE">
+            <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses ∖ {prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∃op⦂PROGRAMME·op≠prog∧op ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="student⊆STUDENT">
+            <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addStudent/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p6,p5,p4,p7">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="person" org.eventb.core.type="STUDENT"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬person∈student"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="person∉student"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="enrollment{person ↦ prog}∈student∪{person} → programmes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/typeof-prog_courses/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="COURSE,PROGRAMME">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(PROGRAMME×COURSE))∈(∅ ⦂ ℙ(PROGRAMME))  (∅ ⦂ ℙ(COURSE))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/enrollment-total_func/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(STUDENT×PROGRAMME))∈(∅ ⦂ ℙ(STUDENT)) → (∅ ⦂ ℙ(PROGRAMME))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,st⦂STUDENT·st ↦ prog∈(∅ ⦂ ℙ(STUDENT×PROGRAMME))∧st ↦ crs∈(∅ ⦂ ℙ(STUDENT×COURSE))⇒prog ↦ crs∈(∅ ⦂ ℙ(PROGRAMME×COURSE))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="COURSE,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(COURSE))=(∅ ⦂ ℙ(COURSE))∧(∅ ⦂ ℙ(STUDENT))=(∅ ⦂ ℙ(STUDENT))∧(∅ ⦂ ℙ(STUDENT×COURSE))=(∅ ⦂ ℙ(STUDENT×COURSE))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addCourse/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="st,crs0,prog0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees prog0,crs0,st)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+                                <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+                                <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p12,p13">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p1,p3,p6,p5,p4,p7,p12,p13">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬crs∈course"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="st ↦ crs0∈register">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="st ↦ prog0∈enrollment">
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs0⦂COURSE,st⦂STUDENT·st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,st⦂STUDENT·st ↦ prog∈enrollment∧st ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="st ↦ prog0∈enrollment∧st ↦ crs0∈register⇒prog0 ↦ crs0∈prog_courses∪{prog ↦ crs}">
+            <org.eventb.core.prIdent name="crs0" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="st" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="crs∉course"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addStudent/register_enrollment_consist/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="stnd,crs,prog0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="COURSE,PROGRAMME,STUDENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees prog0,crs,stnd)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+                                <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+                                <org.eventb.core.prIdent name="stnd" org.eventb.core.type="STUDENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p12,p13">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1,p2,p6"/>
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p5,p4,p7,p12,p13,p1,p2,p6">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="course" org.eventb.core.type="ℙ(COURSE)"/>
+        <org.eventb.core.prIdent name="enrollment" org.eventb.core.type="ℙ(STUDENT×PROGRAMME)"/>
+        <org.eventb.core.prIdent name="person" org.eventb.core.type="STUDENT"/>
+        <org.eventb.core.prIdent name="prog" org.eventb.core.type="PROGRAMME"/>
+        <org.eventb.core.prIdent name="prog_courses" org.eventb.core.type="ℙ(PROGRAMME×COURSE)"/>
+        <org.eventb.core.prIdent name="programmes" org.eventb.core.type="ℙ(PROGRAMME)"/>
+        <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(STUDENT×COURSE)"/>
+        <org.eventb.core.prIdent name="student" org.eventb.core.type="ℙ(STUDENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="register∈student ↔ course"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prog_courses∈programmes  course"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="prog0 ↦ crs∈prog_courses">
+            <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prog∈programmes"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="stnd ↦ crs∈register">
+            <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="stnd" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="stnd ↦ prog0∈enrollment{person ↦ prog}">
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="stnd" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀prog⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog∈enrollment∧stnd ↦ crs∈register⇒prog ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="programmes⊆PROGRAMME"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="enrollment∈student → programmes"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬person∈student"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="course⊆COURSE"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="stnd ↦ prog0∈enrollment{person ↦ prog}∧stnd ↦ crs∈register⇒prog0 ↦ crs∈prog_courses">
+            <org.eventb.core.prIdent name="crs" org.eventb.core.type="COURSE"/>
+            <org.eventb.core.prIdent name="prog0" org.eventb.core.type="PROGRAMME"/>
+            <org.eventb.core.prIdent name="stnd" org.eventb.core.type="STUDENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="person∉student"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀prog0⦂PROGRAMME,crs⦂COURSE,stnd⦂STUDENT·stnd ↦ prog0∈enrollment{person ↦ prog}∧stnd ↦ crs∈register⇒prog0 ↦ crs∈prog_courses"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="student⊆STUDENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>
