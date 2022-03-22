@@ -14,7 +14,9 @@ public class Gate implements Runnable {
 
   public void run() {
     while (guests > 0) {
-      counter.addOne();
+      synchronized (this.counter) {
+        counter.addOne();
+      }
       guests--;
     }
   }
