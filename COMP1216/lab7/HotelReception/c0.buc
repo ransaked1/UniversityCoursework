@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.carrierSet name="_zFgBgKnkEey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="GUEST"/>
+    <org.eventb.core.carrierSet name="_zFgBgankEey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="ROOM"/>
+</org.eventb.core.contextFile>

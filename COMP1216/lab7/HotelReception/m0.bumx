@@ -1,0 +1,43 @@
+machine m0
+sees c0
+variables
+	guest checked
+	
+invariants
+	@inv1: guest ⊆ GUEST
+	@inv2: checked ∈ ROOM ⇸ guest
+	
+events
+
+	event INITIALISATION
+	begin
+		@act1: guest, checked ≔ ∅, ∅
+	end
+	
+	event Checkin
+	any gst rm where
+		@grd1: gst ∈ GUEST
+		@grd2: rm ∈ ROOM
+		@grd3: rm ∉ dom(checked)
+	then
+		@act1: guest ≔ guest ∪ {gst}
+		@act2: checked ≔ checked ∪ {rm ↦ gst} 
+	end
+	
+	event Checkout
+	any rm gst where
+		@grd1: gst ∈ guest
+		@grd2: gst ∈ ran(checked)
+		@grd3: rm ∈ ROOM
+	then
+		@act1: guest ≔ guest ∖ {gst}
+		@act2: checked ≔ checked ∖ {rm ↦ gst}
+	end
+	
+	event getGuest
+	any gst result where
+		@grd1: gst ∈ guest
+		@grd2: result = dom(checked ▷ {gst})
+	end
+	
+end

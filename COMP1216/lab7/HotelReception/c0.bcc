@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scCarrierSet name="ROOM" org.eventb.core.source="/HotelReception/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_zFgBgankEey-gcJ0Bb9y9w" org.eventb.core.type="ℙ(ROOM)"/>
+    <org.eventb.core.scCarrierSet name="GUEST" org.eventb.core.source="/HotelReception/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_zFgBgKnkEey-gcJ0Bb9y9w" org.eventb.core.type="ℙ(GUEST)"/>
+</org.eventb.core.scContextFile>

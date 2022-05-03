@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+        <org.eventb.core.poIdentifier name="GUEST" org.eventb.core.type="ℙ(GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelReception/c0.bpo|org.eventb.core.poFile#c0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

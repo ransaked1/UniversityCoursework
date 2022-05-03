@@ -1,0 +1,46 @@
+machine m1 refines m0
+sees c0
+variables
+	guest checked
+	rooms
+
+invariants
+	@inv1: rooms ⊆ ROOM
+	@inv2: dom(checked) ⊆ rooms
+	
+events
+	
+	event INITIALISATION
+	begin
+		@act1: guest,rooms, checked ≔ ∅, ∅, ∅
+	end
+	
+	event addRoom
+	any rm where
+		@grd1: rm ∉ rooms
+	then
+		@act1: rooms ≔ rooms ∪ {rm}
+	end
+	
+	event removeRoom
+	any rm where
+		@grd1: rm ∈ rooms
+	then
+		@act1: rooms ≔ rooms ∖ {rm}
+		@act2: checked ≔ {rm} ⩤ checked
+	end
+	
+	event Checkin extends Checkin
+	where
+		@grd4: rm ∈ rooms
+	end
+	
+	event Checkout extends Checkout
+	where
+		@grd4: rm ∈ dom(checked)
+	end
+	
+	event getGuest extends getGuest
+	end
+
+end

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_l92bgKn0Eey-gcJ0Bb9y9w" org.eventb.core.target="m0"/>
+    <org.eventb.core.seesContext name="_l92bgan0Eey-gcJ0Bb9y9w" org.eventb.core.target="c0"/>
+    <org.eventb.core.variable name="_l92bgqn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="guest"/>
+    <org.eventb.core.variable name="_l92bg6n0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="checked"/>
+    <org.eventb.core.variable name="_l92bhKn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="rooms"/>
+    <org.eventb.core.invariant name="_l92bhan0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="inv1" org.eventb.core.predicate="rooms ⊆ ROOM"/>
+    <org.eventb.core.invariant name="_l92bhqn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="inv2" org.eventb.core.predicate="dom(checked) ⊆ rooms"/>
+    <org.eventb.core.event name="_l92bh6n0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_l92biKn0Eey-gcJ0Bb9y9w" org.eventb.core.assignment="guest,rooms, checked ≔ ∅, ∅, ∅" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_l92bian0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="addRoom">
+        <org.eventb.core.parameter name="_l92biqn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="rm"/>
+        <org.eventb.core.guard name="_l92bi6n0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="rm ∉ rooms"/>
+        <org.eventb.core.action name="_l92bjKn0Eey-gcJ0Bb9y9w" org.eventb.core.assignment="rooms ≔ rooms ∪ {rm}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_l92bjan0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="removeRoom">
+        <org.eventb.core.parameter name="_l92bjqn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.identifier="rm"/>
+        <org.eventb.core.guard name="_l92bj6n0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="rm ∈ rooms"/>
+        <org.eventb.core.action name="_l92bkKn0Eey-gcJ0Bb9y9w" org.eventb.core.assignment="rooms ≔ rooms ∖ {rm}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_l92bkan0Eey-gcJ0Bb9y9w" org.eventb.core.assignment="checked ≔ {rm} ⩤ checked" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_l92bkqn0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Checkin">
+        <org.eventb.core.refinesEvent name="_l92bk6n0Eey-gcJ0Bb9y9w" org.eventb.core.target="Checkin"/>
+        <org.eventb.core.guard name="_l92blKn0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="rm ∈ rooms"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_l92blan0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Checkout">
+        <org.eventb.core.refinesEvent name="_l92blqn0Eey-gcJ0Bb9y9w" org.eventb.core.target="Checkout"/>
+        <org.eventb.core.guard name="_l92bl6n0Eey-gcJ0Bb9y9w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="rm ∈ dom(checked)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_l92bmKn0Eey-gcJ0Bb9y9w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="getGuest">
+        <org.eventb.core.refinesEvent name="_l92bman0Eey-gcJ0Bb9y9w" org.eventb.core.target="getGuest"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="37">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="ROOM" org.eventb.core.type="ℙ(ROOM)"/>
+        <org.eventb.core.poIdentifier name="GUEST" org.eventb.core.type="ℙ(GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="30">
+        <org.eventb.core.poIdentifier name="guest" org.eventb.core.type="ℙ(GUEST)"/>
+        <org.eventb.core.poIdentifier name="checked" org.eventb.core.type="ℙ(ROOM×GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPcheckee"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ROOM×GUEST))∈ROOM ⇸ (∅ ⦂ ℙ(GUEST))" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN0j4an0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcheckee" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="guest'" org.eventb.core.type="ℙ(GUEST)"/>
+        <org.eventb.core.poIdentifier name="checked'" org.eventb.core.type="ℙ(ROOM×GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcheckee" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTcheckee" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="Checkin/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPcheckef"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="checked∪{rm ↦ gst}∈ROOM ⇸ guest∪{gst}" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN1K8Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#Checkin\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcheckef" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="37">
+        <org.eventb.core.poIdentifier name="gst" org.eventb.core.type="GUEST"/>
+        <org.eventb.core.poIdentifier name="guest'" org.eventb.core.type="ℙ(GUEST)"/>
+        <org.eventb.core.poIdentifier name="rm" org.eventb.core.type="ROOM"/>
+        <org.eventb.core.poIdentifier name="checked'" org.eventb.core.type="ℙ(ROOM×GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcheckef" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTcheckef" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="gst∈GUEST" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN1K8Kn0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN1K86n0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="rm∈ROOM" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN1K8Kn0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN1yAKn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="rm∉dom(checked)" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN1K8Kn0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN1yAan0Eey-gcJ0Bb9y9w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Checkout/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPcheckeg"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="checked ∖ {rm ↦ gst}∈ROOM ⇸ guest ∖ {gst}" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN2ZEan0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#Checkout\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcheckeg" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="37">
+        <org.eventb.core.poIdentifier name="gst" org.eventb.core.type="GUEST"/>
+        <org.eventb.core.poIdentifier name="guest'" org.eventb.core.type="ℙ(GUEST)"/>
+        <org.eventb.core.poIdentifier name="rm" org.eventb.core.type="ROOM"/>
+        <org.eventb.core.poIdentifier name="checked'" org.eventb.core.type="ℙ(ROOM×GUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcheckeg" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTcheckeg" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="gst∈guest" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN2ZEan0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN3AIKn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="gst∈ran(checked)" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN2ZEan0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN3AIan0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="rm∈ROOM" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN2ZEan0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN3AIqn0Eey-gcJ0Bb9y9w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcheckeh" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="37">
+        <org.eventb.core.poIdentifier name="result" org.eventb.core.type="ℙ(ROOM)"/>
+        <org.eventb.core.poIdentifier name="gst" org.eventb.core.type="GUEST"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcheckeh" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTcheckeh" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="gst∈guest" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN3nMqn0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN4OQqn0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="result=dom(checked ▷ {gst})" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_jN3nMqn0Eey-gcJ0Bb9y9w|org.eventb.core.guard#_jN4OQ6n0Eey-gcJ0Bb9y9w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/HotelReception/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="37">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="guest⊆GUEST" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jNz806n0Eey-gcJ0Bb9y9w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="checked∈ROOM ⇸ guest" org.eventb.core.source="/HotelReception/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_jN0j4Kn0Eey-gcJ0Bb9y9w"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

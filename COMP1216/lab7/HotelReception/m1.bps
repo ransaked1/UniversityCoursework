@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="addRoom/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="removeRoom/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="removeRoom/checked/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Checkin/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Checkout/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>
