@@ -1,0 +1,45 @@
+machine m1
+refines m0
+sees c0 c1
+
+variables
+	ship
+	quay
+	sclass
+	occupied
+	docked
+	mooring
+	qclasses
+	facilities
+
+invariants
+	@typeof-facilities: facilities ∈ quay → ℙ(FACILITY)
+
+events
+
+	event INITIALISATION extends INITIALISATION
+	end
+
+	event DockShip extends DockShip
+	any
+		f
+	where
+		@quay-has-facilities: f ⊆ facilities(q)
+	end
+
+	event UnDockShip extends UnDockShip
+	end
+
+	event AddShip extends AddShip
+	end
+
+	event AddQuay extends AddQuay
+	any
+		f
+	where
+		@typeof-f: f ⊆ FACILITY
+	then
+		@add-facilities: facilities(q) ≔ f
+	end
+
+end

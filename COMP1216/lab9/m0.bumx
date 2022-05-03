@@ -1,0 +1,91 @@
+machine m0
+sees c0
+variables
+	ship
+	quay
+	sclass
+	occupied
+	docked
+	mooring
+	qclasses
+
+invariants
+	@inv1: ship ⊆ SHIP
+	@inv2: docked ⊆ ship
+	@inv3: quay ⊆ QUAY
+	@inv4: occupied ⊆ quay
+	@inv5: sclass ∈ ship → CLASS
+	@inv6: mooring ∈ occupied ↣ docked
+	@inv7: qclasses ∈ QUAY ↔ CLASS
+	@inv8: dom(qclasses) = quay
+	@inv9: ∀q· q ∈ dom(mooring) ⇒ sclass(mooring(q)) ∈ qclasses[{q}]
+
+events
+
+	event INITIALISATION
+	then
+		@act1: ship ≔ ∅
+		@act2: docked ≔ ∅
+		@act3: quay ≔ ∅
+		@act4: occupied ≔ ∅
+		@act5: sclass ≔ ∅
+		@act6: mooring ≔ ∅
+		@act7: qclasses ≔ ∅
+	end
+
+	event DockShip
+	any
+		s
+		q
+	where
+		@grd1: s ∈ ship
+		@grd2: s ∉ docked
+		@grd3: q ∈ quay
+		@grd4: q ∉ occupied
+		@grd5: sclass(s) ∈ qclasses[ {q} ]
+	then
+		@act1: occupied ≔ occupied ∪ {q}
+		@act2: docked ≔ docked ∪ {s}
+		@act3: mooring(q) ≔ s
+	end
+
+	event UnDockShip
+	any
+		s
+		q
+	where
+		@grd1: q ↦ s ∈ mooring
+	then
+		@act1: occupied ≔ occupied ∖ {q}
+		@act2: docked ≔ docked ∖ {s}
+		@act3: mooring ≔ {q} ⩤ mooring
+	end
+
+	event AddShip
+	any
+		s
+		c
+	where
+		@grd1: s ∈ SHIP
+		@grd2: s ∉ ship
+		@grd3: c ∈ CLASS
+	then
+		@act2: ship ≔ ship ∪ {s}
+		@act3: sclass(s) ≔ c
+	end
+
+	event AddQuay
+	any
+		q
+		ss
+	where
+		@grd1: q ∈ QUAY
+		@grd2: q ∉ quay
+		@grd3: ss ⊆ CLASS
+		@grd4: ss ≠ ∅
+	then
+		@act2: quay ≔ quay ∪ {q}
+		@act3: qclasses ≔ qclasses ∪ ({q} × ss)
+	end
+
+end

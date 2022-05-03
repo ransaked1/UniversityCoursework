@@ -1,0 +1,85 @@
+machine m0
+sees c0
+variables
+	rooms
+	hotelRooms
+	roomNumbers
+	roomAllocations
+
+invariants
+	@typeof-rooms: rooms ⊆ ROOM
+	@typeof-hotelRooms: hotelRooms ∈ rooms → HOTEL
+	@typeof-roomNumbers: roomNumbers ∈ rooms → ROOM_NUMBER
+	@typeof-roomAllocations: roomAllocations ∈ rooms ⇸ GUEST
+	@roomNumber-is-unique: ∀ j, k · j ∈ rooms ∧ k ∈ rooms ∧ j ≠ k ∧ hotelRooms(j) = hotelRooms(k) ⇒ roomNumbers(j) ≠ roomNumbers(k)
+
+events
+
+	event INITIALISATION
+	then
+		@init-rooms: rooms ≔ ∅
+		@init-hotelRooms: hotelRooms ≔ ∅
+		@init-roomNumbers: roomNumbers ≔ ∅
+		@init-roomAllocations: roomAllocations ≔ ∅
+	end
+
+	event AddRoom
+	any
+		room
+		hotel
+		roomNumber
+	where
+		@is-room: room ∈ ROOM
+		@is-hotel: hotel ∈ HOTEL
+		@is-number: roomNumber ∈ ROOM_NUMBER
+		@is-not-already-added: room ∉ rooms
+		@is-unique-room-number: ∀ j · j ∈ rooms ∧ hotelRooms(j) = hotel ⇒ roomNumbers(j) ≠ roomNumber
+	then
+		@add-room: rooms ≔ rooms ∪ {room}
+		@assign-to-hotel: hotelRooms(room) ≔ hotel
+		@assign-room-number: roomNumbers(room) ≔ roomNumber
+	end
+
+	event RemoveRoom
+	any
+		room
+	where
+		@is-room: room ∈ rooms
+		@is-not-occupied: room ∉ dom(roomAllocations)
+	then
+		@remove-room: rooms ≔ rooms ∖ {room}
+		@remove-room-from-hotel: hotelRooms ≔ {room} ⩤ hotelRooms
+		@remove-room-from-roomNumbers: roomNumbers ≔ {room} ⩤ roomNumbers
+	end
+
+	event CheckInRoom
+	any
+		room
+		guest
+	where
+		@is-room: room ∈ rooms
+		@is-guest: guest ∈ GUEST
+		@is-not-occupied: room ∉ dom(roomAllocations)
+	then
+		@occupy-room: roomAllocations(room) ≔ guest
+	end
+
+	event CheckOutAll
+	any
+		guest
+	where
+		@is-occupied-guest: guest ∈ ran(roomAllocations)
+	then
+		@unoccupy-all-rooms-with-guest: roomAllocations ≔ roomAllocations ⩥ {guest}
+	end
+
+	event AvailableRooms
+	any
+	  result
+	  hotel
+	where
+	  @is-hotel: hotel ∈ HOTEL
+	  @count: result = card({k ∣ k ∈ rooms ∧ hotelRooms(k) = hotel ∧ k ∉ dom(roomAllocations)})
+	end
+
+end

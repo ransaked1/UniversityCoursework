@@ -1,0 +1,10 @@
+context c0
+sets
+  HOTEL
+  ROOM
+  GUEST
+constants
+  ROOM_NUMBER
+axioms
+  @typeof-roomNumber: ROOM_NUMBER = ℤ
+end

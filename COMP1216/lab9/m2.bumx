@@ -1,0 +1,64 @@
+machine m2
+refines m1
+sees c0 c1
+variables
+	ship
+	quay
+	sclass
+	occupied
+	docked
+	mooring
+	qclasses
+	facilities
+	queue
+
+invariants
+	@typeof-queue: queue ∈ ship ⤔ ℕ1
+	@quay-is-finite: finite(quay)
+	@occupied-is-finite: finite(occupied)
+
+events
+
+	event INITIALISATION extends INITIALISATION
+	then
+		@init-queue: queue ≔ ∅
+	end
+
+	event QueueShip
+	any
+		s
+		p
+	where
+		@is-ship: s ∈ ship
+		@not-in-queue: s ∉ dom(queue)
+		@not-docked: s ∉ docked
+		@get-pos: ∀ k · k ∈ ran(queue) ⇒ p > k
+		@p-is-positive: p > 0
+		@all-occupied: card(occupied) = card(quay) ∨ queue ≠ ∅
+	then
+		@add-to-queue: queue(s) ≔ p
+	end
+
+	event DockShipImmediate extends DockShip
+	where
+		@no-queue: queue = ∅
+	end
+
+	event DockShipFromQueue extends DockShip
+	where
+		@ship-is-in-queue: s ∈ dom(queue)
+		@ship-is-first-in-queue: ∀k · k ∈ dom(queue) ∧ k ≠ s ⇒ queue(k) < queue(s)
+	then
+		@remove-from-queue: queue ≔ {s} ⩤ queue
+	end
+
+	event UnDockShip extends UnDockShip
+	end
+
+	event AddShip extends AddShip
+	end
+
+	event AddQuay extends AddQuay
+	end
+
+end

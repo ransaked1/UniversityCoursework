@@ -1,0 +1,6 @@
+context c0
+sets
+	SHIP
+	QUAY
+	CLASS
+end
