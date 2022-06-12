@@ -84,12 +84,11 @@ sqlite3 coronavirus.db < dataset.sql
 sqlite3 coronavirus.db < ex11.sql
 sqlite3 coronavirus.db < ex12.sql
 ```
-                                                              
-## Querying
+
+## Querying. Write an SQL statement for each of the following:
+
 As well as including the SQL, you should also briefly describe your approach for each in the report.
-
-## Write an SQL statement for each of the following:
-
+                                 
 ### EX14: The worldwide total number of cases and deaths (with total cases and total deaths as columns)
 
 ### EX15: The number of cases by date, in increasing date order, for the United Kingdom (with the date representation and number of cases as columns)
@@ -101,6 +100,16 @@ As well as including the SQL, you should also briefly describe your approach for
 ### EX18: A descending list of the the top 10 countries, by percentage total deaths out of total cases in that country (with country name and % deaths of country cases as columns)
 
 ### EX19: The date against a cumulative running total of the number of deaths by day and cases by day for the united kingdom (with date, cumulative UK deaths and cumulative UK cases as columns)
+                                 
+### Commands to query the database
+```
+sqlite3 coronavirus.db < ex14.sql
+sqlite3 coronavirus.db < ex15.sql
+sqlite3 coronavirus.db < ex16.sql
+sqlite3 coronavirus.db < ex17.sql
+sqlite3 coronavirus.db < ex18.sql
+sqlite3 coronavirus.db < ex19.sql
+```
 
 ## Extension
 ### EX20: Using GnuPlot, write a small script (plot.sh) which will, using the data in the SQLite database (called coronavirus.db in the same folder as the script), produce a graph named graph.png in the current working directory with the date on the horizontal axis and the cumulative number of deaths by country on the vertical axis. You should represent the top 10 countries in terms of overall cumulative deaths only.
@@ -110,3 +119,8 @@ For any other temporary files or folders you need as part of your script, you mu
 Cumulative deaths refers to the addition of all the deaths to a specific date. For example: Deaths: 1, 6, 10, 20, Cumulative Deaths would be: 1, 7, 17, 37.
 Note: The calls to SQLite must be directly to just sqlite3 (do not specify a folder or path - if you have installed it in such a way, add it to your PATH)
 Include an explanation of your script in the report. The full script and resulting graph should be included as an appendix in the report (not counting towards the page limit) and in the archive itself.
+                                 
+### Running the script
+```
+sh plot.sh
+```
