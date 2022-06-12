@@ -1,6 +1,8 @@
 # Task
 To create a SQlite database to represent current Coronavirus data from an Open Data Source, in order to be able to answer questions and perform simple analysis.
 
+report.pdf containts the answers to all the questions and briefly explains the code used for each exercise.
+
 # Dataset
 The dataset to be used for this exercise is COVID-19 Coronavirus data from the [EU Open Data Portal](https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv/data.csv).
 
