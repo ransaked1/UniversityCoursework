@@ -6,7 +6,7 @@ report.pdf containts the answers to all the questions and briefly explains the c
 # Dataset
 The dataset to be used for this exercise is COVID-19 Coronavirus data from the [EU Open Data Portal](https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv/data.csv).
 
-A data dictionary to explain the fields used can be found on the EU Portal.
+A data dictionary to explain the fields used can be found on the [EU Portal](https://www.ecdc.europa.eu/en/publications-data/data-daily-new-cases-covid-19-eueea-country).
 
 *The dataset may differ from the one used in the project as it is constatnly updated.
 
