@@ -1,0 +1,1 @@
+SELECT CAST(SUM(cases) AS INTEGER),CAST(SUM(deaths) AS INTEGER) FROM CasesAndDeaths;
