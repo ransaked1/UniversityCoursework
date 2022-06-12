@@ -1,4 +1,4 @@
-These are files provided for COMP1204 CW1.
+These are the files provided for COMP1204 CW1.
 
 File info:
 - al*.kml 
