@@ -6,7 +6,7 @@ The dataset to be used for this exercise is COVID-19 Coronavirus data from the [
 
 A data dictionary to explain the fields used can be found on the EU Portal.
 
-* The dataset may differ from the one used in the project as it is constatnly updated.
+*The dataset may differ from the one used in the project as it is constatnly updated.
 
 # Exercises
 ## The Relational Model
