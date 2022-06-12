@@ -11,9 +11,9 @@ Computer Programming I course in my first semester. Contains Java code with 9 la
 All code was developed using Java version 1.8.0_191.
 
 ### COMP1204
-Data Management course in my second semester. Contains...
+Data Management course in my second semester. Contains Unix scripts for various labs, a unix coursework to parse and plot storm data and a SQL coursework to build and query a database from a CSV dataset. Both courseworks have reports written in LaTeX.
 
-Code was developed for Bash version 4.2.46.
+Code was developed for Bash version 4.2.46, SQLite version 3.7.17 and GNUPlot 5.2 Patch 8. Reports done in LaTeX version 3.141592653.
 
 ### COMP1206
 Computer Programming II course in my second semester. Contains...
