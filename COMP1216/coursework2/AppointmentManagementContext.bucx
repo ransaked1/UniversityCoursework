@@ -1,0 +1,4 @@
+context AppointmentManagementContext extends VaccinationCentersContext
+sets
+	APPOINTMENT
+end

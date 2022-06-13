@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.extendsContext name="_Tar5gM8bEeyEe4AME_6Gmw" org.eventb.core.target="UserManagementContext"/>
+    <org.eventb.core.carrierSet name="_Tar5gc8bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="BRAND"/>
+    <org.eventb.core.carrierSet name="_TasgkM8bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="BATCH_NR"/>
+    <org.eventb.core.carrierSet name="_Tasgkc8bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="NAME"/>
+    <org.eventb.core.carrierSet name="_Tasgks8bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="NHS_NR"/>
+    <org.eventb.core.carrierSet name="_Tasgk88bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="CENTER"/>
+    <org.eventb.core.carrierSet name="_TatHoM8bEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="CERTIFICATE"/>
+</org.eventb.core.contextFile>

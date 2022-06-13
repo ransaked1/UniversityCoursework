@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Coursework/UserManagementContext.bcc|org.eventb.core.scContextFile#UserManagementContext" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.extendsContext#_Tar5gM8bEeyEe4AME_6Gmw"/>
+    <org.eventb.core.scInternalContext name="UserManagementContext">
+        <org.eventb.core.scCarrierSet name="USER" org.eventb.core.source="/Coursework/UserManagementContext.buc|org.eventb.core.contextFile#UserManagementContext|org.eventb.core.carrierSet#__R_CMM3jEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.scCarrierSet name="PASSWORD" org.eventb.core.source="/Coursework/UserManagementContext.buc|org.eventb.core.contextFile#UserManagementContext|org.eventb.core.carrierSet#__R_CMc3jEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(PASSWORD)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scCarrierSet name="BATCH_NR" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_TasgkM8bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(BATCH_NR)"/>
+    <org.eventb.core.scCarrierSet name="BRAND" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_Tar5gc8bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(BRAND)"/>
+    <org.eventb.core.scCarrierSet name="CERTIFICATE" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_TatHoM8bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+    <org.eventb.core.scCarrierSet name="NAME" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_Tasgkc8bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(NAME)"/>
+    <org.eventb.core.scCarrierSet name="NHS_NR" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_Tasgks8bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(NHS_NR)"/>
+    <org.eventb.core.scCarrierSet name="CENTER" org.eventb.core.source="/Coursework/VaccinationCentersContext.buc|org.eventb.core.contextFile#VaccinationCentersContext|org.eventb.core.carrierSet#_Tasgk88bEeyEe4AME_6Gmw" org.eventb.core.type="ℙ(CENTER)"/>
+</org.eventb.core.scContextFile>

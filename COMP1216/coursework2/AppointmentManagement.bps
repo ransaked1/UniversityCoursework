@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-appointments-potential/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-appointments-suggested/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-calendar/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="IssueCertificate/check-day/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetCitizenBookings/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/check-vaccine-count/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/check-vaccine-last/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/check-non-zero/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/check-appointment/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/check-day/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/typeof-appointments-potential/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartRebooking/get-valid-centers/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetNewRebookingSuggestion/typeof-appointments-suggested/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetNewRebookingSuggestion/get-valid-centers/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AcceptRebookingSuggestion/typeof-calendar/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartAppointmentRegistration/check-vaccine-count/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartAppointmentRegistration/check-vaccine-last/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartAppointmentRegistration/check-non-zero/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartAppointmentRegistration/typeof-appointments-potential/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="StartAppointmentRegistration/get-valid-centers/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetNewAppointmentSuggestion/typeof-appointments-suggested/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetNewAppointmentSuggestion/get-valid-centers/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AcceptAppointmentSuggestion/typeof-calendar/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AcceptAppointmentSuggestion/link-citizen/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddCenter/typeof-appointments-potential/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddCenter/typeof-appointments-suggested/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="AddCenter/typeof-calendar/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="273" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

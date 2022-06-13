@@ -1,0 +1,9 @@
+context VaccinationCentersContext extends UserManagementContext
+sets
+	BRAND
+	BATCH_NR
+	NAME
+	NHS_NR
+	CENTER
+	CERTIFICATE
+end

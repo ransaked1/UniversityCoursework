@@ -1,0 +1,314 @@
+/*noinspection CssUnusedSymbol*/
+.gamepane {
+    -fx-background-color: black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.intro {
+    -fx-background-color: black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.menu-background {
+    -fx-background-image: url("../images/6.jpg");
+    -fx-background-size: cover;
+}
+
+/*noinspection CssUnusedSymbol*/
+.challenge-background {
+    -fx-background-image: url("../images/2.jpg");
+    -fx-background-size: cover;
+}
+
+/*noinspection CssUnusedSymbol*/
+.score-background {
+    -fx-background-image: url("../images/1.jpg");
+    -fx-background-size: cover;
+}
+
+.menu {
+    -fx-padding: 20;
+}
+
+/*noinspection CssUnusedSymbol*/
+.menuItem {
+    -fx-fill: white;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 42px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+
+    -fx-background-color: linear-gradient(to left top, #3d0b0b 50%, #2b0808 50%);
+    -fx-padding: 40px 60px;
+    -fx-margin: 12px;
+    -fx-display: inline-block;
+    -fx-text-fill: #f7d4d4;
+    -fx-text-alignment: center;
+    -fx-text-transform: uppercase;
+    -fx-text-decoration: none;
+}
+
+/*noinspection CssUnusedSymbol*/
+.menuItem:hover {
+    -fx-fill: red;
+    -fx-font-size: 46px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.menuItem.selected {
+    -fx-fill: purple;
+}
+
+/*noinspection CssUnusedSymbol*/
+.menuItem.disabled {
+    -fx-fill: gray;
+    -fx-font-size: 42px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.title {
+    -fx-fill: white;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 38px;
+    -fx-font-weight: 900;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.title.small {
+    -fx-font-size: 24px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.heading {
+    -fx-fill: white;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+.score {
+    -fx-fill: yellow;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 40px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X1 {
+    -fx-fill: blue;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 40px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X2 {
+    -fx-fill: #8608c5;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X3 {
+    -fx-fill: #109b06;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X4 {
+    -fx-fill: #ff7300;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X5 {
+    -fx-fill: #ff0000;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.score.X6 {
+    -fx-fill: yellow;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.level {
+    -fx-fill: #ff6600;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.hiscore {
+    -fx-fill: orange;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.lives {
+    -fx-fill: yellow;
+    -fx-font-family: 'Aquire';
+    -fx-font-size: 38px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(gaussian, black, 1, 1.0, 1, 1);
+}
+
+/*noinspection CssUnusedSymbol*/
+.scorelist {
+    -fx-font-size: 22px;
+    -fx-font-family: 'Aquire';
+}
+
+/*noinspection CssUnusedSymbol*/
+.myscore {
+    -fx-font-weight: 700;
+}
+
+/*noinspection CssUnusedSymbol*/
+.deadscore {
+    -fx-strikethrough: true;
+    -fx-fill: grey;
+}
+
+/*noinspection CssUnusedSymbol*/
+.channelItem {
+    -fx-fill: white;
+    -fx-font-family: 'Orbitron';
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-border-color: black;
+    -fx-stroke: black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.channelItem:hover {
+    -fx-fill: red;
+    -fx-font-size: 18px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.channelItem.selected {
+    -fx-fill: #0de823;
+}
+
+.leaderboard {
+    -fx-font-size: 16px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.chatBox {
+    -fx-padding: 10;
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-border-color: white;
+    -fx-border-width: 1;
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroller {
+    -fx-background-color: transparent;
+}
+
+/*noinspection CssUnusedSymbol*/
+.scroller .viewport {
+    -fx-background-color: transparent;
+}
+
+/*noinspection CssUnusedSymbol*/
+.messages {
+    -fx-background-color: transparent;
+    -fx-font-size: 12px;
+    -fx-font-family: 'Orbitron';
+}
+
+.messages Text {
+    -fx-fill: white;
+}
+
+TextField {
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-background-color: rgba(0,0,0,0.6);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: grey;
+}
+
+/*noinspection CssUnusedSymbol*/
+.playerElement {
+    -fx-font-size: 16px;
+    -fx-font-family: 'Aquire';
+}
+
+.playerElement Text {
+    -fx-fill: white;
+}
+
+/*noinspection CssUnusedSymbol*/
+.myname {
+    -fx-font-weight: 700;
+    -fx-fill: white;
+}
+
+/*noinspection CssUnusedSymbol*/
+.instructions {
+    -fx-font-size: 10px;
+    -fx-font-family: 'Orbitron';
+    -fx-fill: white;
+}

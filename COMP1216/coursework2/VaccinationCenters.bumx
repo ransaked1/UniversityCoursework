@@ -1,0 +1,277 @@
+machine VaccinationCenters refines UserManagement
+sees VaccinationCentersContext
+
+/* Vaccination Centers
+ * Requirements implemented:
+ * REQ 10 A vaccine has a brand and a batch number
+ * REQ 11 A citizen has a name, a unique NHS number and a list of certificates for received shots
+ * REQ 12 Each certificate includes the vaccine information and the date of receiving the shot
+ * REQ 13 A citizen can retrieve their certificates from the system
+ * REQ 14 A vaccination centre has a vaccine stock specifying the availability of the vaccines
+ * REQ 15 An adminstrator can update the vaccine stock by adding more vaccine batches
+ * REQ 16 A vaccination centre has a daily number of appointments
+ * REQ 17 An administrator or a staff can view the citizen details using their NHS number
+ * REQ 30 A staff member can update the citizen’s certificates after administering the vaccine.
+ */
+
+variables
+	users admins staff login register
+	vaccines
+	centers
+	center_stock
+	center_stock_amount
+	center_vaccines
+	day
+	citizen_names
+	nhs_numbers
+	certificates
+	appointments_nr
+	citizen_name
+	vaccines_count
+	citizen_certs
+	certificate_vaccines
+	certificate_dates
+	
+invariants
+	@typeof-centers: centers ⊆ CENTER
+	@typeof-vaccines: vaccines ∈ BATCH_NR ↔ BRAND
+	@typeof-vaccines-count: vaccines_count ∈ BATCH_NR ↔ ℤ
+	@center_stock-total_func: center_stock ∈ BATCH_NR ↔ CENTER
+	@center_vaccines: center_vaccines ⊆ BATCH_NR
+	@typeof-time: day ∈ ℤ
+	@typeof-center_stock_amount: center_stock_amount ∈ ℤ
+	
+	@typeof-user-names: citizen_names ∈ NHS_NR ⇸ NAME
+	@typeof-nhs-numbers: nhs_numbers ∈ USER ↔ NHS_NR
+	@typeof-certificates: certificates ∈ NHS_NR ↔ CERTIFICATE
+	@typeof-appointments-static: appointments_nr ∈ CENTER ↔ ℤ
+	
+	@typeof-citizen-name: citizen_name ⊆ NAME
+	@typeof-citizen-certs: citizen_certs ⊆ CERTIFICATE
+	@typeof-certificate-vaccines: certificate_vaccines ∈ CERTIFICATE ⇸ BATCH_NR
+	@typeof-certificate-dates: certificate_dates ∈ CERTIFICATE ⇸ ℤ
+	
+events
+	
+	/* Initialize new variables */
+	event INITIALISATION extends INITIALISATION
+	then
+		@act-init-vaccines: vaccines ≔ ∅
+		@act-init-vaccines-count: vaccines_count ≔ ∅
+		@act-init-centers: centers ≔ ∅
+		@act-init-center_stock: center_stock ≔ ∅
+		@act-init-center_info: center_vaccines ≔ ∅
+		@act-init-day: day ≔ 0
+		@act-init-center_stock_amount: center_stock_amount ≔ 0
+		@act-init-names: citizen_names ≔ ∅
+		@act-init-nhs: nhs_numbers ≔ ∅
+		@act-init-certificates: certificates ≔ ∅
+		@act-init-appointments: appointments_nr ≔ ∅
+		@act-init-name: citizen_name ≔ ∅
+		@act-init-certs: citizen_certs ≔ ∅
+		@act-init-cert-vaccines: certificate_vaccines ≔ ∅
+		@act-init-cert-dates: certificate_dates ≔ ∅
+	end
+	
+	/* Move time to the next day */
+	event NextDay
+	then
+		@inc-day: day ≔ day + 1
+	end
+	
+	/* Issue a vaccination certificate to the citizen. In the next machine it will be limited
+	 * but now it is posibile to issue whenever. */
+	event IssueCertificate
+	any
+		user
+		nhs
+		cert
+		batch
+	where
+		@check-staff: user ∈ dom(staff)
+		@check-loggedin: user ∈ dom(login)
+		@check-nhs: nhs ∈ ran(nhs_numbers)
+		@check-nhs-user: nhs_numbers ∼ [{nhs}] ⊆ dom(users)
+		@check-cert: cert ∉ ran(certificates)
+		@check-vaccine: batch ∈ dom(vaccines_count)
+		@check-count: vaccines_count(batch) > 0
+	then
+		@act1: certificates ≔ certificates ∪ {nhs ↦ cert}
+		@act2: certificate_vaccines ≔ certificate_vaccines ∪ {cert ↦ batch}
+		@act3: certificate_dates ≔ certificate_dates ∪ {cert ↦ day}
+		@act4: vaccines_count ≔ vaccines_count  {batch ↦ (vaccines_count(batch) − 1)}
+	end
+	
+	/* Let staff and admins get the name of a user using their NHS number */
+	event GetCitizenName
+	any
+		user
+		nhs
+	where
+		@check-admin-or-staff: user ∈ dom(admins) ∨ user ∈ dom(staff)
+		@check-loggedin: user ∈ dom(login)
+		@check-nhs: nhs ∈ dom(citizen_names)
+	then
+		@act1: citizen_name ≔ {citizen_names(nhs)}
+	end
+	
+	/* Let the citizen get their certificates */
+	event GetCitizenCertificatesUser
+	any
+		user
+	where
+		@check-user: user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+	then
+		@act1: citizen_certs ≔ certificates[{nhs_numbers(user)}]
+	end
+	
+	/* Get citizen certificate with their MHS number */
+	event GetCitizenCertificatesNHS
+	any
+		user
+		nhs
+	where
+		@check-admin-or-staff: user ∈ dom(admins) ∨ user ∈ dom(staff)
+		@check-loggedin: user ∈ dom(login)
+		@check-nhs: nhs ∈ ran(nhs_numbers)
+	then
+		@act1: citizen_certs ≔ certificates[{nhs}]
+	end
+	
+	/* Add a vaccine to the system */
+	event AddVaccine
+	any
+		brand
+		batch
+		count
+	where
+		@grd1: brand ∈ BRAND
+		@grd2: batch ∉ dom(vaccines) 
+		@grd3: count ∈ ℤ ∧ count ≥ 1
+	then
+		@act1: vaccines ≔ vaccines ∪ {batch ↦ brand}
+		@act2: vaccines_count ≔ vaccines_count ∪ {batch ↦ count}
+	end
+	
+	/* Add a center to the system */
+	event AddCenter
+	any
+		user
+		center
+		appoint_count
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-loggedin: user ∈ dom(login)
+		@check-center: center ∉ centers
+		@check-appoint-nr: appoint_count ∈ ℤ ∧ appoint_count ≥ 0
+	then
+		@add-center: centers ≔ centers ∪ {center}
+		@add-center-appoint-count: appointments_nr ≔ appointments_nr ∪ {center ↦ appoint_count}
+	end
+	
+	/* Change the number of daily appointments for a center */
+	event ChangeCenterAppointCount
+	any
+		user
+		center
+		count
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-loggedin: user ∈ dom(login)
+		@check-center: center ∈ centers
+		@check-count: count ∈ ℤ ∧ count ≥ 0
+	then
+		@act1: appointments_nr ≔ appointments_nr  {center ↦ count}
+	end
+	
+	/* Assign a batch to a vaccination center */
+	event AssignBatchToCenter
+	any
+		user
+		batch
+		center
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-loggedin: user ∈ dom(login)
+		@check-batch-vaccine: batch ∈ dom(vaccines)
+		@check-batch-center: batch ∉ dom(center_stock)
+		@check-center: center ∈ centers
+	then
+		@act1: center_stock ≔ center_stock ∪ {batch ↦ center}
+	end
+	
+	/* Show vaccination center stock */
+	event ShowCenterStock
+	any
+		center
+	where
+		@check-center: center ∈ centers
+	then
+		@act1: center_vaccines ≔ center_stock ∼ [{center}]
+	end
+	
+	/* Initialize the root user as admin if there are no admins */
+	event InitRootUser extends InitRootUser
+	any
+		nhs
+		name
+	where
+		@check-nhs: nhs ∉ ran(nhs_numbers)
+		@check-name: name ∈ NAME
+	then
+		@add-citizen-name: citizen_names ≔ citizen_names ∪ {nhs ↦ name}
+	end
+	
+	/* Login a user */
+	event LoginUser extends LoginUser
+	end
+	
+	/* Logout a user */
+	event LogoutUser extends LogoutUser
+	end
+	
+	/* Register a new basic user */
+	event RegisterUser extends RegisterUser
+	any
+		nhs
+		name
+	where
+		@check-nhs: nhs ∉ dom(citizen_names)
+		@check-name-unique: name ∉ ran(citizen_names)
+	then
+		@add-nhs: nhs_numbers ≔ nhs_numbers ∪ {user ↦ nhs} 
+		@add-name: citizen_names ≔ citizen_names ∪ {nhs ↦ name}
+	end
+	
+	/* Change a user's password */
+	event ChangeUserPassword extends ChangeUserPassword
+	end
+	
+	/* Change a staff's password */
+	event ChangeStaffPassword extends ChangeStaffPassword
+	end
+	
+	/* Change an admin's password */
+	event ChangeAdminPassword extends ChangeAdminPassword
+	end
+	
+	/* Elevate a user to staff role Their name and nhs number are removed.*/
+	event ElevateUserStaff extends ElevateUserStaff
+	then
+		@remove-name: citizen_names ≔ nhs_numbers[{elevate_user}] ⩤ citizen_names
+		@remove-nhs: nhs_numbers ≔ nhs_numbers ∖ ({elevate_user} ◁ nhs_numbers)
+	end
+	
+	/* Elevate a user to admin role. Their name and nhs number are removed. */
+	event ElevateUserAdmin extends ElevateUserAdmin
+	then
+		@remove-name: citizen_names ≔ citizen_names ∖ (nhs_numbers[{user}] ◁ citizen_names)
+		@remove-nhs: nhs_numbers ≔ nhs_numbers ∖ ({elevate_user} ◁ nhs_numbers)
+	end
+	
+	/* Elevate staff member to admin role */
+	event ElevateStaffAdmin extends ElevateStaffAdmin
+	end
+	
+end

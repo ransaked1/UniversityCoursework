@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-user-names/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-certificate-vaccines/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/typeof-certificate-dates/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="IssueCertificate/check-count/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="IssueCertificate/typeof-certificate-vaccines/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="IssueCertificate/typeof-certificate-dates/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="IssueCertificate/act4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetCitizenName/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="GetCitizenCertificatesUser/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="InitRootUser/typeof-user-names/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="RegisterUser/typeof-user-names/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ElevateUserStaff/typeof-user-names/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ElevateUserAdmin/typeof-user-names/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="82" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

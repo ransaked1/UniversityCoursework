@@ -1,0 +1,214 @@
+machine UserManagement
+sees UserManagementContext
+
+/* User Management machine that deals with user registration, login, roles and role management.
+ *  Requirements implemented:
+ * 	REQ 1 The system manages a set of registered users
+ *	REQ 2 The system should only allow a user to log in to the system using the correct password
+ *	REQ 3 A logged-in user can log out of the system
+ *	REQ 4 There are three types of users: administrators, staff, and citizens
+ *	REQ 5 A user can only have one role in the system
+ *	REQ 6 The root user is the initial administrator
+ *	REQ 7 An logged-in administrator can register a new user for the role of administrator or staff
+ *	REQ 8 A citizen can register an account with the system directly.
+ *	REQ 9 A logged-in user can change their password
+ */
+
+variables
+	users
+	admins
+	staff
+	login
+	register
+	
+invariants
+	/* Users can have the same passwords. A many to one relationship*/
+	@inv-user-password: users ∈ USER ⇸ PASSWORD
+	@inv-admin-password: admins ∈ USER ⇸ PASSWORD
+	@inv-staff-password: staff ∈ USER ⇸ PASSWORD
+	
+	/* Users, admins and staff are all part of the USER type*/
+	@inv-users-user: dom(users) ⊆ USER
+	@inv-admins-user: dom(admins) ⊆ USER
+	@inv-staff-user: dom(staff) ⊆ USER
+	
+	/* Users can have only one role */
+	@inv-types-no-intersection: users ∩ admins ∩ staff = ∅
+	
+	/* Registered users are a union of all roles */
+	@inv-login-registered: register = users ∪ admins ∪ staff
+	
+	/* Logged in users is a subset of registered users */
+	@inv-login-sub-registered: login ⊆ register
+	
+events
+	
+	/* Initialize all sets */
+	event INITIALISATION
+	then
+		@act-init-users: users ≔ ∅
+		@act-init-admins: admins ≔ ∅
+		@act-init-staff: staff ≔ ∅
+		@act-init-login: login ≔ ∅
+		@act-init-register: register ≔ ∅
+	end
+	
+	/* Initialize the root user as admin if there are no admins */
+	event InitRootUser
+	any
+		root
+		pass
+	where
+		@grd1: root ∈ USER
+		@grd2: pass ∈ PASSWORD
+		@check-no-admins: card(admins) = 0
+	then
+		@assign-root: admins ≔ {root ↦ pass}
+		@assign-register: register ≔ {root ↦ pass}
+	end
+	
+	/* Register a new basic user */
+	event RegisterUser
+	any
+		user
+		pass
+	where
+		@grd1: user ∈ USER
+		@grd2: pass ∈ PASSWORD
+		@check-unregistered: user ∉ dom(register)
+		@check-nonzero-admin: card(admins) > 0
+	then
+		@add-register: register ≔ register ∪ {user ↦ pass}
+		@add-users: users ≔ users ∪ {user ↦ pass}
+	end
+	
+	/* Login a user */
+	event LoginUser
+	any
+		user
+		pass
+	where
+		@check-registered: user ∈ dom(register)
+		@check-password: pass = register(user)
+		@check-not-loggedin: user ∉ dom(login)
+	then
+		@add-login: login ≔ login ∪ {user ↦ pass}
+	end
+	
+	/* Logout a user */
+	event LogoutUser
+	any
+		user
+		pass
+	where
+		@check-loggedin: user ∈ dom(login)
+		@check-password: pass = login(user)
+	then
+		@remove-login: login ≔ login ∖ {user ↦ pass}
+	end
+	
+	/* Change a user's password */
+	event ChangeUserPassword
+	any
+		user
+		pass
+		new_pass
+	where
+		@check-user: user ∈ dom(users)
+		@check-password: pass = login(user)
+		@new-password-type: new_pass ∈ PASSWORD
+		@check-loggedin: user ∈ dom(login)
+	then
+		/** Change the password for user everywhere */
+		@act1: login ≔ login  {user ↦ new_pass}
+		@act2: register ≔ register  {user ↦ new_pass}
+		@act3: users ≔ users  {user ↦ new_pass}
+	end
+	
+	/* Change a staff's password */
+	event ChangeStaffPassword
+	any
+		user
+		pass
+		new_pass
+	where
+		@check-staff: user ∈ dom(staff)
+		@check-password: pass = login(user)
+		@new-password-type: new_pass ∈ PASSWORD
+		@check-loggedin: user ∈ dom(login)
+	then
+		/** Change the password for user everywhere */
+		@login-change: login ≔ login  {user ↦ new_pass}
+		@register-change: register ≔ register  {user ↦ new_pass}
+		@staff-change: staff ≔ staff  {user ↦ new_pass}
+	end
+	
+	/* Change an admin's password */
+	event ChangeAdminPassword
+	any
+		user
+		pass
+		new_pass
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-password: pass = login(user)
+		@new-password-type: new_pass ∈ PASSWORD
+		@check-loggedin: user ∈ dom(login)
+	then
+		/** Change the password for user everywhere */
+		@login-change: login ≔ login  {user ↦ new_pass}
+		@register-change: register ≔ register  {user ↦ new_pass}
+		@admin-change: admins ≔ admins  {user ↦ new_pass}
+	end
+	
+	/* Elevate a user to staff role */
+	event ElevateUserStaff
+	any
+		user
+		pass
+		elevate_user
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-password: pass = login(user)
+		@check-elevate-from-user: elevate_user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+	then
+		@add-to-staff: staff ≔ staff ∪ ({elevate_user} ◁ users)
+		@remove-from-users: users ≔ users ∖ ({elevate_user} ◁ users)
+	end
+	
+	/* Elevate a user to admin role */
+	event ElevateUserAdmin
+	any
+		user
+		pass
+		elevate_user
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-password: pass = login(user)
+		@check-elevate-from-user: elevate_user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+	then
+		@add-to-admins: admins ≔ admins ∪ ({elevate_user} ◁ users)
+		@remove-from-users: users ≔ users ∖ ({elevate_user} ◁ users)
+	end
+	
+	/* Elevate staff member to admin role */
+	event ElevateStaffAdmin
+	any
+		user
+		pass
+		elevate_user
+	where
+		@check-admin: user ∈ dom(admins)
+		@check-password: pass = login(user)
+		@check-elevate-from-staff: elevate_user ∈ dom(staff)
+		@check-loggedin: user ∈ dom(login)
+	then
+		@add-to-admins: admins ≔ admins ∪ ({elevate_user} ◁ staff)
+		@remove-from-staff: staff ≔ staff ∖ ({elevate_user} ◁ staff)
+	end
+
+end
+
+	

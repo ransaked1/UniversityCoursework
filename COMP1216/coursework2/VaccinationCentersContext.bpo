@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="8">
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="PASSWORD" org.eventb.core.type="ℙ(PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="BATCH_NR" org.eventb.core.type="ℙ(BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="BRAND" org.eventb.core.type="ℙ(BRAND)"/>
+        <org.eventb.core.poIdentifier name="CERTIFICATE" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="NAME" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="NHS_NR" org.eventb.core.type="ℙ(NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="CENTER" org.eventb.core.type="ℙ(CENTER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework/VaccinationCentersContext.bpo|org.eventb.core.poFile#VaccinationCentersContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="8"/>
+</org.eventb.core.poFile>

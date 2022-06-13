@@ -1,0 +1,77 @@
+Basic
+
+//Pieces\\
++ Placing Pieces
++ Track Pieces
++ Clear Lines
+
+//UI\\
++ Score
++ Level
++ Lives
++ Multiplier
+
+//Extra\\
++ Music
++ Styles
++ Menu
++ Instructions
++ Show specific piece
++ Handle piece ready
+
+//Events\\
++ Add tile to list
++ Piece rotation
++ Piece swapping
++ Sound effects
++ Keyboard support
+
+//Graphics\\
++ Squares -> tiles
++ Hovering
++ Clearing animations
+
+//Game loop\\
++ Timer working
++ Timer done -> lose life, next piece
++ Show times
++ End game timer run out
+
+//Scores\\
++ Score scene
++ Scores file
++ Name for score
++ Online scores
+
+//Multiplayer\\
++ Find, create, join lobby
++ Lobby chat
++ Multiplayer scores, blocks on server, game updates
+
+
+Extensions
++ Piece place shadow
++ Offline Mode
++ Color multiplier
+- Particle effects
++ Discard piece
++ Splash screen
++ Game icons
+- Settings and binds menu
++ Leaderboard
+- Epic graphics and music
+- Multiplayer power ups:
+    - Freeze everyone else
+    - Score multiplier
+    - Reset timer
+    - Burn lines
+    - Add a bad piece to a random player
+    - Rotate for other players
+- Single player power ups:
+    - Reset timers
+    - Burn line vertical/horizontal
+    - Burn both lines
+    - Slow timer
+    - Score multiplier
+    - Rotate at some point
+- Custom effects for power ups

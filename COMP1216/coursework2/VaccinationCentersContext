@@ -1,0 +1,4 @@
+context VaccinationCenters extends UserManagementContext
+sets
+	ASET
+end

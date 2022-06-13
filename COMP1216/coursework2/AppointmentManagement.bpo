@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="273">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="11">
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="PASSWORD" org.eventb.core.type="ℙ(PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="BATCH_NR" org.eventb.core.type="ℙ(BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="BRAND" org.eventb.core.type="ℙ(BRAND)"/>
+        <org.eventb.core.poIdentifier name="CERTIFICATE" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="NAME" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="NHS_NR" org.eventb.core.type="ℙ(NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="CENTER" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="APPOINTMENT" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="265">
+        <org.eventb.core.poIdentifier name="vaccines_count" org.eventb.core.type="ℙ(BATCH_NR×ℤ)"/>
+        <org.eventb.core.poIdentifier name="register" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="users" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="vaccines" org.eventb.core.type="ℙ(BATCH_NR×BRAND)"/>
+        <org.eventb.core.poIdentifier name="centers" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="appointments_potential" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="login" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="certificate_vaccines" org.eventb.core.type="ℙ(CERTIFICATE×BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="citizen_names" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="state" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="appointment_center" org.eventb.core.type="ℙ(APPOINTMENT×CENTER)"/>
+        <org.eventb.core.poIdentifier name="center_stock" org.eventb.core.type="ℙ(BATCH_NR×CENTER)"/>
+        <org.eventb.core.poIdentifier name="user_session" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="day" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="day_tmp" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="certificate_dates" org.eventb.core.type="ℙ(CERTIFICATE×ℤ)"/>
+        <org.eventb.core.poIdentifier name="admins" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="staff" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="center_vaccines" org.eventb.core.type="ℙ(BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="appointment_nhs" org.eventb.core.type="ℙ(APPOINTMENT×NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="appointments_nr" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="appointment_day" org.eventb.core.type="ℙ(APPOINTMENT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="nhs_numbers" org.eventb.core.type="ℙ(USER×NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="certificates" org.eventb.core.type="ℙ(NHS_NR×CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="citizen_books" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.poIdentifier name="citizen_certs" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="calendar" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="center_stock_amount" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="citizen_name" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="appointments_suggested" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poPredicate name="appointments_suggestee" org.eventb.core.predicate="users∈USER ⇸ PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18yPs9FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestef" org.eventb.core.predicate="admins∈USER ⇸ PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18yPtNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesteg" org.eventb.core.predicate="staff∈USER ⇸ PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18yPtdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesteh" org.eventb.core.predicate="dom(users)⊆USER" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18y2wNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestei" org.eventb.core.predicate="dom(admins)⊆USER" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18y2wdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestej" org.eventb.core.predicate="dom(staff)⊆USER" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18y2wtFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestek" org.eventb.core.predicate="users∩admins∩staff=(∅ ⦂ ℙ(USER×PASSWORD))" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18y2w9FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestel" org.eventb.core.predicate="register=users∪admins∪staff" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18zd0NFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestem" org.eventb.core.predicate="login⊆register" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.invariant#_18zd0dFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesten" org.eventb.core.predicate="centers⊆CENTER" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfHxU9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesteo" org.eventb.core.predicate="vaccines∈BATCH_NR ↔ BRAND" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfHxVNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestep" org.eventb.core.predicate="vaccines_count∈BATCH_NR ↔ ℤ" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfHxVdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesteq" org.eventb.core.predicate="center_stock∈BATCH_NR ↔ CENTER" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfIYYNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggester" org.eventb.core.predicate="center_vaccines⊆BATCH_NR" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfIYYdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestes" org.eventb.core.predicate="day∈ℤ" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfIYYtFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestet" org.eventb.core.predicate="center_stock_amount∈ℤ" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfIYY9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggesteu" org.eventb.core.predicate="citizen_names∈NHS_NR ⇸ NAME" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfI_cNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestev" org.eventb.core.predicate="nhs_numbers∈USER ↔ NHS_NR" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfI_cdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestew" org.eventb.core.predicate="certificates∈NHS_NR ↔ CERTIFICATE" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfI_ctFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestex" org.eventb.core.predicate="appointments_nr∈CENTER ↔ ℤ" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfI_c9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestey" org.eventb.core.predicate="citizen_name⊆NAME" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfJmgNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggestez" org.eventb.core.predicate="citizen_certs⊆CERTIFICATE" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfJmgdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggeste{" org.eventb.core.predicate="certificate_vaccines∈CERTIFICATE ⇸ BATCH_NR" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfJmgtFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="appointments_suggeste|" org.eventb.core.predicate="certificate_dates∈CERTIFICATE ⇸ ℤ" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.invariant#_hfJmg9FPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof-appointments-potential/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CENTER))⊆(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfJmhNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0s90tFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#INITIALISATION\/typeof-appointments-potential\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof-appointments-suggested/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CENTER))⊆(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfJmhNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0s90tFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#INITIALISATION\/typeof-appointments-suggested\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/typeof-calendar/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CENTER×ℤ))∈(∅ ⦂ ℙ(CENTER)) ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfJmhNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0s90tFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#INITIALISATION\/typeof-calendar\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey'" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="209">
+        <org.eventb.core.poIdentifier name="vaccines_count'" org.eventb.core.type="ℙ(BATCH_NR×ℤ)"/>
+        <org.eventb.core.poIdentifier name="citizen_books'" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.poIdentifier name="appointments_nr'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="citizen_name'" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="citizen_names'" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="citizen_certs'" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="appointment_nhs'" org.eventb.core.type="ℙ(APPOINTMENT×NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="appointment_day'" org.eventb.core.type="ℙ(APPOINTMENT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="day'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="certificate_vaccines'" org.eventb.core.type="ℙ(CERTIFICATE×BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="center_stock'" org.eventb.core.type="ℙ(BATCH_NR×CENTER)"/>
+        <org.eventb.core.poIdentifier name="user_session'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="center_vaccines'" org.eventb.core.type="ℙ(BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="appointments_suggested'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="center_stock_amount'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="certificate_dates'" org.eventb.core.type="ℙ(CERTIFICATE×ℤ)"/>
+        <org.eventb.core.poIdentifier name="admins'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="appointment_center'" org.eventb.core.type="ℙ(APPOINTMENT×CENTER)"/>
+        <org.eventb.core.poIdentifier name="certificates'" org.eventb.core.type="ℙ(NHS_NR×CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="appointments_potential'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="centers'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="nhs_numbers'" org.eventb.core.type="ℙ(USER×NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="vaccines'" org.eventb.core.type="ℙ(BATCH_NR×BRAND)"/>
+        <org.eventb.core.poIdentifier name="calendar'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey'" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey'" org.eventb.core.poStamp="209"/>
+    <org.eventb.core.poSequent name="IssueCertificate/check-day/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey(batcm"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="appointment∈dom(appointment_day)∧appointment_day∈APPOINTMENT ⇸ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uL9NFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0uzA9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uL9NFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0uzA9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey(batcm"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey(" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="vaccines_count'" org.eventb.core.type="ℙ(BATCH_NR×ℤ)"/>
+        <org.eventb.core.poIdentifier name="nhs" org.eventb.core.type="NHS_NR"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="batch" org.eventb.core.type="BATCH_NR"/>
+        <org.eventb.core.poIdentifier name="certificate_vaccines'" org.eventb.core.type="ℙ(CERTIFICATE×BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="certificate_dates'" org.eventb.core.type="ℙ(CERTIFICATE×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cert" org.eventb.core.type="CERTIFICATE"/>
+        <org.eventb.core.poIdentifier name="certificates'" org.eventb.core.type="ℙ(NHS_NR×CERTIFICATE)"/>
+        <org.eventb.core.poIdentifier name="appointment" org.eventb.core.type="APPOINTMENT"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey(batcm" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey(" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(staff)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfN38dFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfN38tFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="nhs∈ran(nhs_numbers)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfN389FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="nhs_numbers∼[{nhs}]⊆dom(users)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfN39NFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="cert∉ran(certificates)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfOfANFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="batch∈dom(vaccines_count)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfOfAdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="vaccines_count(batch)&gt;0" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfNQ4NFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfOfAtFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="appointment∈appointment_nhs∼[{nhs}]" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uL9NFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0uzAtFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey(" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey(batcm" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="appointment_day(appointment)=day" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uL9NFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0uzA9FREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="GetCitizenBookings/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uzBNFREeyEe4AME_6Gmw|org.eventb.core.action#_T0vaEtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uzBNFREeyEe4AME_6Gmw|org.eventb.core.action#_T0vaEtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey)" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="citizen_books'" org.eventb.core.type="ℙ(APPOINTMENT)"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey)" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey)" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(users)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uzBNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0vaENFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0uzBNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0vaEdFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="StartRebooking/check-vaccine-count/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR∧finite(certificates[{nhs_numbers(user)}])" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBI9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBI9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/check-vaccine-last/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀cert⦂CERTIFICATE·user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR∧(cert∈certificates[{nhs_numbers(user)}]⇒cert∈dom(certificate_dates)∧certificate_dates∈CERTIFICATE ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBJNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBJNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/check-non-zero/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey**"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·(∀cr⦂CENTER·cr∈centers⇒(∀btch⦂BATCH_NR·btch∈center_stock∼[{cr}]⇒btch∈dom(vaccines_count)∧vaccines_count∈BATCH_NR ⇸ ℤ))∧(ctr∈{cr⦂CENTER·cr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{cr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ cr}⇒finite({ctr} ◁ calendar)∧ctr∈dom(appointments_nr)∧appointments_nr∈CENTER ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey**"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/check-appointment/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/check-day/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀appoint⦂APPOINTMENT·user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR∧(appoint∈appointment_nhs∼[{nhs_numbers(user)}]⇒appoint∈dom(appointment_day)∧appointment_day∈APPOINTMENT ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/typeof-appointments-potential/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{ctr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ ctr}⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#StartRebooking\/typeof-appointments-potential\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartRebooking/get-valid-centers/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·ctr∈centers⇒(∀btch⦂BATCH_NR·btch∈center_stock∼[{ctr}]⇒btch∈dom(vaccines_count)∧vaccines_count∈BATCH_NR ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.action#_T0xPQNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.action#_T0xPQNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey*" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="user_session'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="appointments_potential'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey*(" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey*" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(users)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBIdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBItFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey*)" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*(" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(certificates[{nhs_numbers(user)}])&lt;3" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBI9FREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey**" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*)" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="{cert⦂CERTIFICATE·cert∈certificates[{nhs_numbers(user)}]∧day − certificate_dates(cert)&gt;28 ∣ cert}=certificates[{nhs_numbers(user)}]" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0wBJNFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey*+" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey**" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈{cr⦂CENTER·cr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{cr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ cr}∧((card({ctr} ◁ calendar)&lt;appointments_nr(ctr)∨ctr∉dom(calendar))∧appointments_nr(ctr)≠0) ∣ ctr}≠(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMNFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey*," org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*+" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="nhs_numbers(user)∈ran(appointment_nhs)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMdFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey*" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey*," org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="{appoint⦂APPOINTMENT·appoint∈appointment_nhs∼[{nhs_numbers(user)}]∧appointment_day(appoint)&gt;day ∣ appoint}≠(∅ ⦂ ℙ(APPOINTMENT))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0vaE9FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0woMtFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="GetNewRebookingSuggestion/typeof-appointments-suggested/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈appointments_potential∧((card({ctr} ◁ calendar)&lt;appointments_nr(ctr)∨ctr∉dom(calendar))∧appointments_nr(ctr)≠0) ∣ ctr}⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#GetNewRebookingSuggestion\/typeof-appointments-suggested\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="GetNewRebookingSuggestion/get-valid-centers/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·ctr∈appointments_potential⇒finite({ctr} ◁ calendar)∧ctr∈dom(appointments_nr)∧appointments_nr∈CENTER ⇸ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw|org.eventb.core.action#_T0x2U9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw|org.eventb.core.action#_T0x2U9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey+" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="appointments_suggested'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey+" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey+" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="appointments_potential≠(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0x2UNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0x2UdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="state=3" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0xPRNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0x2UtFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey," org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey," org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey," org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0ydYdFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0ydYtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="state=4" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0ydYdFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0ydY9FREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="AcceptRebookingSuggestion/typeof-calendar/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey-"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="calendar∪{center ↦ day_tmp}∈centers ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#AcceptRebookingSuggestion\/typeof-calendar\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey-" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="appointment_day'" org.eventb.core.type="ℙ(APPOINTMENT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="appointment_center'" org.eventb.core.type="ℙ(APPOINTMENT×CENTER)"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+        <org.eventb.core.poIdentifier name="appointment" org.eventb.core.type="APPOINTMENT"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="calendar'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey-" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey-" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="center∈appointments_suggested" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0zrgNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="appointment∉dom(appointment_nhs)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0zrgdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0zrgtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="state=4" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw|org.eventb.core.guard#_T0zrg9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="user∈user_session" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T0zEctFREeyEe4AME_6Gmw|org.eventb.core.guard#_T00SkNFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey." org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey." org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey." org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="state=3∨state=4" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T005odFREeyEe4AME_6Gmw|org.eventb.core.guard#_T005otFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="StartAppointmentRegistration/check-vaccine-count/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR∧finite(certificates[{nhs_numbers(user)}])" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T01gtNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T01gtNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartAppointmentRegistration/check-vaccine-last/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀cert⦂CERTIFICATE·user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR∧(cert∈certificates[{nhs_numbers(user)}]⇒cert∈dom(certificate_dates)∧certificate_dates∈CERTIFICATE ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartAppointmentRegistration/check-non-zero/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·(∀cr⦂CENTER·cr∈centers⇒(∀btch⦂BATCH_NR·btch∈center_stock∼[{cr}]⇒btch∈dom(vaccines_count)∧vaccines_count∈BATCH_NR ⇸ ℤ))∧(ctr∈{cr⦂CENTER·cr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{cr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ cr}⇒finite({ctr} ◁ calendar)∧ctr∈dom(appointments_nr)∧appointments_nr∈CENTER ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartAppointmentRegistration/typeof-appointments-potential/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey\/"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{ctr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ ctr}⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#StartAppointmentRegistration\/typeof-appointments-potential\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="StartAppointmentRegistration/get-valid-centers/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey\/"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·ctr∈centers⇒(∀btch⦂BATCH_NR·btch∈center_stock∼[{ctr}]⇒btch∈dom(vaccines_count)∧vaccines_count∈BATCH_NR ⇸ ℤ)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.action#_T02HwtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.action#_T02HwtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey\/"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey/" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="user_session'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="appointments_potential'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey/(" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey\/" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(users)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T01gstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T01gs9FREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey/)" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/(" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(certificates[{nhs_numbers(user)}])&lt;3" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T01gtNFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPAppointmentManagementContey/*" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/)" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="{cert⦂CERTIFICATE·cert∈certificates[{nhs_numbers(user)}]∧day − certificate_dates(cert)&gt;27 ∣ cert}=certificates[{nhs_numbers(user)}]" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwNFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey/" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTHYPAppointmentManagementContey\/*" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈{cr⦂CENTER·cr∈centers∧{btch⦂BATCH_NR·btch∈center_stock∼[{cr}]∧vaccines_count(btch)&gt;0 ∣ btch}≠(∅ ⦂ ℙ(BATCH_NR)) ∣ cr}∧((card({ctr} ◁ calendar)&lt;appointments_nr(ctr)∨ctr∉dom(calendar))∧appointments_nr(ctr)≠0) ∣ ctr}≠(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T01gsNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02HwdFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="GetNewAppointmentSuggestion/typeof-appointments-suggested/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey0"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{ctr⦂CENTER·ctr∈appointments_potential∧((card({ctr} ◁ calendar)&lt;appointments_nr(ctr)∨ctr∉dom(calendar))∧appointments_nr(ctr)≠0) ∣ ctr}⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#GetNewAppointmentSuggestion\/typeof-appointments-suggested\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="GetNewAppointmentSuggestion/get-valid-centers/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey0"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀ctr⦂CENTER·ctr∈appointments_potential⇒finite({ctr} ◁ calendar)∧ctr∈dom(appointments_nr)∧appointments_nr∈CENTER ⇸ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw|org.eventb.core.action#_T03V4dFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw|org.eventb.core.action#_T03V4dFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey0" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="appointments_suggested'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey0" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey0" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="appointments_potential≠(∅ ⦂ ℙ(CENTER))" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02u0tFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw|org.eventb.core.guard#_T02u09FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="state=1" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T02u0dFREeyEe4AME_6Gmw|org.eventb.core.guard#_T03V4NFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey1" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey1" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey1" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03V49FREeyEe4AME_6Gmw|org.eventb.core.guard#_T03V5NFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="state=2" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03V49FREeyEe4AME_6Gmw|org.eventb.core.guard#_T0388NFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="AcceptAppointmentSuggestion/typeof-calendar/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey2"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="calendar∪{center ↦ day_tmp}∈centers ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#AcceptAppointmentSuggestion\/typeof-calendar\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AcceptAppointmentSuggestion/link-citizen/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey2"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="user∈dom(nhs_numbers)∧nhs_numbers∈USER ⇸ NHS_NR" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.action#_T05LE9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.action#_T05LE9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey2" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="appointment_nhs'" org.eventb.core.type="ℙ(APPOINTMENT×NHS_NR)"/>
+        <org.eventb.core.poIdentifier name="appointment_day'" org.eventb.core.type="ℙ(APPOINTMENT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="appointment_center'" org.eventb.core.type="ℙ(APPOINTMENT×CENTER)"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+        <org.eventb.core.poIdentifier name="appointment" org.eventb.core.type="APPOINTMENT"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="calendar'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey2" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey2" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="center∈appointments_suggested" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.guard#_T04kA9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="appointment∉dom(appointment_nhs)" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.guard#_T04kBNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="day_tmp&lt;day+15" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.guard#_T04kBdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="state=2" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.guard#_T05LENFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="user∈user_session" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T03889FREeyEe4AME_6Gmw|org.eventb.core.guard#_T05LEdFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey3" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day_tmp'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey3" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey3" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="state=1∨state=2" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T06ZMNFREeyEe4AME_6Gmw|org.eventb.core.guard#_T06ZMdFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey4" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="day'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey4" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey4" org.eventb.core.poStamp="273"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey5" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="citizen_name'" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="nhs" org.eventb.core.type="NHS_NR"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey5" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey5" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)∨user∈dom(staff)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfPGE9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfPtItFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfPGE9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfPtI9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="nhs∈dom(citizen_names)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfPGE9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfPtJNFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey6" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="citizen_certs'" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey6" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey6" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(users)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfQUMdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfQ7QdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfQUMdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfQ7QtFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey7" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="nhs" org.eventb.core.type="NHS_NR"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="citizen_certs'" org.eventb.core.type="ℙ(CERTIFICATE)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey7" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey7" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)∨user∈dom(staff)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfRiUNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfRiU9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfRiUNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfRiVNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="nhs∈ran(nhs_numbers)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfRiUNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfSJYNFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey8" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="vaccines_count'" org.eventb.core.type="ℙ(BATCH_NR×ℤ)"/>
+        <org.eventb.core.poIdentifier name="brand" org.eventb.core.type="BRAND"/>
+        <org.eventb.core.poIdentifier name="batch" org.eventb.core.type="BATCH_NR"/>
+        <org.eventb.core.poIdentifier name="count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="vaccines'" org.eventb.core.type="ℙ(BATCH_NR×BRAND)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey8" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey8" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="brand∈BRAND" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfSJYtFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfSwcdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="batch∉dom(vaccines)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfSJYtFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfSwctFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="count∈ℤ∧count≥1" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfSJYtFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfSwc9FPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="AddCenter/typeof-appointments-potential/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="appointments_potential⊆centers∪{center}" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T07nVdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#AddCenter\/typeof-appointments-potential\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AddCenter/typeof-appointments-suggested/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="appointments_suggested⊆centers∪{center}" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T07nVdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#AddCenter\/typeof-appointments-suggested\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="AddCenter/typeof-calendar/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTALLHYPAppointmentManagementContey9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="calendar∈centers∪{center} ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.event#_T07nVdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poSequent#AddCenter\/typeof-calendar\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey9" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="appointments_nr'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="appoint_count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="centers'" org.eventb.core.type="ℙ(CENTER)"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey9" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey9" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfTXhdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfT-kNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="center∉centers" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfT-kdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="appoint_count∈ℤ∧appoint_count≥0" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfTXgdFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfT-ktFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey:" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="appointments_nr'" org.eventb.core.type="ℙ(CENTER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey:" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey:" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfUloNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfUlpNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfUloNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfUlpdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="center∈centers" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfUloNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfVMsNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="count∈ℤ∧count≥0" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfUloNFPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfVMsdFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey;" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="batch" org.eventb.core.type="BATCH_NR"/>
+        <org.eventb.core.poIdentifier name="center_stock'" org.eventb.core.type="ℙ(BATCH_NR×CENTER)"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey;" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey;" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfVMs9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfVzw9FPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfVMs9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfVzxNFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="batch∈dom(vaccines)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfVMs9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfVzxdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="batch∉dom(center_stock)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfVMs9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfWa0NFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="center∈centers" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfVMs9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfWa0dFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey=" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="center_vaccines'" org.eventb.core.type="ℙ(BATCH_NR)"/>
+        <org.eventb.core.poIdentifier name="center" org.eventb.core.type="CENTER"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey=" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey=" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="center∈centers" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfWa09FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfXB4dFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey&gt;" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="root" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="nhs" org.eventb.core.type="NHS_NR"/>
+        <org.eventb.core.poIdentifier name="name" org.eventb.core.type="NAME"/>
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="citizen_names'" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="admins'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey&gt;" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey&gt;" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="root∈USER" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_180E49FMEeyEe4AME_6Gmw|org.eventb.core.guard#_180r8dFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass∈PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_180E49FMEeyEe4AME_6Gmw|org.eventb.core.guard#_180r8tFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(admins)=0" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_180E49FMEeyEe4AME_6Gmw|org.eventb.core.guard#_180r89FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="nhs∉ran(nhs_numbers)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfXB49FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfXo8dFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="name∈NAME" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfXB49FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfXo8tFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey?" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey?" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey?" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(register)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_182hItFMEeyEe4AME_6Gmw|org.eventb.core.guard#_183IMNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=register(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_182hItFMEeyEe4AME_6Gmw|org.eventb.core.guard#_183IMdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∉dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_182hItFMEeyEe4AME_6Gmw|org.eventb.core.guard#_183IMtFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementContey@" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementContey@" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementContey@" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_183vQNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_183vQ9FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_183vQNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_183vRNFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyA" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="nhs" org.eventb.core.type="NHS_NR"/>
+        <org.eventb.core.poIdentifier name="name" org.eventb.core.type="NAME"/>
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="citizen_names'" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="nhs_numbers'" org.eventb.core.type="ℙ(USER×NHS_NR)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyA" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyA" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈USER" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_181TAdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_181TBNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass∈PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_181TAdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1816ENFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∉dom(register)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_181TAdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1816EdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(admins)&gt;0" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_181TAdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1816EtFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="nhs∉dom(citizen_names)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfYQA9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfY3EdFPEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="name∉ran(citizen_names)" org.eventb.core.source="/Coursework/VaccinationCenters.bum|org.eventb.core.machineFile#VaccinationCenters|org.eventb.core.event#_hfYQA9FPEeyEe4AME_6Gmw|org.eventb.core.guard#_hfY3EtFPEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyB" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="new_pass" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyB" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyB" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(users)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_184WUdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1849YNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_184WUdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1849YdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="new_pass∈PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_184WUdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1849YtFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_184WUdFMEeyEe4AME_6Gmw|org.eventb.core.guard#_1849Y9FMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyC" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="new_pass" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyC" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyC" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(staff)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_185kc9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_186LgtFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_185kc9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_186Lg9FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="new_pass∈PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_185kc9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_186LhNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_185kc9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_186ykNFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyD" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="login'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="new_pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="admins'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyD" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyD" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_187ZoNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_187ZpNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_187ZoNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_188AsNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="new_pass∈PASSWORD" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_187ZoNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_188AsdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_187ZoNFMEeyEe4AME_6Gmw|org.eventb.core.guard#_188AstFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyE" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="citizen_names'" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="elevate_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="nhs_numbers'" org.eventb.core.type="ℙ(USER×NHS_NR)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyE" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyE" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_188nw9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_189O0tFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_188nw9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_189O09FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="elevate_user∈dom(users)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_188nw9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_189O1NFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_188nw9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18914NFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyF" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="citizen_names'" org.eventb.core.type="ℙ(NHS_NR×NAME)"/>
+        <org.eventb.core.poIdentifier name="elevate_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="admins'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="nhs_numbers'" org.eventb.core.type="ℙ(USER×NHS_NR)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyF" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyF" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_189149FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18-c8tFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_189149FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18-c89FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="elevate_user∈dom(users)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_189149FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18-c9NFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_189149FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18_EANFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTAppointmentManagementConteyG" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poIdentifier name="pass" org.eventb.core.type="PASSWORD"/>
+        <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="elevate_user" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="staff'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="admins'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPAppointmentManagementConteyG" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#EVTIDENTAppointmentManagementConteyG" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈dom(admins)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_18_EA9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18_rE9FMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pass=login(user)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_18_EA9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18_rFNFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="elevate_user∈dom(staff)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_18_EA9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_18_rFdFMEeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="user∈dom(login)" org.eventb.core.source="/Coursework/UserManagement.bum|org.eventb.core.machineFile#UserManagement|org.eventb.core.event#_18_EA9FMEeyEe4AME_6Gmw|org.eventb.core.guard#_19ASINFMEeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework/AppointmentManagement.bpo|org.eventb.core.poFile#AppointmentManagement|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="273">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="appointments_potential⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="appointments_suggested⊆centers" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvsdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="calendar∈centers ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvstFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="day_tmp∈ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0rvs9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="state∈ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0sWwNFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="user_session⊆USER" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0sWwdFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="appointment_nhs∈APPOINTMENT ↔ NHS_NR" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0sWwtFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="appointment_center∈APPOINTMENT ↔ CENTER" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0sWw9FREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="appointment_day∈APPOINTMENT ↔ ℤ" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0s90NFREeyEe4AME_6Gmw"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="citizen_books⊆APPOINTMENT" org.eventb.core.source="/Coursework/AppointmentManagement.bum|org.eventb.core.machineFile#AppointmentManagement|org.eventb.core.invariant#_T0s90dFREeyEe4AME_6Gmw"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

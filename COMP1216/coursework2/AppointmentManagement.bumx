@@ -1,0 +1,325 @@
+machine AppointmentManagement
+refines VaccinationCenters
+sees AppointmentManagementContext
+
+/*AppointmentManagementContext
+ * Requirements implemented:
+ * REQ 18 A vaccination centre maintains a list of booked appointments
+ * REQ 19 A citizen can only book an appointment if they have received less than 3 shots
+ * REQ 20 A citizen can only book an appointment if their last shot was more than 28 days
+ * (4 weeks) from the date of the last shot
+ * REQ 21 A citizen is offered the earliest available appointment at any centre
+ * REQ 22 If the citizen rejects the current offer, the system offers the following earliest
+ * appointment, that might be at a different centre
+ * REQ 23 If the citizen accepts the current offer, the booking is confirmed
+ * REQ 24 At any point during the booking process, the use can abandon the system 
+ * without completing the booking
+ * REQ 25 The booking is stopped if there are no more available appointments within the 
+ * 14 days from the date of login to offer
+ * REQ 26 A citizen can view their current booking (if any).
+ * REQ 27 Rebooking an appointment can be done up to 1 day before the date of the original one
+ * REQ 28 Rebooking follows the same rules as booking
+ * REQ 29 After re-booking is confirmed, the original appointmnet becomes available
+ */
+
+variables
+	users
+	admins
+	staff
+	login
+	register
+	vaccines
+	centers
+	center_stock
+	center_vaccines
+	day
+	day_tmp
+	citizen_names
+	nhs_numbers
+	certificates
+	appointments_nr
+	citizen_name
+	vaccines_count
+	citizen_certs
+	certificate_vaccines
+	certificate_dates
+	center_stock_amount
+	
+	appointments_potential
+	appointments_suggested	
+	calendar
+	state
+	user_session
+	appointment_nhs
+	appointment_center
+	appointment_day
+	citizen_books
+
+invariants
+	@typeof-appointments-potential: appointments_potential ⊆ centers
+	@typeof-appointments-suggested: appointments_suggested ⊆ centers
+	@typeof-calendar: calendar ∈ centers ↔ ℤ
+	@typeof-day-tmp: day_tmp ∈ ℤ
+	@typeof-state: state ∈ ℤ
+	
+	@typeof-user-session: user_session ⊆ USER
+	@typeof-appoint-nhs: appointment_nhs ∈ APPOINTMENT ↔ NHS_NR
+	@typeof-appoint-batch: appointment_center ∈ APPOINTMENT ↔ CENTER
+	@typeof-appoint-day: appointment_day ∈ APPOINTMENT ↔ ℤ
+	@typeof-citizen-books: citizen_books ⊆ APPOINTMENT
+	
+events
+	
+	/* Initialize new variables */
+	event INITIALISATION extends INITIALISATION
+	then
+		@act-init-appointments-offered: appointments_potential ≔ ∅
+		@act-init-appointments-suggested: appointments_suggested ≔ ∅
+		@act-init-calendar: calendar ≔ ∅
+		@act-init-day-tmp: day_tmp ≔ 0
+		@act-init-state: state ≔ 0
+		@act-init-user-session: user_session ≔ ∅
+		@act-init-appoint-nhs: appointment_nhs ≔ ∅
+		@act-init-appoint-center: appointment_center ≔ ∅
+		@act-init-appoint-day: appointment_day ≔ ∅
+		@act-init-citizen-books: citizen_books ≔ ∅
+	end
+	
+	/* Issue certificate is now restricted to make certificates on the day of the appointment */
+	event IssueCertificate extends IssueCertificate
+	any
+		appointment
+	where
+		@check-appointment: appointment ∈ appointment_nhs ∼ [{nhs}]
+		@check-day: appointment_day(appointment) = day
+	end
+	
+	/* Get citizen's appointments */
+	event GetCitizenBookings
+	any
+		user
+	where 
+		@check-citizen: user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+	then
+		@act1: citizen_books ≔ appointment_nhs ∼ [{nhs_numbers(user)}]
+	end
+	
+	/* Starts the rebooking sequence */
+	event StartRebooking
+	any
+		user
+	where
+		/* Check the citizen is logged in */
+		@check-citizen: user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+		
+		/* Check that the citizen has less than 3 vaccines */
+		@check-vaccine-count: card(certificates[{nhs_numbers(user)}]) < 3
+		
+		/* Check the user had their last vaccine more than 28 days ago. The list comprehension returns 
+		 * all the certificates that are 28 days old then it compares it to the set of citizen certificates.
+		 * If they are the same then all the vaccines are 28+ days old.
+		 */
+		@check-vaccine-last: {cert ∣ cert ∈ certificates[{nhs_numbers(user)}] ∧ (day − certificate_dates(cert) > 28)} 
+		= certificates[{nhs_numbers(user)}]
+		
+		/* Check that there are centers with non zero stock and have available appointments */
+		@check-non-zero: {ctr ∣ ctr ∈ {cr ∣ cr ∈ centers ∧ {btch ∣ btch ∈ center_stock ∼ [{cr}] ∧ vaccines_count(btch) > 0} ≠ ∅} ∧ 
+			((card({ctr} ◁ calendar) < appointments_nr(ctr) ∨ ctr ∉ dom(calendar)) ∧ appointments_nr(ctr) ≠ 0)
+		} ≠ ∅
+		
+		@check-appointment: nhs_numbers(user) ∈ ran(appointment_nhs)
+		@check-day: {appoint ∣ appoint ∈ appointment_nhs ∼ [{nhs_numbers(user)}] ∧ appointment_day(appoint) > day} ≠ ∅
+	then
+		@get-valid-centers: appointments_potential ≔ {ctr ∣ ctr ∈ centers ∧ 
+			{btch ∣ btch ∈ center_stock ∼ [{ctr}] ∧ vaccines_count(btch) > 0} ≠ ∅
+		}
+		@init-first-day: day_tmp ≔ day + 1
+		@change-state: state ≔ 3
+		@save-user: user_session ≔ {user}
+	end
+	
+	/* Generate rebooking options for a day in the calendar. Make unavailable after 14 days from today. */
+	event GetNewRebookingSuggestion
+	where
+		@appointment-started: appointments_potential ≠ ∅
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 3
+	then
+		@get-valid-centers: appointments_suggested ≔ {ctr ∣ ctr ∈ appointments_potential ∧ 
+			((card({ctr} ◁ calendar) < appointments_nr(ctr) ∨ ctr ∉ dom(calendar)) ∧ appointments_nr(ctr) ≠ 0)
+		}
+		@change-state: state ≔ 4
+	end
+	
+	/* Reject the rebooking options for that day. Move to the next day. Make unavailable after 14 days from today.*/
+	event RejectRebookingSuggestion
+	where
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 4
+	then
+		@chande-day: day_tmp ≔ day_tmp + 1
+		@change-state: state ≔ 3
+	end
+	
+	/* Accept a rebooking option and change the booking information. Make unavailable after 14 days from today. */
+	event AcceptRebookingSuggestion
+	any
+		center
+		appointment
+		user
+	where
+		@check-center: center ∈ appointments_suggested
+		@check-appointment: appointment ∉ dom(appointment_nhs)
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 4
+		@check-user-session: user ∈ user_session
+	then
+		@calendar-add: calendar ≔ calendar ∪ {center ↦ day_tmp}
+		@link-center-change: appointment_center ≔ appointment_center  {appointment ↦ center}
+		@link-day-change: appointment_day ≔ appointment_day  {appointment ↦ day_tmp}
+		@interupt-session: day_tmp ≔ day + 15
+		@change-state: state ≔ 0
+	end
+	
+	/* Stop the rebooking sequence.*/
+	event AbandonAppointmentRebooking
+	where
+		@check-state: state = 3 ∨ state = 4
+	then
+		@interupt-session: day_tmp ≔ day + 15
+		@change-state: state ≔ 0
+	end
+	
+	/* Starts the booking sequence */
+	event StartAppointmentRegistration
+	any
+		user
+	where
+		/* Same as rebooking */
+		@check-citizen: user ∈ dom(users)
+		@check-loggedin: user ∈ dom(login)
+		@check-vaccine-count: card(certificates[{nhs_numbers(user)}]) < 3
+		@check-vaccine-last: {cert ∣ cert ∈ certificates[{nhs_numbers(user)}] ∧ (day − certificate_dates(cert) > 27)} = certificates[{nhs_numbers(user)}]
+		@check-non-zero: {ctr ∣ ctr ∈ {cr ∣ cr ∈ centers ∧ {btch ∣ btch ∈ center_stock ∼ [{cr}] ∧ vaccines_count(btch) > 0} ≠ ∅} ∧ 
+			((card({ctr} ◁ calendar) < appointments_nr(ctr) ∨ ctr ∉ dom(calendar)) ∧ appointments_nr(ctr) ≠ 0)
+		} ≠ ∅
+	then
+		@get-valid-centers: appointments_potential ≔ {ctr ∣ ctr ∈ centers ∧ {btch ∣ btch ∈ center_stock ∼ [{ctr}] ∧ vaccines_count(btch) > 0} ≠ ∅}
+		@init-first-day: day_tmp ≔ day + 1
+		@change-state: state ≔ 1
+		@save-user: user_session ≔ {user}
+	end
+	
+	/* Generate booking options for a day in the calendar. Make unavailable after 14 days from today. */
+	event GetNewAppointmentSuggestion
+	where
+		@appointment-started: appointments_potential ≠ ∅
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 1
+	then
+		@get-valid-centers: appointments_suggested ≔ {ctr ∣ ctr ∈ appointments_potential ∧ 
+			((card({ctr} ◁ calendar) < appointments_nr(ctr) ∨ ctr ∉ dom(calendar)) ∧ appointments_nr(ctr) ≠ 0)
+		}
+		@change-state: state ≔ 2
+	end
+	
+	/* Reject the booking options for that day. Move to the next day. Make unavailable after 14 days from today.*/
+	event RejectAppointmentSuggestion
+	where
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 2
+	then
+		@init-first-day: day_tmp ≔ day_tmp + 1
+		@change-state: state ≔ 1
+	end
+	
+	/* Accept a booking option and change the booking information. Make unavailable after 14 days from today. */
+	event AcceptAppointmentSuggestion
+	any
+		center
+		appointment
+		user
+	where
+		@check-center: center ∈ appointments_suggested
+		@check-appointment: appointment ∉ dom(appointment_nhs)
+		@check-day-tmp: day_tmp < day + 15
+		@check-state: state = 2
+		@check-user-session: user ∈ user_session
+	then
+		@calendar-add: calendar ≔ calendar ∪ {center ↦ day_tmp}
+		@link-citizen: appointment_nhs ≔ appointment_nhs ∪ {appointment ↦ nhs_numbers(user)}
+		@link-center: appointment_center ≔ appointment_center ∪ {appointment ↦ center}
+		@link-day: appointment_day ≔ appointment_day ∪ {appointment ↦ day_tmp}
+		@interupt-session: day_tmp ≔ day + 15
+		@change-state: state ≔ 0
+	end
+	
+	/* Stop the booking sequence.*/
+	event AbandonAppointmentRegistration
+	where
+		@check-state: state = 1 ∨ state = 2
+	then
+		@interupt-session: day_tmp ≔ day + 15
+		@change-state: state ≔ 0
+	end
+
+	event NextDay extends NextDay
+	end
+
+	event GetCitizenName extends GetCitizenName
+	end
+
+	event GetCitizenCertificatesUser extends GetCitizenCertificatesUser
+	end
+
+	event GetCitizenCertificatesNHS extends GetCitizenCertificatesNHS
+	end
+
+	event AddVaccine extends AddVaccine
+	end
+
+	event AddCenter extends AddCenter
+	end
+	
+	event ChangeCenterAppointCount extends ChangeCenterAppointCount
+	end
+
+	event AssignBatchToCenter extends AssignBatchToCenter
+	end
+
+	event ShowCenterStock extends ShowCenterStock
+	end
+
+	event InitRootUser extends InitRootUser
+	end
+
+	event LoginUser extends LoginUser
+	end
+
+	event LogoutUser extends LogoutUser
+	end
+
+	event RegisterUser extends RegisterUser
+	end
+
+	event ChangeUserPassword extends ChangeUserPassword
+	end
+
+	event ChangeStaffPassword extends ChangeStaffPassword
+	end
+
+	event ChangeAdminPassword extends ChangeAdminPassword
+	end
+
+	event ElevateUserStaff extends ElevateUserStaff
+	end
+
+	event ElevateUserAdmin extends ElevateUserAdmin
+	end
+
+	event ElevateStaffAdmin extends ElevateStaffAdmin
+	end
+
+end

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_hfF8INFPEeyEe4AME_6Gmw" org.eventb.core.target="UserManagement"/>
+    <org.eventb.core.seesContext name="_hfF8IdFPEeyEe4AME_6Gmw" org.eventb.core.target="VaccinationCentersContext"/>
+    <org.eventb.core.variable name="_hfF8ItFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name="_hfF8I9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="admins"/>
+    <org.eventb.core.variable name="_hfF8JNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="staff"/>
+    <org.eventb.core.variable name="_hfF8JdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="login"/>
+    <org.eventb.core.variable name="_hfGjMNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="register"/>
+    <org.eventb.core.variable name="_hfGjMdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="vaccines"/>
+    <org.eventb.core.variable name="_hfGjMtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="centers"/>
+    <org.eventb.core.variable name="_hfGjM9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center_stock"/>
+    <org.eventb.core.variable name="_hfGjNNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center_stock_amount"/>
+    <org.eventb.core.variable name="_hfGjNdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center_vaccines"/>
+    <org.eventb.core.variable name="_hfGjNtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="day"/>
+    <org.eventb.core.variable name="_hfHKQNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="citizen_names"/>
+    <org.eventb.core.variable name="_hfHKQdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs_numbers"/>
+    <org.eventb.core.variable name="_hfHKQtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="certificates"/>
+    <org.eventb.core.variable name="_hfHKQ9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="appointments_nr"/>
+    <org.eventb.core.variable name="_hfHKRNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="citizen_name"/>
+    <org.eventb.core.variable name="_hfHKRdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="vaccines_count"/>
+    <org.eventb.core.variable name="_hfHxUNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="citizen_certs"/>
+    <org.eventb.core.variable name="_hfHxUdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="certificate_vaccines"/>
+    <org.eventb.core.variable name="_hfHxUtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="certificate_dates"/>
+    <org.eventb.core.invariant name="_hfHxU9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-centers" org.eventb.core.predicate="centers ⊆ CENTER"/>
+    <org.eventb.core.invariant name="_hfHxVNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-vaccines" org.eventb.core.predicate="vaccines ∈ BATCH_NR ↔ BRAND"/>
+    <org.eventb.core.invariant name="_hfHxVdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-vaccines-count" org.eventb.core.predicate="vaccines_count ∈ BATCH_NR ↔ ℤ"/>
+    <org.eventb.core.invariant name="_hfIYYNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="center_stock-total_func" org.eventb.core.predicate="center_stock ∈ BATCH_NR ↔ CENTER"/>
+    <org.eventb.core.invariant name="_hfIYYdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="center_vaccines" org.eventb.core.predicate="center_vaccines ⊆ BATCH_NR"/>
+    <org.eventb.core.invariant name="_hfIYYtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-time" org.eventb.core.predicate="day ∈ ℤ"/>
+    <org.eventb.core.invariant name="_hfIYY9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-center_stock_amount" org.eventb.core.predicate="center_stock_amount ∈ ℤ"/>
+    <org.eventb.core.invariant name="_hfI_cNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-user-names" org.eventb.core.predicate="citizen_names ∈ NHS_NR ⇸ NAME"/>
+    <org.eventb.core.invariant name="_hfI_cdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-nhs-numbers" org.eventb.core.predicate="nhs_numbers ∈ USER ↔ NHS_NR"/>
+    <org.eventb.core.invariant name="_hfI_ctFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-certificates" org.eventb.core.predicate="certificates ∈ NHS_NR ↔ CERTIFICATE"/>
+    <org.eventb.core.invariant name="_hfI_c9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-appointments-static" org.eventb.core.predicate="appointments_nr ∈ CENTER ↔ ℤ"/>
+    <org.eventb.core.invariant name="_hfJmgNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-citizen-name" org.eventb.core.predicate="citizen_name ⊆ NAME"/>
+    <org.eventb.core.invariant name="_hfJmgdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-citizen-certs" org.eventb.core.predicate="citizen_certs ⊆ CERTIFICATE"/>
+    <org.eventb.core.invariant name="_hfJmgtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-certificate-vaccines" org.eventb.core.predicate="certificate_vaccines ∈ CERTIFICATE ⇸ BATCH_NR"/>
+    <org.eventb.core.invariant name="_hfJmg9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="typeof-certificate-dates" org.eventb.core.predicate="certificate_dates ∈ CERTIFICATE ⇸ ℤ"/>
+    <org.eventb.core.event name="_hfJmhNFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_hfKNkNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="vaccines ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-vaccines"/>
+        <org.eventb.core.action name="_hfKNkdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="vaccines_count ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-vaccines-count"/>
+        <org.eventb.core.action name="_hfKNktFPEeyEe4AME_6Gmw" org.eventb.core.assignment="centers ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-centers"/>
+        <org.eventb.core.action name="_hfKNk9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="center_stock ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-center_stock"/>
+        <org.eventb.core.action name="_hfKNlNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="center_vaccines ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-center_info"/>
+        <org.eventb.core.action name="_hfK0oNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="day ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="act-init-day"/>
+        <org.eventb.core.action name="_hfK0odFPEeyEe4AME_6Gmw" org.eventb.core.assignment="center_stock_amount ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="act-init-center_stock_amount"/>
+        <org.eventb.core.action name="_hfLbsNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_names ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-names"/>
+        <org.eventb.core.action name="_hfLbsdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="nhs_numbers ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-nhs"/>
+        <org.eventb.core.action name="_hfMCwNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificates ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-certificates"/>
+        <org.eventb.core.action name="_hfMCwdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="appointments_nr ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-appointments"/>
+        <org.eventb.core.action name="_hfMCwtFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_name ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-name"/>
+        <org.eventb.core.action name="_hfMCw9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_certs ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-certs"/>
+        <org.eventb.core.action name="_hfMp0NFPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificate_vaccines ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-cert-vaccines"/>
+        <org.eventb.core.action name="_hfMp0dFPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificate_dates ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act-init-cert-dates"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfMp0tFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="NextDay">
+        <org.eventb.core.action name="_hfMp09FPEeyEe4AME_6Gmw" org.eventb.core.assignment="day ≔ day + 1" org.eventb.core.generated="false" org.eventb.core.label="inc-day"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfNQ4NFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="IssueCertificate">
+        <org.eventb.core.parameter name="_hfNQ4dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfNQ4tFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs"/>
+        <org.eventb.core.parameter name="_hfNQ49FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="cert"/>
+        <org.eventb.core.parameter name="_hfN38NFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="batch"/>
+        <org.eventb.core.guard name="_hfN38dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-staff" org.eventb.core.predicate="user ∈ dom(staff)"/>
+        <org.eventb.core.guard name="_hfN38tFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfN389FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs" org.eventb.core.predicate="nhs ∈ ran(nhs_numbers)"/>
+        <org.eventb.core.guard name="_hfN39NFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs-user" org.eventb.core.predicate="nhs_numbers ∼ [{nhs}] ⊆ dom(users)"/>
+        <org.eventb.core.guard name="_hfOfANFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-cert" org.eventb.core.predicate="cert ∉ ran(certificates)"/>
+        <org.eventb.core.guard name="_hfOfAdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-vaccine" org.eventb.core.predicate="batch ∈ dom(vaccines_count)"/>
+        <org.eventb.core.guard name="_hfOfAtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-count" org.eventb.core.predicate="vaccines_count(batch) &gt; 0"/>
+        <org.eventb.core.action name="_hfOfA9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificates ≔ certificates ∪ {nhs ↦ cert}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_hfPGENFPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificate_vaccines ≔ certificate_vaccines ∪ {cert ↦ batch}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_hfPGEdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="certificate_dates ≔ certificate_dates ∪ {cert ↦ day}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_hfPGEtFPEeyEe4AME_6Gmw" org.eventb.core.assignment="vaccines_count ≔ vaccines_count  {batch ↦ (vaccines_count(batch) − 1)}" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfPGE9FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="GetCitizenName">
+        <org.eventb.core.parameter name="_hfPtINFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfPtIdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs"/>
+        <org.eventb.core.guard name="_hfPtItFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-admin-or-staff" org.eventb.core.predicate="user ∈ dom(admins) ∨ user ∈ dom(staff)"/>
+        <org.eventb.core.guard name="_hfPtI9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfPtJNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs" org.eventb.core.predicate="nhs ∈ dom(citizen_names)"/>
+        <org.eventb.core.action name="_hfQUMNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_name ≔ {citizen_names(nhs)}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfQUMdFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="GetCitizenCertificatesUser">
+        <org.eventb.core.parameter name="_hfQ7QNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.guard name="_hfQ7QdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-user" org.eventb.core.predicate="user ∈ dom(users)"/>
+        <org.eventb.core.guard name="_hfQ7QtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.action name="_hfQ7Q9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_certs ≔ certificates[{nhs_numbers(user)}]" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfRiUNFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="GetCitizenCertificatesNHS">
+        <org.eventb.core.parameter name="_hfRiUdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfRiUtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs"/>
+        <org.eventb.core.guard name="_hfRiU9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-admin-or-staff" org.eventb.core.predicate="user ∈ dom(admins) ∨ user ∈ dom(staff)"/>
+        <org.eventb.core.guard name="_hfRiVNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfSJYNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs" org.eventb.core.predicate="nhs ∈ ran(nhs_numbers)"/>
+        <org.eventb.core.action name="_hfSJYdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_certs ≔ certificates[{nhs}]" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfSJYtFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="AddVaccine">
+        <org.eventb.core.parameter name="_hfSJY9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="brand"/>
+        <org.eventb.core.parameter name="_hfSJZNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="batch"/>
+        <org.eventb.core.parameter name="_hfSwcNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="count"/>
+        <org.eventb.core.guard name="_hfSwcdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="brand ∈ BRAND"/>
+        <org.eventb.core.guard name="_hfSwctFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="batch ∉ dom(vaccines)"/>
+        <org.eventb.core.guard name="_hfSwc9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="count ∈ ℤ ∧ count ≥ 1"/>
+        <org.eventb.core.action name="_hfSwdNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="vaccines ≔ vaccines ∪ {batch ↦ brand}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_hfTXgNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="vaccines_count ≔ vaccines_count ∪ {batch ↦ count}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfTXgdFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="AddCenter">
+        <org.eventb.core.parameter name="_hfTXgtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfTXg9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center"/>
+        <org.eventb.core.parameter name="_hfTXhNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="appoint_count"/>
+        <org.eventb.core.guard name="_hfTXhdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-admin" org.eventb.core.predicate="user ∈ dom(admins)"/>
+        <org.eventb.core.guard name="_hfT-kNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfT-kdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-center" org.eventb.core.predicate="center ∉ centers"/>
+        <org.eventb.core.guard name="_hfT-ktFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-appoint-nr" org.eventb.core.predicate="appoint_count ∈ ℤ ∧ appoint_count ≥ 0"/>
+        <org.eventb.core.action name="_hfT-k9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="centers ≔ centers ∪ {center}" org.eventb.core.generated="false" org.eventb.core.label="add-center"/>
+        <org.eventb.core.action name="_hfT-lNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="appointments_nr ≔ appointments_nr ∪ {center ↦ appoint_count}" org.eventb.core.generated="false" org.eventb.core.label="add-center-appoint-count"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfUloNFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ChangeCenterAppointCount">
+        <org.eventb.core.parameter name="_hfUlodFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfUlotFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center"/>
+        <org.eventb.core.parameter name="_hfUlo9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="count"/>
+        <org.eventb.core.guard name="_hfUlpNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-admin" org.eventb.core.predicate="user ∈ dom(admins)"/>
+        <org.eventb.core.guard name="_hfUlpdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfVMsNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-center" org.eventb.core.predicate="center ∈ centers"/>
+        <org.eventb.core.guard name="_hfVMsdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-count" org.eventb.core.predicate="count ∈ ℤ ∧ count ≥ 0"/>
+        <org.eventb.core.action name="_hfVMstFPEeyEe4AME_6Gmw" org.eventb.core.assignment="appointments_nr ≔ appointments_nr  {center ↦ count}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfVMs9FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="AssignBatchToCenter">
+        <org.eventb.core.parameter name="_hfVzwNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="user"/>
+        <org.eventb.core.parameter name="_hfVzwdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="batch"/>
+        <org.eventb.core.parameter name="_hfVzwtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center"/>
+        <org.eventb.core.guard name="_hfVzw9FPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-admin" org.eventb.core.predicate="user ∈ dom(admins)"/>
+        <org.eventb.core.guard name="_hfVzxNFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-loggedin" org.eventb.core.predicate="user ∈ dom(login)"/>
+        <org.eventb.core.guard name="_hfVzxdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-batch-vaccine" org.eventb.core.predicate="batch ∈ dom(vaccines)"/>
+        <org.eventb.core.guard name="_hfWa0NFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-batch-center" org.eventb.core.predicate="batch ∉ dom(center_stock)"/>
+        <org.eventb.core.guard name="_hfWa0dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-center" org.eventb.core.predicate="center ∈ centers"/>
+        <org.eventb.core.action name="_hfWa0tFPEeyEe4AME_6Gmw" org.eventb.core.assignment="center_stock ≔ center_stock ∪ {batch ↦ center}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfWa09FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ShowCenterStock">
+        <org.eventb.core.parameter name="_hfXB4NFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="center"/>
+        <org.eventb.core.guard name="_hfXB4dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-center" org.eventb.core.predicate="center ∈ centers"/>
+        <org.eventb.core.action name="_hfXB4tFPEeyEe4AME_6Gmw" org.eventb.core.assignment="center_vaccines ≔ center_stock ∼ [{center}]" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfXB49FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="InitRootUser">
+        <org.eventb.core.refinesEvent name="_hfXB5NFPEeyEe4AME_6Gmw" org.eventb.core.target="InitRootUser"/>
+        <org.eventb.core.parameter name="_hfXB5dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs"/>
+        <org.eventb.core.parameter name="_hfXo8NFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="name"/>
+        <org.eventb.core.guard name="_hfXo8dFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs" org.eventb.core.predicate="nhs ∉ ran(nhs_numbers)"/>
+        <org.eventb.core.guard name="_hfXo8tFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-name" org.eventb.core.predicate="name ∈ NAME"/>
+        <org.eventb.core.action name="_hfXo89FPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_names ≔ citizen_names ∪ {nhs ↦ name}" org.eventb.core.generated="false" org.eventb.core.label="add-citizen-name"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfXo9NFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LoginUser">
+        <org.eventb.core.refinesEvent name="_hfYQANFPEeyEe4AME_6Gmw" org.eventb.core.target="LoginUser"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfYQAdFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LogoutUser">
+        <org.eventb.core.refinesEvent name="_hfYQAtFPEeyEe4AME_6Gmw" org.eventb.core.target="LogoutUser"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfYQA9FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RegisterUser">
+        <org.eventb.core.refinesEvent name="_hfYQBNFPEeyEe4AME_6Gmw" org.eventb.core.target="RegisterUser"/>
+        <org.eventb.core.parameter name="_hfYQBdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="nhs"/>
+        <org.eventb.core.parameter name="_hfY3ENFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.identifier="name"/>
+        <org.eventb.core.guard name="_hfY3EdFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-nhs" org.eventb.core.predicate="nhs ∉ dom(citizen_names)"/>
+        <org.eventb.core.guard name="_hfY3EtFPEeyEe4AME_6Gmw" org.eventb.core.generated="false" org.eventb.core.label="check-name-unique" org.eventb.core.predicate="name ∉ ran(citizen_names)"/>
+        <org.eventb.core.action name="_hfY3E9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="nhs_numbers ≔ nhs_numbers ∪ {user ↦ nhs}" org.eventb.core.generated="false" org.eventb.core.label="add-nhs"/>
+        <org.eventb.core.action name="_hfY3FNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_names ≔ citizen_names ∪ {nhs ↦ name}" org.eventb.core.generated="false" org.eventb.core.label="add-name"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfY3FdFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ChangeUserPassword">
+        <org.eventb.core.refinesEvent name="_hfZeINFPEeyEe4AME_6Gmw" org.eventb.core.target="ChangeUserPassword"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfZeIdFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ChangeStaffPassword">
+        <org.eventb.core.refinesEvent name="_hfZeItFPEeyEe4AME_6Gmw" org.eventb.core.target="ChangeStaffPassword"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfZeI9FPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ChangeAdminPassword">
+        <org.eventb.core.refinesEvent name="_hfZeJNFPEeyEe4AME_6Gmw" org.eventb.core.target="ChangeAdminPassword"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfaFMNFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ElevateUserStaff">
+        <org.eventb.core.refinesEvent name="_hfaFMdFPEeyEe4AME_6Gmw" org.eventb.core.target="ElevateUserStaff"/>
+        <org.eventb.core.action name="_hfaFMtFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_names ≔ nhs_numbers[{elevate_user}] ⩤ citizen_names" org.eventb.core.generated="false" org.eventb.core.label="remove-name"/>
+        <org.eventb.core.action name="_hfaFM9FPEeyEe4AME_6Gmw" org.eventb.core.assignment="nhs_numbers ≔ nhs_numbers ∖ ({elevate_user} ◁ nhs_numbers)" org.eventb.core.generated="false" org.eventb.core.label="remove-nhs"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfaFNNFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ElevateUserAdmin">
+        <org.eventb.core.refinesEvent name="_hfaFNdFPEeyEe4AME_6Gmw" org.eventb.core.target="ElevateUserAdmin"/>
+        <org.eventb.core.action name="_hfasQNFPEeyEe4AME_6Gmw" org.eventb.core.assignment="citizen_names ≔ citizen_names ∖ (nhs_numbers[{user}] ◁ citizen_names)" org.eventb.core.generated="false" org.eventb.core.label="remove-name"/>
+        <org.eventb.core.action name="_hfasQdFPEeyEe4AME_6Gmw" org.eventb.core.assignment="nhs_numbers ≔ nhs_numbers ∖ ({elevate_user} ◁ nhs_numbers)" org.eventb.core.generated="false" org.eventb.core.label="remove-nhs"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hfasQtFPEeyEe4AME_6Gmw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="ElevateStaffAdmin">
+        <org.eventb.core.refinesEvent name="_hfasQ9FPEeyEe4AME_6Gmw" org.eventb.core.target="ElevateStaffAdmin"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>
