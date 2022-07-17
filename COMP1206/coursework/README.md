@@ -4,12 +4,12 @@ Creating a fully functional online game in Java. The online functionality requir
 
 ## Game features to implement
 
-Play a piece in a valid location
-Reject a piece in an invalid location
-A new random piece generated each time
-Lines are cleared
-Score, Level, Lives shown in the UI
-Scoring works	
+* Play a piece in a valid location
+* Reject a piece in an invalid location
+* A new random piece generated each time
+* Lines are cleared
+* Score, Level, Lives shown in the UI
+* Scoring works	
 Multiplier works
 Level works
 Background music
