@@ -2,6 +2,34 @@
 
 Creating a fully functional online game in Java. The online functionality requires being connected to UoS network as the server is on university machines but you can test the game in offline mode. Read the full list of features below.
 
+## VIDEO DEMO
+
+[![VIDEO DEMO](https://img.youtube.com/vi/CcnZl6FBO6I/0.jpg)](https://www.youtube.com/watch?v=CcnZl6FBO6I)
+
+# Quick start
+
+## Prerequisites
+
+Java 1.8 is the most common version of java on consumer machines but you will need the latest Java 17 from [here](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) to run the game.
+
+## Usage
+### Compile
+```
+mvn compile
+```
+
+### Run
+```
+mvn javafx:run
+```
+
+### Generate JavaDoc
+```
+mvn javadoc:javadoc
+```
+
+## Documentation
+
 ## Game features to implement
 
 * Play a piece in a valid location
@@ -57,34 +85,6 @@ Creating a fully functional online game in Java. The online functionality requir
 * Scores shows multiplayer game scores
 * Full javadoc must be generated with mvn javadoc:javadoc.
 
-## VIDEO DEMO
-
-[![VIDEO DEMO](https://img.youtube.com/vi/CcnZl6FBO6I/0.jpg)](https://www.youtube.com/watch?v=CcnZl6FBO6I)
-
-# Quick start
-
-## Prerequisites
-
-Java 1.8 is the most common version of java on consumer machines but you will need the latest Java 17 from [here](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) to run the game.
-
-## Usage
-### Compile
-```
-mvn compile
-```
-
-### Run
-```
-mvn javafx:run
-```
-
-### Generate JavaDoc
-```
-mvn javadoc:javadoc
-```
-
-## Documentation
-
 ## Built With
-* [Pytest 6.2.2](https://docs.pytest.org/en/stable) - testing library used
-* [Coverage 5.4](https://coverage.readthedocs.io) - code coverage library used
+* [Java 17](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) - java version used
+* [Maven 4.0](https://maven.apache.org/ref/4-LATEST/) - Project builder used
