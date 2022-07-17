@@ -86,5 +86,5 @@ mvn javadoc:javadoc
 * Full javadoc must be generated with mvn javadoc:javadoc.
 
 ## Built With
-* [Java 17](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) - java version used
+* [Java 17](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) - Java version used
 * [Maven 4.0](https://maven.apache.org/ref/4-LATEST/) - Project builder used
