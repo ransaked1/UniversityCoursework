@@ -28,8 +28,6 @@ mvn javafx:run
 mvn javadoc:javadoc
 ```
 
-## Documentation
-
 ## Game features to implement
 
 * Play a piece in a valid location
