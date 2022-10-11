@@ -1,0 +1,12 @@
+Write down, on paper or in a text file, an evaluation of the expression double (double 2) by repeatedly expanding
+the definition of double and +. You may assume that + behaves as expected.
+
+Is there more than one way of doing this?
+First - evaluating the double inside parenthesis and then expanding the outer double.
+double (2 + 2) = double 4 = 4 + 4 = 8
+
+Second - expanding all the definitions and then evaluating everything.
+double (2 + 2) = 2+2 + 2+2 = 8
+
+Is one way more efficient than the other?
+The first case is more efficient as it will use less memory.

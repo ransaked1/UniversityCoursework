@@ -1,0 +1,19 @@
+['a','b','c'] - [Char]
+
+('a','b','c') - (Char, Char, Char)
+
+['a',3,True] - None
+
+('a',3,True) - (Char, Num, Bool)
+
+[ (False, '0'), (True,'1')] - [(Bool, Char)]
+
+( [True,False] , ['0','1'] ) - ([Bool], [Char])
+
+[tail, init, reverse] - [[a] -> [a]]
+
+[] - [a]
+
+2 : 3 : [] : 4 : 5 : [] - [[Num]]
+
+[] : [] - [[a]]

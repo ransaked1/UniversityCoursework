@@ -1,0 +1,6 @@
+The class Eq is instantiated by all of the basic types as well as Lists and Tuples built from these.
+However, function types are not an instance of the Eq class. Suggest reasons why this is the case.
+
+In order to determine if the output of two functions in equal we would have to compare their outputs which means
+applying the functions to the arguments we don't have yet or to find the domain and range of the functions which is not
+really practical. We would have to test for every input or use two identical functions that ignore their arguments.

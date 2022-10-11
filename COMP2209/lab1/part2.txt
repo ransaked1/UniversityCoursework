@@ -1,0 +1,6 @@
+Definition:
+sum [] = 0
+sum (x:xs) = x + sum xs
+
+By expanding the above definition show that sum (x:[]) = x for any x.
+sum (x:[]) = x + sum [] = x + 0 = x
