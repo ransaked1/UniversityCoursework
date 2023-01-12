@@ -1,0 +1,2 @@
+testTerm :: Expr
+testTerm = read "App (Lam \"v\"(App (App (Var \"v\") (Lam \"z\" (Var \"z\")))(App (Lam \"v\" (App (App (Var \"v\") (Lam \"x\" (Lam \"y\" (Var \"x\")))) (Lam \"z\" (Var \"z\")))) (Lam \"x\" (Lam \"y\" (Var \"x\")))))) (Lam \"x\" (Lam \"y\" (Var \"y\")))"
