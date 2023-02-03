@@ -26,3 +26,15 @@ Software Modelling & Design course in my second semester. Contains UML diagrams 
 Event-B Modelling done in **Rodin version 3.6.0**. Reports done in **LaTeX version 3.141592653**.
 
 ### YEAR II
+
+### COMP2209
+
+Computer Programming III course in my first semester. Contains 7 labs and a final coursework in functional programming using Haskell. All code needs compilation.
+
+All code was developed using **Haskell version 7.6.3**.
+
+### COMP2213
+
+Interaction Design course in my first semester. Contains 5 reflection essays on the material studied + A four part group coursework that aimed to apply our knowledge to design a software solution for a smarthome with solar panels.
+
+All documents are in PDF format.
