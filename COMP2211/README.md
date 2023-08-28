@@ -1,4 +1,4 @@
-# AdAuctionDashboard
+# Ad Auction Dashboard
 ## Prerequisites
 
 Java 1.8 is the most common version of Java on consumer machines but you will need the latest Java 17 from [here](https://download.oracle.com/java/17/archive/jdk-17.0.3_windows-x64_bin.exe) to run the game.
