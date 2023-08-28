@@ -1,0 +1,8 @@
+grant {
+	permission java.io.FilePermission "${user.dir}/-", "read, write, delete";
+	permission java.util.PropertyPermission "user.dir", "read";
+	permission java.net.SocketPermission "localhost:1025-65535", "connect,accept,listen,resolve";
+	permission java.net.SocketPermission "127.0.0.1:1025-65535", "connect,accept,listen,resolve";
+	permission java.util.logging.LoggingPermission "control";
+	permission java.lang.RuntimePermission "modifyThread";
+};
