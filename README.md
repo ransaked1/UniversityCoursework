@@ -25,6 +25,8 @@ Software Modelling & Design course in my second semester. Contains UML diagrams 
 
 Event-B Modelling done in **Rodin version 3.6.0**. Reports done in **LaTeX version 3.141592653**.
 
+<br></br>
+
 ### YEAR II
 
 ### COMP2209
@@ -39,8 +41,30 @@ Interaction Design course in my first semester. Contains 5 reflection essays on 
 
 All documents are in PDF format.
 
+### COMP2207
+
+Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java. All code needs compilation.
+
+All code was written in **Java version 17.0.2**. All documents are in PDF format.
+
 ### COMP2211
 
-Software Engineering Group Project in my second semester, contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
+Software Engineering Group Project in my second semester. Contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work. Coursework can be run without compilation on any PC supporting Java 17. See the project folder for details.
 
-All code was written in **Java version 17.0.2**. All documents are in PDF format. 
+All code was written in **Java version 17.0.2**. All documents are in PDF format.
+
+### COMP2212
+
+Programming Language Concepts course in my second semester. Contains 4 labs and a final coursework designing a domain-specific programming language from scratch using Haskell. All code needs compilation.
+
+All code was written in **Haskell version 7.6.3**. All documents are in PDF format.
+
+### COMP2215
+
+Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico. All code needs compilation on a Pico board.
+
+All code was written in **C for GCC version 4.8.5**.
+
+<br></br>
+
+### YEAR III
