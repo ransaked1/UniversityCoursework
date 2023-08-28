@@ -39,6 +39,12 @@ Interaction Design course in my first semester. Contains 5 reflection essays on 
 
 All documents are in PDF format.
 
+### COMP2207
+
+Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java.
+
+All code was written in **Java version 17.0.2**. All documents are in PDF format.
+
 ### COMP2211
 
 Software Engineering Group Project in my second semester. Contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
@@ -50,3 +56,9 @@ All code was written in **Java version 17.0.2**. All documents are in PDF format
 Programming Language Concepts course in my second semester. Contains 4 labs and a final coursework designing a domain-specific programming language from scratch using Haskell. All code needs compilation.
 
 All code was written in **Haskell version 7.6.3**.
+
+### COMP2212
+
+Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico.
+
+All code was written in **C for GCC version 4.8.5**.
