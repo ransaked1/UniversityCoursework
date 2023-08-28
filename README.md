@@ -41,6 +41,12 @@ All documents are in PDF format.
 
 ### COMP2211
 
-Software Engineering Group Project in my second semester, contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
+Software Engineering Group Project in my second semester. Contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
 
-All code was written in **Java version 17.0.2**. All documents are in PDF format. 
+All code was written in **Java version 17.0.2**. All documents are in PDF format.
+
+### COMP2212
+
+Programming Language Concepts course in my second semester. Contains 4 labs and a final coursework designing a domain-specific programming language from scratch using Haskell. All code needs compilation.
+
+All code was written in **Haskell version 7.6.3**.
