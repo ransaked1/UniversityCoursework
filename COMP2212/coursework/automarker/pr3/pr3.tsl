@@ -1,0 +1,19 @@
+//P3
+Tile tile1 = read "tile1.tl";
+Tile tile1-y = hReflect tile1; //mirror all
+
+Int blankSquareSize = 3;
+
+Tile blankTile = blank blankSquareSize blankSquareSize;
+Tile tile1-x = vReflect tile1; //reverse all order
+Tile tile1-xy = hReflect (vReflect tile1);
+
+Tile column1 = vAdd tile1 blankTile;
+Tile column2 = vAdd tile1-y tile1-x;
+Tile column3 = vAdd blankTile tile1-xy;
+Tile base = hAdd (hAdd column1 column2) column3;
+
+Tile combinedBase = hAdd base (vReflect base);
+
+Tile row = hRepeat 10 combinedBase;
+Tile final = vRepeat 30 row;

@@ -1,0 +1,16 @@
+//P2
+Tile tile1 = read "tile1.tl";
+Tile tile2 = rot90 tile1; //[[1,0,0,0],[1,1,0,0],[1,1,1,0],[1,1,1,1]]  go in reverse and take all first, seconds and so on
+Tile tile3 = rot180 tile1; //[[1,1,1,1],[1,1,1,0],[1,1,0,0],[1,0,0,0]] rot90 x2
+Tile tile4 = rot270 tile1; //[[1,1,1,1],[0,1,1,1],[0,0,1,1],[0,0,0,1]] rot90 x3
+
+Tile base = vAdd (hAdd tile1 tile2) (hAdd tile4 tile3);
+
+Int columnCount = 5;
+Int rowCount = 3;
+
+Tile firstRow = hRepeat 5 base;
+Tile middleRows = hAdd (hAdd (vRepeat 3 base) (grow 3 base)) (vRepeat 3 base);
+Tile lastRow = hRepeat 5 base;
+
+Tile final = vAdd (vAdd firstRow middleRows) lastRow;

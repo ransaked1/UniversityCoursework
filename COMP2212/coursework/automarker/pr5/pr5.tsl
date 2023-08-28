@@ -1,0 +1,12 @@
+//P5
+Tile input = read "tile1.tl";
+
+Tile subtile1 = subtile 6 0 0 input;
+Tile subtile2 = subtile 6 2 2 input;
+Tile subtile3 = subtile 6 4 4 input;
+
+Tile row1 = hAdd (hAdd subtile1 subtile1) subtile1;
+Tile row2 = hAdd (hAdd subtile2 subtile2) subtile2;
+Tile row3 = hAdd (hAdd subtile3 subtile3) subtile3;
+
+Tile final = vAdd (vAdd row1 row2) row3;

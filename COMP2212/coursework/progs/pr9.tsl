@@ -1,0 +1,28 @@
+//P9
+Tile tile1 = read "tile1.tl";
+Tile blankTile = and tile1 (not tile1);
+
+Range row = 0..100;
+Range col = 0..100;
+
+Tile basic = vRepeat row (
+                hRepeat col (
+                    (2 * col < row)
+                        ? (tile1)
+                        : (blankTile)
+                )
+             );
+
+Tile basicTop = hReflect (rot90 basic);
+
+Tile combine1 = rot270 basic;
+Tile combine2 = hReflect basic;
+
+Tile corner = and combine1 combine2;
+
+Tile main = or corner (or basic basicTop);
+Tile combined = or combine1 combine2;
+
+Tile overlaps = and main combined;
+
+Tile final = and (not overlaps) (or main combined);

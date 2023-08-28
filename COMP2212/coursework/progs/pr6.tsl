@@ -1,0 +1,31 @@
+//P6
+Tile tile1 = read "tile1.tl";
+Tile tile2 = read "tile2.tl";
+Tile tile3 = read "tile3.tl";
+Tile blankTile = and tile1 (not tile1);
+
+Int repetitions = 20;
+
+Tile topCornerRow1 = hAdd (hRepeat 2 blankTile) tile1;
+Tile topCornerRow2 = hAdd blankTile (hAdd tile2 tile3);
+Tile topCornerRow3 = hAdd tile3 (hAdd tile1 tile2);
+
+Tile topCorner = vAdd topCornerRow1 (vAdd topCornerRow2 topCornerRow3);
+
+Tile bottomCornerRow1 = hAdd tile2 (hAdd tile3 tile1);
+Tile bottomCornerRow2 = hAdd tile1 (hAdd tile2 blankTile);
+Tile bottomCornerRow3 = hAdd tile3 (hRepeat 2 blankTile);
+
+Tile bottomCorner = vAdd bottomCornerRow1 (vAdd bottomCornerRow2 bottomCornerRow3);
+
+Tile mainTileRow1 = hAdd tile2 (hAdd tile3 tile1);
+Tile mainTileRow2 = hAdd tile1 (hAdd tile2 tile3);
+Tile mainTileRow3 = hAdd tile3 (hAdd tile1 tile2);
+
+Tile mainTile = vAdd mainTileRow1 (vAdd mainTileRow2 mainTileRow3);
+
+Tile topRow = hAdd topCorner (hRepeat (repetitions - 1) mainTile);
+Tile middleRows = vRepeat (repetitions - 2) (hRepeat repetitions mainTile);
+Tile bottomRow = hAdd (hRepeat (repetitions - 1) mainTile) bottomCorner;
+
+Tile final = vAdd topRow (vAdd middleRows bottomRow);

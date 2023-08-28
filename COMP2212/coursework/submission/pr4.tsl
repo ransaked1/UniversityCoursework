@@ -1,0 +1,24 @@
+//P4
+Tile tile1 = read "tile1.tl";
+Tile tile2 = read "tile2.tl";
+Tile tile3 = read "tile3.tl";
+Tile blankTile = blank 2 2;
+
+Tile tileType1 = and tile1 (not tile3);
+Tile tileType2 = and tile2 (not tile3);
+
+Range col = 0..49;
+Range row = 0..49;
+
+Tile final = vRepeat row (
+                hRepeat col (
+                    (row + col < 50 && col < 25)
+                        ? (tileType1)
+                        : (
+                            (row <= col && col >= 25)
+                            ? (tileType2)
+                            : (blankTile)
+                        )
+                )
+             );
+//This is a C style condition syntax - [boolean] ? [something to do if true] : [something to do if false]

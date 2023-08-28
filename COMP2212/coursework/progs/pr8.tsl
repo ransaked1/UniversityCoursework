@@ -1,0 +1,35 @@
+//P8
+Tile tile1Up = read "tile1.tl";
+Tile tile2Up = read "tile2.tl";
+
+Tile tile1Down = vReflect tile1Up;
+Tile tile2Down = vReflect tile2Up;
+
+Tile tile3Down = grow 2 tile2Down;
+Tile tile3Up = grow 2 tile2Up;
+
+Tile sideTop1 = (hAdd tile1Down (hAdd tile1Down tile2Down));
+Tile sideReflect1 = hAdd (vAdd tile1Down tile2Up) tile3Up;
+Tile side1 = (vAdd sideTop1 (vAdd sideReflect1 (vReflect sideReflect1)));
+
+Tile upperMain1 = hAdd tile3Down (hAdd tile3Down (vAdd tile2Down tile1Up));
+Tile lowerMain1 = hAdd (vAdd (vReflect sideReflect1) (vReflect sideTop1)) (vAdd (hAdd tile1Up tile1Up) tile3Up);
+Tile main1 = vAdd upperMain1 lowerMain1;
+
+Tile sideTop2 = (hAdd tile2Down (hAdd tile1Down tile1Down));
+Tile sideReflect2 = hAdd tile3Up (vAdd tile1Down tile2Up);
+Tile side2 = (vAdd sideTop2 (vAdd sideReflect2 (vReflect sideReflect2)));
+
+Tile upperMain2 = hAdd (vAdd tile2Down tile1Up) (hAdd tile3Down tile3Down);
+Tile lowerMain2 = hAdd (vAdd (hAdd tile1Up tile1Up) tile3Up) (vAdd (vReflect sideReflect2) (vReflect sideTop2)) ;
+Tile main2 = vAdd upperMain2 lowerMain2;
+
+Tile combined1 = hAdd side1 main1;
+Tile combined2 = hAdd main2 side2;
+
+Tile topRow = hAdd (hRepeat 2 (hAdd combined1 combined2)) combined1;
+Tile bottomRow = vReflect topRow;
+
+Tile pattern = vAdd topRow bottomRow;
+
+Tile final = vRepeat 1..4 pattern;

@@ -1,0 +1,11 @@
+//P1
+//Input tiles
+Tile tile1 = read "tile1.tl";
+Tile tile2 = read "tile2.tl";
+
+//Generating each row
+Tile row1 = hRepeat 32 (hAdd tile1 tile2);  //[1,0] -> [1,0,1,0....];
+Tile row2 = hRepeat 1..32 (hAdd tile2 tile1);  //[0,1] -> [0,1,0,1....];
+
+//Final row
+Tile final = vRepeat 32 (vAdd row1 row2); //[[1,0,1,0,...],[0,1,0,1...]] -> [[1,0,1,0,...],[0,1,0,1...],[1,0,1,0,...],[0,1,0,1...]....];

@@ -1,0 +1,81 @@
+#!/bin/bash
+
+#Set the name of the interpreter executable 
+executable="./Tsl"
+
+# Set the maximum number of test for any given problem
+maxTests=30
+#
+total=0
+totalpassed=0
+# List the problem numbers that you want to test in the following array
+#problems=(1 2 3 4 5 6 7 8 9 10)
+problems=(1 2 3 4 5)
+#
+for i in ${problems[@]}
+do
+	echo 
+	echo "*****************"
+	echo "*     pr $i     *"
+	echo "*****************"	
+	prog="pr$i/pr$i.tsl"
+	passed=0
+	possible=0
+	inDir="pr$i"
+    
+    for ((j=1; j<=maxTests; j++));
+	do
+        if [ -e $inDir/inputs/input$j ]; then 
+			possible=$((possible+1))
+			total=$((total+1))
+			echo 
+			echo "  ******************************"
+			echo "  *          test $j           *"
+			echo "  ******************************"
+			in="pr$i/inputs/input"
+			in+=$j
+			out="pr$i/outputs/out$j.tl"
+
+			echo "  Input Files:"
+			echo "  ------"
+			head -n 20 $in/*.tl | sed "s/^/  /"
+			echo
+            cp $in/*.tl .
+
+            echo " Output File:"
+            echo $out
+            $executable $prog
+
+#			gtimeout --kill-after='30' 30 $executable $prog > $out 2>/dev/null
+			$executable $prog > $out 2>/dev/null
+            rm -f ./*.tl 
+
+			if [ "$?" = 124 ]; then
+				echo -e "  TEST FAILED -- TIMEOUT"
+			else
+				outofficial="pr$i/expected/"
+				outofficial+="exp" 
+				outofficial+="$j.tl"
+                
+                [ -n "$(tail -c1 $out)" ] && echo >> $out
+
+				diff $out $outofficial > /dev/null
+				if [ "$?" = 0 ]; then
+					passed=$((passed+1))
+					echo -e "  TEST PASSED" 
+				else
+					echo -e "  TEST FAILED" 
+					echo 
+				fi
+			fi
+		fi
+	done
+	echo 
+	echo "You passed $passed tests out of a possible $possible for pr$i"	
+	totalpassed=$((totalpassed+passed))
+done
+echo 
+echo "$totalpassed tests passed out of a total of $total"
+echo
+echo
+echo "------------------------------------------------------------------"
