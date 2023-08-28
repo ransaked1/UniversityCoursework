@@ -1,5 +1,5 @@
 # Ad Auction Dashboard
-![Main menu screenshot](https://github.com/ransaked1/UniversityCoursework/blob/master/COMP2211/screenshot.png?raw=true)
+<img src="https://github.com/ransaked1/UniversityCoursework/blob/master/COMP2211/screenshot.png?raw=true" align="center" width="779" height="602">
 
 ## Prerequisites
 
