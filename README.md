@@ -25,7 +25,7 @@ Software Modelling & Design course in my second semester. Contains UML diagrams 
 
 Event-B Modelling done in **Rodin version 3.6.0**. Reports done in **LaTeX version 3.141592653**.
 
-<nbsp>
+<br></br>
 
 ### YEAR II
 
@@ -64,5 +64,7 @@ All code was written in **Haskell version 7.6.3**.
 Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico.
 
 All code was written in **C for GCC version 4.8.5**.
+
+<br></br>
 
 ### YEAR III
