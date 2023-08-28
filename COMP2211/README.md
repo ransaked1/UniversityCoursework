@@ -64,38 +64,38 @@ Your system must have the Impression Log Source, Click Log Source, and Server Lo
 
 ## Frequently Asked Questions
 
-Q. How many different graphs can you compare at once?
+Q. How many different graphs can you compare at once?<br>
 A. You can compare as many as you want.
 
-Q. How many campaigns can I have loaded at once?
+Q. How many campaigns can I have loaded at once?<br>
 A. You can load as many as you want.
 
-Q. How to delete a campaign?
+Q. How to delete a campaign?<br>
 A. Click the three horizontal line icon ≡ in the top left to open the side menu. Next to the campaign you wish to delete, click the red
 bin icon.
 
-Q. If I close the software, will I lose my campaign data?
+Q. If I close the software, will I lose my campaign data?<br>
 A. No - your campaign data will be stored locally on your device and will be there when you reopen the software.
 
-Q. What do the metrics stand for/mean?
-A. The metrics and their definitions include:
-● Impressions - The number of times an ad is shown to a user.
-● Clicks - The number of times a user clicks on an ad that is shown to them.
-● CTR - Click-Through-Rate - The average number of clicks per impression.
+Q. What do the metrics stand for/mean?<br>
+A. The metrics and their definitions include:<br>
+● Impressions - The number of times an ad is shown to a user.<br>
+● Clicks - The number of times a user clicks on an ad that is shown to them.<br>
+● CTR - Click-Through-Rate - The average number of clicks per impression.<br>
 ● Bounces - The number of times a user clicks on an ad but then fails to interact with the website. You can define
-this yourself.
-● CPC - Cost-Per-Click - The average amount of money spent on an advertising campaign for each click.
-● Uniques - The number of unique users that click on an ad during a campaign.
+this yourself.<br>
+● CPC - Cost-Per-Click - The average amount of money spent on an advertising campaign for each click.<br>
+● Uniques - The number of unique users that click on an ad during a campaign.<br>
 ● CPM - Cost-Per-Thousand Impressions - The average amount of money spent on an advertising campaign for
-every thousand impressions.
-● Bounce Rate - The average number of bounces per click.
+every thousand impressions.<br>
+● Bounce Rate - The average number of bounces per click.<br>
 ● CPA - Cost-Per-Acquisition - The average amount of money spent on an advertising campaign for each time a
 user clicks and then acts on an ad.
 
-Q. How do I see specific graph points?
+Q. How do I see specific graph points?<br>
 A. Hover your mouse over the point you wish to read on the graph.
 
-Q. How to change the time granularity?
+Q. How to change the time granularity?<br>
 A. Select Hour, Day, or Week above the graph.
 
 
