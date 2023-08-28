@@ -43,13 +43,13 @@ All documents are in PDF format.
 
 ### COMP2207
 
-Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java.
+Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java. All code needs compilation.
 
 All code was written in **Java version 17.0.2**. All documents are in PDF format.
 
 ### COMP2211
 
-Software Engineering Group Project in my second semester. Contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
+Software Engineering Group Project in my second semester. Contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work. Coursework can be run without compilation on any PC supporting Java 17. See the project folder for details.
 
 All code was written in **Java version 17.0.2**. All documents are in PDF format.
 
@@ -61,7 +61,7 @@ All code was written in **Haskell version 7.6.3**.
 
 ### COMP2215
 
-Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico.
+Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico. All code needs compilation on a Pico board.
 
 All code was written in **C for GCC version 4.8.5**.
 
