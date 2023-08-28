@@ -1,0 +1,63 @@
+/*
+Primary background - #F1F1F1 (WHITE)
+Secondary background - #7E909A (GREY)
+Text - #202020 (DARK GREY)
+
+Graph colors:
+1 - #1C4E80 (DARK BLUE)
+2 - #0091D5 (BLUE)
+3 - #EA6A47 (ORANGE)
+4 - #A5D8DD (LIGHT BLUE)
+ */
+
+
+.button {
+   -fx-background-color: #2a54a7;
+   -fx-text-fill: white;
+   -fx-font-family: 'Verdana';
+}
+
+.add_campaign_button {
+    -fx-background-color: #1C4E80;
+    -fx-text-fill: white;
+    -fx-font-family: 'Verdana';
+}
+
+.menu-background {
+  -fx-background-color: #F1F1F1;
+}
+
+.panel {
+    -fx-background-color: white;
+}
+
+.label{
+   -fx-font-family: 'Verdana';
+}
+
+.chart{
+    -fx-background-color: transparent;
+}
+
+.chart-title {
+    -fx-text-fill: white;
+    -fx-font-size: 1.6em;
+}
+
+.axis {
+    -fx-tick-label-fill: grey;
+    -fx-font-family: Tahoma;
+
+}
+
+.chart-line-symbol{
+    -fx-background-color: black, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 9px;
+    -fx-padding: 5px;
+}
+
+.default-color0.chart-series-line { -fx-stroke: #1C4E80; }
+.default-color1.chart-series-line { -fx-stroke: #0091D5; }
+.default-color2.chart-series-line { -fx-stroke: #EA6A47; }
+.default-color3.chart-series-line { -fx-stroke: #A5D8DD; }

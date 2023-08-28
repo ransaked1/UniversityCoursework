@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="706.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.CampaignDrawerController">
+   <children>
+      <JFXButton fx:id="btnAddCampaign" layoutX="75.0" layoutY="42.0" maxWidth="200.0" minWidth="150.0" onAction="#addCampaign" styleClass="add_campaign_button" stylesheets="@stylesheets/MainStyleLight.css" text="Add Campaign" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="30.0" />
+      <JFXListView fx:id="campaignList" layoutX="20.0" layoutY="77.0" prefHeight="400.0" prefWidth="230.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0" />
+   </children>
+</AnchorPane>

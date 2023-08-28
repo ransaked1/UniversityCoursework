@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.CreateCampaignController">
+  <tabs>
+    <Tab text="Manual Import">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="56.0" layoutY="38.0" text="Campaign Name:" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="39.0" />
+                  <TextField fx:id="campaignNameField" layoutX="164.0" layoutY="34.0" prefHeight="25.0" prefWidth="351.0" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="35.0" />
+                  <Label layoutX="56.0" layoutY="101.0" text="Impression Log Source" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="100.0" />
+                  <Label layoutX="56.0" layoutY="146.0" text="Click Log Source" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="170.0" />
+                  <Label layoutX="63.0" layoutY="193.0" text="Server Log Source" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="240.0" />
+                  <JFXButton fx:id="impressionChooser" layoutX="202.0" layoutY="97.0" onAction="#chooseImpressionFile" stylesheets="@stylesheets/MainStyleLight.css" text="Select File" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="100.0" />
+                  <JFXButton fx:id="clickChooser" layoutX="202.0" layoutY="143.0" onAction="#chooseClickFile" stylesheets="@stylesheets/MainStyleLight.css" text="Select File" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="170.0" />
+                  <JFXButton fx:id="serverChooser" layoutX="202.0" layoutY="190.0" onAction="#chooseServerFile" stylesheets="@stylesheets/MainStyleLight.css" text="Select File" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="240.0" />
+                  <Label fx:id="impressionLogFile" contentDisplay="RIGHT" layoutX="315.0" layoutY="100.0" maxWidth="250.0" text="No File Selected" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="100.0" />
+                  <Label fx:id="clickLogFile" contentDisplay="RIGHT" layoutX="315.0" layoutY="146.0" maxWidth="250.0" text="No File Selected" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="170.0" />
+                  <Label fx:id="serverLogFile" contentDisplay="RIGHT" layoutX="315.0" layoutY="193.0" maxWidth="250.0" text="No File Selected" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="240.0" />
+                  <JFXButton fx:id="createCampaignBtn" disable="true" layoutX="161.0" layoutY="283.0" onAction="#createCampaign" stylesheets="@stylesheets/MainStyleLight.css" text="Create Campaign" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="320.0" />
+                  <JFXButton fx:id="cancelCampaignBtn" layoutX="340.0" layoutY="283.0" onAction="#cancelCampaign" stylesheets="@stylesheets/MainStyleLight.css" text="Cancel" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="320.0" />
+                  <ProgressBar fx:id="impressionProgress" layoutX="51.0" layoutY="134.0" prefHeight="10.0" prefWidth="460.0" progress="0.0" visible="false" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="135.0" />
+                  <ProgressBar fx:id="clickProgress" layoutX="61.0" layoutY="144.0" prefHeight="10.0" prefWidth="460.0" progress="0.0" visible="false" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="205.0" />
+                  <ProgressBar fx:id="serverProgress" layoutX="71.0" layoutY="154.0" prefHeight="10.0" prefWidth="460.0" progress="0.0" visible="false" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="275.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab disable="true" text="Automatic Import">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

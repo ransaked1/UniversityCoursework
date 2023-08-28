@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="menu-background" stylesheets="@stylesheets/MainStyleLight.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.MainSceneController">
+   <children>
+      <MenuBar maxHeight="30.0" minHeight="30.0" prefHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openManual" text="Manual" />
+            </items>
+          </Menu>
+        </menus>
+         <padding>
+            <Insets bottom="3.0" left="5.0" top="3.0" />
+         </padding>
+      </MenuBar>
+      <GridPane prefHeight="738.0" styleClass="menu-background" stylesheets="@stylesheets/MainStyleLight.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="600.0" minHeight="250.0" prefHeight="280.0" />
+          <RowConstraints maxHeight="800.0" minHeight="300.0" prefHeight="430.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" valignment="CENTER" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="56.0" layoutY="13.0" text="Campaign" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="12.0" />
+                        <JFXHamburger fx:id="campaignHamburger" fillWidth="false" layoutX="14.0" layoutY="12.0" maxHeight="17.0" maxWidth="20.0" prefHeight="17.0" prefWidth="20.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="12.0" />
+                        <JFXComboBox fx:id="campaignPicker" layoutX="134.0" layoutY="8.0" onAction="#switchFocusedCampaign" prefHeight="25.0" prefWidth="315.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="12.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <DatePicker fx:id="timePickerEnd" disable="true" editable="false" layoutX="324.0" layoutY="4.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#setTimeFilterEnd" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
+                        <DatePicker fx:id="timePickerStart" disable="true" editable="false" layoutX="334.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#setTimeFilterStart" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="15.0" />
+                        <Label alignment="CENTER" layoutX="304.0" layoutY="8.0" prefHeight="25.0" prefWidth="15.0" text="to" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="8.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="350.0" minWidth="210.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="700.0" prefWidth="820.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="310.0" minHeight="220.0" prefHeight="310.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane maxHeight="300.0" minHeight="190.0" minWidth="100.0" prefHeight="250.0" prefWidth="250.0" styleClass="panel">
+                     <GridPane.margin>
+                        <Insets bottom="2.0" left="10.0" right="2.0" top="2.0" />
+                     </GridPane.margin>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="38.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="214.0" prefHeight="26.0" text="AD TOTAL COST" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotalCost" alignment="CENTER" contentDisplay="CENTER" layoutY="93.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="214.0" prefHeight="26.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <GridPane prefHeight="280.0" prefWidth="730.0" styleClass="menu-background" stylesheets="@stylesheets/MainStyleLight.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="110.0" prefWidth="115.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="600.0" minHeight="80.0" prefHeight="135.0" valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="600.0" minHeight="80.0" prefHeight="135.0" valignment="TOP" vgrow="ALWAYS" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="IMPRESSIONS" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblImpressions" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="CLICKS" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblClicks" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="CTR" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblCtr" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="BOUNCES" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblBounces" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="110.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="10.0" top="2.0" />
+                           </GridPane.margin>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="146.0" text="CONVERSIONS" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblConversions" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="146.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="CPC" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblCpc" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="UNIQUES" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblUniques" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="CPM" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblCpm" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="100.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="154.0" text="BOUNCE RATE" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblBounceRate" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="154.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="300.0" minHeight="100.0" minWidth="110.0" prefHeight="134.0" prefWidth="154.0" styleClass="panel" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="10.0" top="2.0" />
+                           </GridPane.margin>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="119.0" prefHeight="26.0" prefWidth="146.0" text="CPA" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblCpa" alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" maxWidth="1.7976931348623157E308" minHeight="26.0" minWidth="127.0" prefHeight="26.0" prefWidth="146.0" text="NaN" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="300.0" prefWidth="385.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" prefWidth="1300.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="panel" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="1.0" top="2.0" />
+                     </GridPane.margin>
+                     <children>
+                        <Label alignment="CENTER" text="Filtering" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ToggleButton fx:id="genderButtonBoth" layoutX="108.0" layoutY="40.0" mnemonicParsing="false" onAction="#toggleGenderFilter" selected="true" text="Both" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="40.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="genderButtons" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="genderButtonFemale" layoutX="147.0" layoutY="40.0" mnemonicParsing="false" onAction="#toggleGenderFilter" text="Female" toggleGroup="$genderButtons" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="40.0" />
+                        <ToggleButton fx:id="genderButtonMale" layoutX="201.0" layoutY="40.0" mnemonicParsing="false" onAction="#toggleGenderFilter" text="Male" toggleGroup="$genderButtons" AnchorPane.leftAnchor="181.0" AnchorPane.topAnchor="40.0" />
+                        <Label layoutX="36.0" layoutY="44.0" text="Gender" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="43.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton fx:id="buttonUnder25" focusTraversable="false" layoutX="108.0" layoutY="82.0" onAction="#addAgeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Under 25" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="80.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <Label layoutX="46.0" layoutY="54.0" text="Age group" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0" />
+                        <JFXRadioButton fx:id="button25to34" focusTraversable="false" layoutX="108.0" layoutY="105.0" onAction="#addAgeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="25 to 34" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="105.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="button35to44" focusTraversable="false" layoutX="118.0" layoutY="115.0" onAction="#addAgeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="35 to 44" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="130.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="button45to54" focusTraversable="false" layoutX="175.0" layoutY="80.0" onAction="#addAgeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="45 to 54" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="80.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonAbove54" focusTraversable="false" layoutX="175.0" layoutY="105.0" onAction="#addAgeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Above 54" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="105.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <Label layoutX="22.0" layoutY="158.0" text="Income" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="165.0" />
+                        <JFXRadioButton fx:id="buttonIncomeLow" focusTraversable="false" layoutX="84.0" layoutY="164.0" onAction="#addIncomeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Low" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="165.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonIncomeMedium" focusTraversable="false" layoutX="84.0" layoutY="285.0" onAction="#addIncomeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Medium" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="190.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonIncomeHigh" focusTraversable="false" layoutX="84.0" layoutY="215.0" onAction="#addIncomeFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="High" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="215.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <Label layoutX="22.0" layoutY="255.0" text="Context" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="250.0" />
+                        <JFXRadioButton fx:id="buttonContextSM" focusTraversable="false" layoutX="84.0" layoutY="261.0" onAction="#addContextFilter" prefHeight="5.0" prefWidth="100.0" selected="true" text="Social Media" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="250.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonContextShopping" focusTraversable="false" layoutX="84.0" layoutY="282.0" onAction="#addContextFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Shopping" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="275.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonContextBlog" focusTraversable="false" layoutX="84.0" layoutY="312.0" onAction="#addContextFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="Blog" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="300.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="buttonContextNews" focusTraversable="false" layoutX="94.0" layoutY="322.0" onAction="#addContextFilter" prefHeight="5.0" prefWidth="80.0" selected="true" text="News" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="325.0">
+                           <selectedColor>
+                              <Color red="0.06666667014360428" green="0.46666666865348816" blue="0.8941176533699036" />
+                           </selectedColor>
+                        </JFXRadioButton>
+                        <ToggleButton fx:id="bounceButtonTime" layoutX="173.0" layoutY="349.0" mnemonicParsing="false" onAction="#toggleBounceFilter" selected="true" text="Time" AnchorPane.leftAnchor="151.0" AnchorPane.topAnchor="349.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="bounceButtons" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="bounceButtonSingle" layoutX="212.0" layoutY="349.0" mnemonicParsing="false" onAction="#toggleBounceFilter" text="Singe Page" toggleGroup="$bounceButtons" AnchorPane.leftAnchor="192.0" AnchorPane.topAnchor="349.0" />
+                        <Label layoutX="36.0" layoutY="354.0" text="Bounce Definition" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="354.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="applyFiltersButton" layoutX="52.0" layoutY="385.0" onAction="#applyFilters" prefWidth="200.0" text="Recompute Data" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="385.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxWidth="1.7976931348623157E308" minWidth="700.0" styleClass="panel" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                     <children>
+                          <BarChart fx:id="histogram" animated="false" minHeight="338.0" minWidth="668.0" prefHeight="338.0" prefWidth="668.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+                              <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                              </xAxis>
+                              <yAxis>
+                                  <NumberAxis side="LEFT" />
+                              </yAxis>
+                          </BarChart>
+
+                        <LineChart fx:id="lineChart" animated="false" minHeight="338.0" minWidth="668.0" prefHeight="338.0" prefWidth="668.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+
+
+
+
+                          <ComboBox fx:id="selectTypeComBox" layoutX="517.0" layoutY="13.0" onAction="#selectGraphType" prefWidth="120.0" promptText="Select a Metric" AnchorPane.leftAnchor="570.0" AnchorPane.topAnchor="15.0" />
+                        <ToggleButton fx:id="granularityButtonDay" layoutX="376.0" layoutY="15.0" mnemonicParsing="false" onAction="#toggleGranularity" prefHeight="25.0" prefWidth="54.0" text="Day" AnchorPane.leftAnchor="436.0" AnchorPane.topAnchor="15.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="granularityButtons" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="granularityButtonHour" layoutX="322.0" layoutY="15.0" mnemonicParsing="false" onAction="#toggleGranularity" prefHeight="25.0" prefWidth="54.0" text="Hour" toggleGroup="$granularityButtons" AnchorPane.leftAnchor="382.0" AnchorPane.topAnchor="15.0" />
+                        <ToggleButton fx:id="granularityButtonWeek" layoutX="436.0" layoutY="15.0" mnemonicParsing="false" onAction="#toggleGranularity" prefHeight="25.0" prefWidth="54.0" selected="true" text="Week" toggleGroup="$granularityButtons" AnchorPane.leftAnchor="490.0" AnchorPane.topAnchor="15.0" />
+                        <Button fx:id="saveGraphButton" layoutX="200.0" layoutY="15.0" maxWidth="115.0" minWidth="115.0" mnemonicParsing="false" onAction="#saveGraph" prefHeight="25.0" prefWidth="115.0" text="Take Snapshot" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="15.0" />
+                        <Button fx:id="deleteGraphButton" layoutX="300.0" layoutY="15.0" onAction="#deleteGraph" prefHeight="25.0" prefWidth="95.0" text="Reset Graph" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="graphNameField" layoutX="260.0" layoutY="15.0" prefHeight="25.0" prefWidth="115.0" promptText="Snapshot-1" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="15.0" />
+                        <Label fx:id="cursorCoords" layoutX="200.0" layoutY="15.0" prefHeight="25.0" prefWidth="500.0" text="" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="45.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="10.0" top="2.0" />
+                     </GridPane.margin>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <JFXDrawer fx:id="campaignDrawer" defaultDrawerSize="300.0" layoutY="60.0" minHeight="-Infinity" prefHeight="706.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-255.0" AnchorPane.topAnchor="62.0" />
+   </children>
+</AnchorPane>
