@@ -1,3 +1,7 @@
+# Programming Language Concepts Coursework
+
+See the project files and the description below to find out how to use this interpreter.
+
 ## Introduction to BitGrid
 
 BitGrid is a domain-specific programming language for specifying tiling patterns.
