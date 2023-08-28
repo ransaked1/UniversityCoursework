@@ -1,6 +1,6 @@
 # Ad Auction Dashboard
 See *SEG_Ad_Auction_Dashboard_Definition.pdf* in the project files for the project specification.
-
+<br></br>
 <img src="https://github.com/ransaked1/UniversityCoursework/blob/master/COMP2211/screenshot.png?raw=true" align="center" width="779" height="602">
 
 ## Prerequisites
