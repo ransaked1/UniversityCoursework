@@ -1,4 +1,6 @@
-# Distributed File System
+# Distributed File System Coursework
+
+This coursework implements a distributed file system with file replication. See *COMP2207-2223-Coursework.pdf* in the project files for the project specification.
 
 ## Prerequisites
 
