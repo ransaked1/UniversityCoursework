@@ -57,7 +57,7 @@ All code was written in **Java version 17.0.2**. All documents are in PDF format
 
 Programming Language Concepts course in my second semester. Contains 4 labs and a final coursework designing a domain-specific programming language from scratch using Haskell. All code needs compilation.
 
-All code was written in **Haskell version 7.6.3**.
+All code was written in **Haskell version 7.6.3**. All documents are in PDF format.
 
 ### COMP2215
 
