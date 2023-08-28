@@ -1,6 +1,7 @@
 # Programming Language Concepts Coursework
 
-See the project files and the description below to find out how to use this interpreter. See *COMP2212-spec.pdf* in the project files for the project specification.
+See the project files and the description below to find out how to use this interpreter.<br>
+See *COMP2212-spec.pdf* in the project files for the project specification.
 
 ## Introduction to BitGrid
 
