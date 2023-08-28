@@ -31,10 +31,16 @@ Event-B Modelling done in **Rodin version 3.6.0**. Reports done in **LaTeX versi
 
 Computer Programming III course in my first semester. Contains 7 labs and a final coursework in functional programming using Haskell. All code needs compilation.
 
-All code was developed using **Haskell version 7.6.3**.
+All code was written in **Haskell version 7.6.3**.
 
 ### COMP2213
 
 Interaction Design course in my first semester. Contains 5 reflection essays on the material studied + A four part group coursework that aimed to apply our knowledge to design a software solution for a smarthome with solar panels.
 
 All documents are in PDF format.
+
+### COMP2211
+
+Software Engineering Group Project in my second semester, contains an Ad Auction Dashboard completely developed in Java by me and 3 other teammates. I was responsible for most of the backend and coordinated the Agile work.
+
+All code was written in **Java version 17.0.2**. All documents are in PDF format. 
