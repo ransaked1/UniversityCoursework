@@ -57,7 +57,7 @@ Programming Language Concepts course in my second semester. Contains 4 labs and 
 
 All code was written in **Haskell version 7.6.3**.
 
-### COMP2212
+### COMP2215
 
 Computer Systems II course in my second semester. Contains 8 embedded programming mini-projects written in C for the Raspberry Pi Pico.
 
