@@ -1,0 +1,5 @@
+let foo = \ ( x : Int )
+if (x < 3)
+    then 0
+    else (x + 1)
+in foo (42)
