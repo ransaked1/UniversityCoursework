@@ -11,3 +11,4 @@ azure-mgmt-compute==17.0.0
 azure-mgmt-core==1.2.0
 azure-mgmt-network==16.0.0
 azure-mgmt-resource==10.2.0
+requests
