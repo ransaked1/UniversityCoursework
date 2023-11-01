@@ -1,0 +1,26 @@
+[
+    { "id" : "Bob",
+      "city" : "Southampton"
+    },
+    { "id" : "Alice",
+      "city" : "Southampton"
+    },
+    { "id" : "Charlotte",
+      "city" : "London"
+    },
+    { "id" : "Dave",
+      "city" : "Portsmouth"
+    },
+    { "id" : "Ellen",
+      "city" : "Bournemouth"
+    },
+    { "id" : "Farid",
+      "city" : "Leicester"
+    },
+    { "id" : "Greta",
+      "city" : "Manchester"
+    },
+    { "id" : "Hao",
+      "city" : "Exeter"
+    }
+]
