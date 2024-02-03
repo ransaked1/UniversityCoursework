@@ -1,0 +1,14 @@
+<h2>Edit Page</h2>
+<h3>
+    <?=$pagetitle?>
+</h3>
+
+<?php
+$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+$form = new Form($csrfToken); 
+echo $form->start();
+echo $form->add('content',array('type' => 'wysiwyg', 'value' => h($page)));
+echo $form->add('Save Page',array('type' => 'submit'));
+echo $form->end();
+
+?>

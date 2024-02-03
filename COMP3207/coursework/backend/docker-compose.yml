@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SECRET_KEY_TOKEN=${SECRET_KEY_TOKEN}
+      - COSMOS_DB_URI=${COSMOS_DB_URI}
+      - COSMOS_DB_NAME=${COSMOS_DB_NAME}
+      - COSMOS_DB_PROFILE_COLLECTION=${COSMOS_DB_PROFILE_COLLECTION}
+      - COSMOS_DB_MATCH_COLLECTION=${COSMOS_DB_MATCH_COLLECTION}
+    ports:
+      - "8080:8080"

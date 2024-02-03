@@ -1,0 +1,45 @@
+body {
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #acc5d0;
+}
+.title {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+.player {
+    background-color: white;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+.player.me {
+    color: blue;
+}
+.admin {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.container {
+    background-color: rgba(255,255,255,0.8);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 100vh;
+}
+#messages { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: auto;
+    max-height: 80vh;
+}
+#messages li { 
+    padding: 5px 10px; 
+}
+#messages li:nth-child(odd) { 
+    background-color: rgba(0,0,0,0.2); 
+}

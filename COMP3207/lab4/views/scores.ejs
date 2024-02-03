@@ -1,0 +1,12 @@
+<h2 class="text-center">The Survivors</h2>
+
+<div class="row">
+
+    <div v-for="player of players" class="col-md-2 text-center" v-if="player.state > -1">
+        <div class="player">
+            <strong>Player {{player.name}}</strong>
+            <p>{{player.score}}</p>
+        </div>
+
+    </div>
+</div>

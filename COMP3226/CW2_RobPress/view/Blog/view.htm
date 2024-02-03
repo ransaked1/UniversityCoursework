@@ -1,0 +1,96 @@
+<? $post = $blog['Posts']; ?>
+<? 
+
+if(!empty($blog['Users'])) {
+	$author = $blog['Users']; 
+} else {
+	$author = new stdClass();
+	$author->displayname = 'Guest';
+	$author->id = -1;
+	$author->username = 'guest';
+}
+
+?>
+
+<h2><?=$post->title?></h2>
+<h4>Posted by <a href="<?=$site['base']?>/user/view/<?=$author->id?>"><?=$author->displayname?></a> on
+	<?=nicedate($post->created)?></h4>
+<? if(sizeof($blog['Categories']) > 0): ?>
+<p><em>Posted in:
+		<? foreach($blog['Categories'] as $num=>$category): ?>
+		<a href="<?=$site['base']?>/blog/index/<?=$category->id?>">
+			<?= $category->title ?>
+		</a>
+		<? if(($num + 1) < sizeof($blog['Categories'])) { echo ', '; } ?>
+		<? endforeach; ?>
+	</em></p>
+<? endif; ?>
+
+<?=$post->content?>
+
+<?if(!empty($site['comments'])):?>
+<hr />
+<h3>Comments</h3>
+<? if(sizeof($comments) == 0): ?>
+<p><em>No comments have been posted yet</em></p>
+<? else: ?>
+<div class="comments">
+	<? foreach($comments as $comment): ?>
+	<?php
+	$can_moderate = 0;
+	$class = "";
+
+	if($comment['Comments']->moderated == 0 && $user['level'] > 1) {
+		$can_moderate = 1;
+		$class = "moderated";
+	} elseif ($comment['Comments']->moderated == 0 && $user['id'] == $comment['Comments']->user_id) {
+		$class = "moderated";
+	} elseif ($comment['Comments']->moderated == 0) {
+		continue;
+	}
+?>
+	<div class="comment <?=$class?>">
+		<?php $avatar = empty($u->avatar) ? '/img/avatar.png' : $comment['Users']->avatar; ?>
+		<h4><?=$comment['Comments']->subject?> <span style="float: right">
+				<a
+					href="<?=$site['base']?>/user/view/<?=$comment['Users']->id?>"><?=$comment['Users']->displayname?></a>
+				<br /><img src="<?=$site['base']?><?=$avatar?>" class="avatar" /></span></h4>
+		<h6><?=nicedate($comment['Comments']->created)?></h6>
+		<?=$comment['Comments']->message?>
+		<? if($comment['Comments']->moderated == 0): ?>
+		<p><em>Awaiting moderation</em></p>
+		<? endif; ?>
+		<?php
+		    $csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+		?>
+		<?if($user['level'] > 1):?>
+		<a href="<?=$site['base']?>/blog/moderate/<?=$comment['Comments']->id?>/0?csrf_token=<?= $csrfToken ?>" class="btn btn-danger">Delete</a>
+		<a href="<?=$site['base']?>/admin/comment/edit/<?=$comment['Comments']->id?>" class="btn btn-default">Edit</a>
+		<?endif;?>
+		<?if($can_moderate == 1):?>
+		<a href="<?=$site['base']?>/blog/moderate/<?=$comment['Comments']->id?>/1?csrf_token=<?= $csrfToken ?>" class="btn btn-success">Approve
+			Comment</a>
+		<?endif;?>
+		<div class="clearfix"> </div>
+	</div>
+	<? endforeach; ?>
+</div>
+<? endif; ?>
+
+<h3>Leave a Comment</h3>
+<? if(!is_array($user)): ?>
+<p>You must be <a href="<?=$site['base']?>/user/add">registered</a> and <a href="<?=$site['base']?>/user/login">logged
+		in</a> in order to leave a comment</p>
+<? else: ?>
+<?
+$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+$form = new Form($csrfToken); 
+echo $form->start(array('action' => $site['base'] . '/blog/comment/' . $post->id));
+echo $form->add('user_id',array('type' => 'hidden', 'value' => $user['id']));
+echo $form->add('subject',array('type' => 'text', 'placeholder' => 'Enter Subject'));
+echo $form->add('message',array('type' => 'wysiwyg','label' => 'Your message'));
+echo $form->add('Submit',array('type' => 'submit'));
+echo $form->end();
+?>
+<? endif; ?>
+<? endif; ?>

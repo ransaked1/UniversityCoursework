@@ -1,0 +1,28 @@
+<h2>Contact Us</h2>
+<p>You can get into contact with us by filling in our form below</p>
+
+<div class="row-fluid">
+	<div class="col-md-6 col-md-offset-3">
+		<?php
+	//Get from address from database
+	$from = '';
+	if(isset($user['email'])) {
+		$from = $user['email'];
+	}
+
+	//Get to address
+	$to = $site['email'];
+
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken);
+	echo $form->start();
+	echo $form->add('from',array('type' => 'text', 'value' => $from));
+	echo $form->add('to',array('type' => 'hidden', 'value' => $to));
+	echo $form->add('subject',array('type' => 'text'));
+	echo $form->add('message',array('type' => 'textarea'));
+	echo $form->add('Send',array('type' => 'submit'));
+
+	echo $form->end();
+?>
+	</div>
+</div>

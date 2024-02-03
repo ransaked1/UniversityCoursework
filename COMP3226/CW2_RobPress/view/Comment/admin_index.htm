@@ -1,0 +1,82 @@
+<?php
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+?>
+
+<h2>All Comments</h2>
+<h3>Awaiting Moderation</h3>
+
+<?if(sizeof($unmoderated) == 0):?>
+<p>No comments to moderate</p>
+<?else:?>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Subject</th>
+            <th>Comment</th>
+            <th>In Response To</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?foreach($unmoderated as $comment): ?>
+        <tr>
+            <td>
+                <a href="<?=$site['base']?>/user/view/<?=$comment['Users']->id?>"><?=$comment['Users']->username?></a>
+            </td>
+            <td><?=$comment['Comments']->subject?></td>
+            <td style="font-size: 80%"><?=$comment['Comments']->message?></td>
+            <td>
+                <a href="<?=$site['base']?>/blog/view/<?=$comment['Posts']->id?>"><?=$comment['Posts']->title?></a>
+            </td>
+            <td>
+                <a class="btn btn-success" href="<?=$site['base']?>/blog/moderate/<?=$comment['Comments']->id?>/1?csrf_token=<?= $csrfToken ?>"><i
+                        class="fa fa-check"></i></a>
+                <a class="btn btn-danger" href="<?=$site['base']?>/blog/moderate/<?=$comment['Comments']->id?>/0?csrf_token=<?= $csrfToken ?>"><i
+                        class="fa fa-times"></i></a>
+                <a class="btn btn-default" href="<?=$site['base']?>/admin/comment/edit/<?=$comment['Comments']->id?>"><i
+                        class="fa fa-pencil"></i></a>
+            </td>
+        </tr>
+        <?endforeach;?>
+    </tbody>
+</table>
+<?endif;?>
+
+<h3>Approved Comments</h3>
+
+<?if(sizeof($moderated) == 0):?>
+<p>No comments</p>
+<?else:?>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Subject</th>
+            <th>Comment</th>
+            <th>In Response To</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?foreach($moderated as $comment): ?>
+        <tr>
+            <td>
+                <a href="<?=$site['base']?>/user/view/<?=$comment['Users']->id?>"><?=$comment['Users']->username?></a>
+            </td>
+            <td><?=$comment['Comments']->subject?></td>
+            <td style="font-size: 80%"><?=$comment['Comments']->message?></td>
+            <td>
+                <a href="<?=$site['base']?>/blog/view/<?=$comment['Posts']->id?>"><?=$comment['Posts']->title?></a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="<?=$site['base']?>/blog/moderate/<?=$comment['Comments']->id?>/0?csrf_token=<?= $csrfToken ?>"><i
+                        class="fa fa-times"></i></a>
+                <a class="btn btn-default" href="<?=$site['base']?>/admin/comment/edit/<?=$comment['Comments']->id?>"><i
+                        class="fa fa-pencil"></i></a>
+            </td>
+        </tr>
+        <?endforeach;?>
+    </tbody>
+</table>
+<?endif;?>

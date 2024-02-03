@@ -1,0 +1,10 @@
+textblob
+matplotlib
+pandas
+numpy
+demoji
+scikit_learn
+wordcloud
+tqdm
+langdetect
+pipreqsnb

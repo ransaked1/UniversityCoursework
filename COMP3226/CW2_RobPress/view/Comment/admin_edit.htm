@@ -1,0 +1,11 @@
+<h2>Edit Comment</h2>
+
+<?php
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken);
+	echo $form->start();
+	echo $form->add('subject');
+	echo $form->add('message',array('type' => 'wysiwyg'));
+	echo $form->add('Save',array('type' => 'submit'));
+	echo $form->end();
+?>

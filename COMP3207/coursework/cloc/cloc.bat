@@ -1,0 +1,1 @@
+.\cloc-1.98.exe --include-lang=Python,JavaScript --list-file=folderlist

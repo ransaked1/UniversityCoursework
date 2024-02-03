@@ -1,0 +1,45 @@
+<h2>Static Pages</h2>
+<p>Static pages enable you to have non-blog related content on your website. These pages appear automatically in your
+	navigation bar.</p>
+<hr />
+
+<div class="row-fluid">
+	<div class="col-md-4">
+		<h4>Add New Page</h4>
+
+		<?php
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken); 
+	echo $form->start(array('action' => $site['base'].'/admin/page/add'));
+	echo $form->add('title',array('placeholder' => 'Enter Title'));
+	echo $form->add('Add Page',array('type' => 'submit'));
+	echo $form->end();
+?>
+
+	</div>
+	<div class="col-md-8">
+		<h4>All Pages</h4>
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Page Name</th>
+			</thead>
+			<tbody>
+				<? foreach($pages as $pagetitle=>$page): ?>
+				<tr>
+					<td style="font-weight: bold">
+						<? 
+							$pagename = str_ireplace(".html","",$page);
+							$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+						?>
+						<a href="<?=$site['base']?>/admin/page/delete/<?=$pagename?>?csrf_token=<?= $csrfToken ?>" style="float: right">&times;</a>
+						<a href="<?=$site['base']?>/admin/page/edit/<?=$pagename?>">
+							<?=$pagetitle?>
+						</a>
+					</td>
+				</tr>
+				<? endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+</div>

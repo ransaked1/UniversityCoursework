@@ -1,0 +1,14 @@
+<div class="well" style="width: 60%; margin: auto; padding: auto">
+	<h2>Search</h2>
+	<p>What would you like to search for?</p>
+
+	<?
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken); 
+	echo $form->start();
+	echo $form->add('search');
+	echo $form->add('Search',array('type' => 'submit'));
+	echo $form->end();
+?>
+
+</div>

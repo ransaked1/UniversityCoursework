@@ -1,0 +1,20 @@
+<div v-if="me.state == 0">
+    <p><button class="btn btn-lg btn-primary" @click="join">Join Game</button></p>
+</div>
+
+<div v-else>
+    <p>Waiting for other players...</p>
+
+    <div class="row">
+        <div v-for="player of players" class="col-sm-2 text-center">
+            <div class="player">
+                <strong>Player {{player.name}}</strong>
+            </div>
+        </div>
+    </div>
+    
+    <div v-if="me.name == 1">
+        <button class="btn btn-lg btn-success" @click="admin('start')">Start Game</button>
+    </div>
+</div>
+    

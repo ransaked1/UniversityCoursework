@@ -1,0 +1,40 @@
+<div class="row">
+
+    <div class="col-sm-4 text-center">
+        <p><strong>Time Remaining:</strong></p>
+        <p>{{state.countdown}}</p>
+    </div>
+
+    <div class="col-sm-4 text-center">
+        <div class="player me" v-if="me.state == 0">
+            <strong>Player {{me.name}}</strong>
+            <p>{{me.score}} / 100</p>
+            <p><button class="btn btn-sm btn-primary" @click="action('advance')">Step</button></p>
+        </div>
+        <div v-else-if="me.state == 1">
+            <h2>You have survived!</h2>
+        </div>
+        <div v-else-if="me.state == -1">
+            <h2>You have been eliminated!</h2>
+        </div>
+    </div>
+
+    <div class="col-sm-4 text-center">
+        <p><strong>The light is:</strong></p>
+        <p v-bind:style="{color: state.light}">{{capitalise(state.light)}}</p>
+        <p v-if="me.name == 1"><button class="btn btn-sm btn-primary" @click="admin('light')">Toggle</button></p>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div v-for="player of players" class="col-md-2 text-center" v-if="player.name != me.name && player.state > -1">
+        <div class="player">
+            <strong>Player {{player.name}}</strong>
+            <p>{{player.score}}</p>
+        </div>
+
+    </div>
+</div>
+

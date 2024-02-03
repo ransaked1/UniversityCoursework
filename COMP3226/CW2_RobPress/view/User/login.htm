@@ -1,0 +1,17 @@
+<div class="well" style="width: 60%; margin: auto; padding: auto">
+	<h2>Login</h2>
+	<p>Please type your RobPress username and password to log in</p>
+
+	<?
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken); 
+	echo $form->start();
+	echo $form->add('username');
+	echo $form->add('password',array('type' => 'password','value' => ''));
+	echo $form->add('Login',array('type' => 'submit'));
+	echo $form->end();
+?>
+
+	<p>Don't have an account yet? Why not <a href="<?=$site['base']?>/user/add">Register</a>
+
+</div>

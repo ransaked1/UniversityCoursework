@@ -1,0 +1,18 @@
+<h2>Blog Settings</h2>
+
+<?php
+$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+$form = new Form($csrfToken); 
+echo $form->start();
+?>
+
+<?foreach($settings as $setting):?>
+<?php
+echo $form->add($setting->setting,array('label' => $setting->title, 'type' => $setting->type, 'value' => $setting->value));
+?>
+<?endforeach;?>
+<hr />
+<?php
+echo $form->add('Save Settings',array('type' => 'submit'));
+echo $form->end(); 
+?>

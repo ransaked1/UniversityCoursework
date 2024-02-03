@@ -1,0 +1,23 @@
+{
+  "name": "ecsterminate",
+  "version": "1.0.0",
+  "description": "ECS Example Game",
+  "main": "app.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "gdeploy": "gcloud app deploy --version test",
+    "hdeploy": "git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oli Bills",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.3.1"
+  }
+}

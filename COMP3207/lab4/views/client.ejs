@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <h2 class="title">ECSterminate: <span style="color: red">Red</span> Light, <span style="color: green">Green</span> Light</h2>
+
+    <div id="game">
+
+        <div class="row">
+            <div class="col-md-9">
+
+                <!-- Error Display -->
+                <div v-if="error" class="alert alert-danger">
+                    <strong>Error: </strong> {{error}}
+                </div>
+
+                <!-- Waiting for connection -->
+                <div v-if="state.state === false">
+                    <%- include('loading') -%>
+                </div>
+
+                <!-- Waiting for player to join -->
+                <div v-else-if="state.state == 0">
+                    <%- include('join') -%>
+                </div>
+
+                <!-- Playing the game -->
+                <div v-else-if="state.state == 1">
+                    <%- include('play') -%>
+                </div>
+
+                <!-- Playing the game -->
+                <div v-else-if="state.state == 2">
+                    <%- include('scores') -%>
+                </div>
+
+                <div class="admin" v-if="me.name == 1">
+                    <p><strong>Debug information:</strong> My state: {{me.state}} | Game state: {{state.state}}</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <input type="text" @keyup.enter="chat()" v-model="chatmessage" class="form-control" placeholder="Chat" v-if="me.state > 0">
+                <ul id="messages">
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

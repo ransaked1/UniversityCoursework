@@ -1,0 +1,29 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "player/register"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "usercontainerbinding",
+      "databaseName": "quiplash",
+      "containerName": "player",
+      "createIfNotExists": "false",       
+      "connection" : "AzureCosmosDBConnectionString" 
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+==========
+Hack #1
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Navigate to Transactions tab
+2. Filter by any account
+3. Order by any options available (from, to etc.)
+4. Change the query parameter to: ' OR 1=1
+Explain exactly how you discovered this vulnerability
+When using the filter functionality I noticed that the order options become clickable. When clicking them a query parameter "order" was set to a column name to order by. I immediately thought about trying an SQL Injection because the column name sent would be used in an SQL query to ORDER BY.
+Suggest a possible fault in the application that resulted in this vulnerability
+The application uses a query parameter to sort by allowing the input to be altered by the user. An allow list for input validation or server side procedures instead of a parameter would mitigate this issue.
+==========
+Hack #2
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Access https://robthebank.soton.ac.uk/test.php after logging in
+Explain exactly how you discovered this vulnerability
+Based on Hack#2 description and hint was looking for test.php, testing.php or tests.php. Started with the root path and almost immediately encountered test.php
+Suggest a possible fault in the application that resulted in this vulnerability
+Test files should not be pushed to the production branch in version control and deployed to prod.
+==========
+Hack #3
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Access https://robthebank.soton.ac.uk/pages/<script>alert('XSS Attack!')</script>
+2. Press OK on the alert until the 
+Explain exactly how you discovered this vulnerability
+Tried these locations that have reflected XSS before arriving to the solution:
+https://robthebank.soton.ac.uk/accounts/index/<script>alert('XSS Attack!')</script>
+https://robthebank.soton.ac.uk/accounts/view/<script>alert('XSS Attack!')</script>
+https://robthebank.soton.ac.uk/transactions/index/<script>alert('XSS Attack!')</script>
+And stored XSS on the transactions page.
+Tried encoding with no success.
+Following the hint in the task tried to look for error pages found before and there found the vulnerability.
+Suggest a possible fault in the application that resulted in this vulnerability
+Input needs sanitation before being used in the function. Even if the function fails, an XSS attack is possible.
+==========
+Hack #4
+==========
+Give all the steps and input which you used to trigger this vulnerability
+Preparations:
+1. Navigate to the the My Accounts tab.
+2. Add an account or if one already exists press on the card number value.
+3. Choose a valid image to upload.
+4. If the image is successfully uploaded proceed to the hack.
+
+The Hack:
+Using exiftool inject your php executable code into the png image.
+Rename the file to [name].png.php
+Upload the image but don't submit it yet.
+Using burpsuite intercept the request when submitting.
+Change the value of Content-Type from application/octet-stream to image/png
+Forward the request
+Explain exactly how you discovered this vulnerability
+While exploring the different paths available I found the page with the option to upload an image and immediately thought that this could be exploited. I used exiftool to edit the png (documentation helped me append an empty php tag). To fake the content type I needed to change the metadata sent so I used burpsuite for that
+Suggest a possible fault in the application that resulted in this vulnerability
+The application lacks appropriate checks on allowed characters, data format and/or the file size.
+==========
+Hack #5
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Navigate to the My Accounts tab.
+2. Add an account or if one already exists press on the card number value.
+3. Submit any text in the URL bar and submit it.
+4. Copy the src part of the HTML element that is generated (/accounts/image?url=[your random text]).
+5. Append it to https://robthebank.soton.ac.uk/ and append https://robthebank.soton.ac.uk/stats instead of your random text for the url parameter
+
+Explain exactly how you discovered this vulnerability
+Based on the hint for Hack#5 Your Stats are my Stats I first started looking for a "stats" or "statistics" page that could exist on the website. I eventually discovered it at https://robthebank.soton.ac.uk/stats. When trying to access it I was getting the message: This page cannot be accessed outside of the Rob the Bank Network Trusted Zone (Your IP:[My IP]). First I have tried tricking the server using Burp Suite by intercepting the request and meddling with the parameters and appending parameters in the header to maybe trick the server that the request is coming from localhost. After failing with that I proceeded to look for Open Redirects that I could use to access the webpage. First I tried the /users/redir/ path that is used when logging in with no success. Then I went to the Card page that offered the option to use a URL to upload an image which also has a less obvious open redirect that could be exploited.
+Suggest a possible fault in the application that resulted in this vulnerability
+The website reveals the address and parameter used to access the URL provided even if the image upload fails to render. Redirects should not be used to begin with and there is no sanitization or trusted domains for the user input.
+==========
+Hack #6
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Access https://robthebank.soton.ac.uk/admin/accounts/view/[id of an account the user doesn't own] e.g 100
+Explain exactly how you discovered this vulnerability
+Knowing that the framework is CakePHP based on the cookie name, I started looking at tutorials and documentation online to find common paths to try and access. From this tutorial I got the idea to try the /admin path: https://www.youtube.com/watch?v=X_D8bQajpQw (tried phpmyadmin, dbadmin before from here https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/05-Enumerate_Infrastructure_and_Application_Admin_Interfaces) I started going down the site map and adding the /admin at the root of the URL like so: https://robthebank.soton.ac.uk/path/to/resource becoming https://robthebank.soton.ac.uk/admin/path/to/resource.
+I tried these paths:
+https://robthebank.soton.ac.uk/
+https://robthebank.soton.ac.uk/pages/display/about
+https://robthebank.soton.ac.uk/pages/display/services
+https://robthebank.soton.ac.uk/accounts
+https://robthebank.soton.ac.uk/accounts/index/1
+https://robthebank.soton.ac.uk/accounts/card/573
+https://robthebank.soton.ac.uk/accounts/view/573
+The last one was a valid path so with that knowledge I decided to try some other account id and found the vulnerability.
+Suggest a possible fault in the application that resulted in this vulnerability
+Leaving a public admin interface public and unsecured.
+==========
+Hack #7
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Navigate to the About page.
+2. remove the /display/about from the URL and replace it with any text
+3. Try the URL, an error is triggered
+Explain exactly how you discovered this vulnerability
+I was trying to find files through the page/display/ function in the URL trying names like test.php, config.php etc. When trying index.php I by mistake didn't include the display part so I run /page/index.php part. It was a happy accident, however eventually I would have tried the /page path to look for other functions available.
+Suggest a possible fault in the application that resulted in this vulnerability
+The application is not catching possible errors in the page Class so they are displayed to the users revealing the file structure and other language/framework information.
+==========
+Hack #9
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Go to the transactions tab
+2. Click on the emergency transaction button
+3. Copy the code provided as an example in the field
+4. In the button's html code change the time parameter to 0
+Explain exactly how you discovered this vulnerability
+Tried SQL injection that did not work due to input string length validation. Tried changing the time parameter but later realised that it does not change the time sent as the payload in the request. Started changing the time parameter in the payload with the web page inspector. Looked into decoding the given code, no success with Base64, 32 or hex. Looked online for popular hashing algorithms https://codesigningstore.com/what-is-the-best-hashing-algorithm. When decoded from MD5 the value is 0. There was a possibility the decoded value should have matched the time parameter in the request and indeed when the time value was set to 0 the request was accepted.
+Suggest a possible fault in the application that resulted in this vulnerability
+The emergency code given as example was not blacklisted allowing multiple uses. The time parameter should not be provided by the user but instead checked against the server time when the request is received, allowing some margin of error.
+==========
+Hack #10
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Access https://robthebank.soton.ac.uk/users?showusers=1
+Explain exactly how you discovered this vulnerability
+The X-Powered-By header has the value OpenBank 0.5 - http://openbank.clicked.cc so I accessed the link to learn more about the framework used and any vulnerabilities related to it. There I found that there was one newer version of the framework available that added a few more features but also noted the removal of a debugging feature: Removed showusers query parameter on users controller used for debugging. Knowing that there is a /users/redir URL I knew that should be the Users controller at / users so I tried adding the showusers parameter to it first with a random string that returned Forbidden confirming that such path is accessible, then I tried 0, and then 1 finding the vulnerability.
+Suggest a possible fault in the application that resulted in this vulnerability
+The application framework was not updated to the latest version thus leaving a debugging vulnerability on the client side.
+==========
+Hack #11
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Go to the Help section
+2. Press on any of the page redirects available 
+3. Replace the value for the parameter page with "%252E%252E%252F%252E%252E%252F%252E%252E%252F%252E%252E%252Fetc%252Fpasswd"
+4. Navigate to the new URL.
+Explain exactly how you discovered this vulnerability
+Noticed the page parameter in the request and immediately thought about exploiting it to get to navigate the file system. Tried a bunch of inputs (admin, config, data) until found that if I input "passwd" I get the message "Apache mod_security: Access to file has been denied. ALLOWED="/etc/pass*,/home/data/*,*.html"". All ../../etc/pass variants failed not passing validation. Double encoding solved the input validation issue. Added the ../ double encoding (%252E%252E%252F) to the start of the "etc%252passwd" path until found the correct path
+Suggest a possible fault in the application that resulted in this vulnerability
+Using a parameter to specify the page path opens the system up to this vulnerability. Validating the input by pattern matching for dot and slash combinations is vulnerable to multiple layers of URL encoding.
+==========
+Hack #12
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Navigate to the main page
+2. Open the Application tab in the Browser inspector
+3. Refresh the tab until the __utmz[a] cookie is received
+4. Decode from base64 into a:4:{s:1:"d";i:0;s:1:"a";i:5;s:1:"c";i:10;s:1:"u";i:159;}
+5. Change the first zero to a 1
+6. Encode and replace the cookie in the inspector
+7. Refresh the page again
+Explain exactly how you discovered this vulnerability
+The hint made me think it IS in fact the CakePHP cookie but shortly I noticed that it is session-specific and I couldn't find any vulnerabilities related to CakePHP session cookie. Decoding the cookies from base16, 32 or 64 lead no results. While looking into this vulnerability I notices that seemingly randomly another __utmz[a] cookie would be received while navigating the website. Upon some research, this is generally a Google Analytics tracking cookie. Its value was always the same so I decided to concentrate on finding a vulnerability related to it. I tried changing the attributes of the cookie like the expiration date with no success. I failed to find relevant documentation to decode it myself but when I tried basic base64 decoding I finally saw something coherent a:4:{s:1:"d";i:0;s:1:"a";i:5;s:1:"c";i:10;s:1:"u";i:159;} For a long time I couldn't figure out what this data structure was so I tried running it through ChatGPT to get some ideas. This is how I got the hint that this looks like a serialized PHP array that translates to this in print_r format:
+Array
+(
+    [d] => 0
+    [a] => 5
+    [c] => 10
+    [u] => 159
+)
+I tried setting all the values to 0 then all to 1 and then going one by one changing each one to 1. This is how I found that if d is changed to 1 the website redirects to /special/debug and we enter a debug mode. a and c values seem to be parameters that don't influence the result but the u value when set to 1 does not trigger the debug mode. This is why when I tried setting all the values to 1 it did not trigger the debug mode.
+Suggest a possible fault in the application that resulted in this vulnerability
+Cookies should not expose plain data like a PHP object serialization with simple encoding like base64 in this case. It should be encrypted and ideally, such data shouldn't be stored in a cookie sent to the client as debugging shouldn't be accessible to clients.
+==========
+Hack #14
+==========
+Give all the steps and input which you used to trigger this vulnerability
+1. Run Burp suite, go to the Proxy tab, open the browser
+2. Login into https://robthebank.soton.ac.uk/
+3. Turn intercept on and try to access https://robthebank.soton.ac.uk/api
+4. In Burp suite change the intercepted request header attribute Accept to application/json
+5. Send the request to the Repeater
+6. Run the request from the Repeater until the instances array in the response has a string value in it. Save it for later use.
+7. From the browser make a new request to /api/instance/{the instance string from the previous step}
+8. When intercepted change the Accept to application/json again and forward the request. Save the key string from the response.
+9. Make a request to /api/a_16/{the instance string}.
+10. When intercepted again change the Accept to application/json and add to the request body "key={the key from step 8}"
+11. Forward the request to trigger the vulnerability
+Explain exactly how you discovered this vulnerability
+From the task hint got the idea of trying the /api path which existed but access was forbidden. API usually use JSON for communication so using Burp suite changed the content type to application/json and started getting valid responses. Also tried /api/status, /api/config and other variations like this hoping to find an endpoint that would respond with more information about the api configuration but with no success. Following some research (https://www.stackhawk.com/blog/6-serious-api-security-vulnerabilities-and-how-to-fix-them/#:~:text=An%20API%20vulnerability%20is%20a,or%20is%20not%20adequately%20secured) I got the idea of trying to spam the API with requests hoping to get an error that could give more hints. Using the Burp suite Repeater I spammed the endpoint with request and no error was triggered but the instances array sometimes leaked an instance. I then tried putting the instance as a parameter /api/{value} and in the request body which did not work. With the information available, decided to try /api/instances and /api/instace as an endpoint with the value leaked as payload and parameter which did not work but when put as part of the path got a response with the instance, key and action. Following the same logic, tried various combinations of payloads to /api and /api/instance that did not work. I then started looking for others paths. Trying to access /api/a_6 returned an error: 403 confirming its existence and that it could be called directly. I added the key to the body and now the method returned an internal error so I added the instance to the payload and then as part of the URL like with instances before and that triggered the vulnerability. Through this process I used Burp Suite Repeater and Postman cycling through the type of request (GET, POST, PUT) systematically.
+Suggest a possible fault in the application that resulted in this vulnerability
+The api lacks Authentication checks leaving endpoints exposed to users that only have a valid cookie. Also, each session creates a new instance in the API and cause of incorrect recycling instances are leaked when the /api endpoint is called even from an Unauthenticated user.

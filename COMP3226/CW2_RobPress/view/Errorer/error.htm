@@ -1,0 +1,23 @@
+<h2>Error
+    <?= $ERROR['code'] ?>:
+    <?= $ERROR['status'] ?>
+</h2>
+
+<?if($site['debug']):?>
+<div class="alert alert-danger"><strong>Error</strong>:
+    <?= $ERROR['text'] ?>
+</div>
+
+<hr />
+
+<?if(isset($ERROR['trace']) && !empty($ERROR['trace'])):?>
+<h4>Stack Trace</h4>
+
+<div class="well">
+    <ol>
+        <?=$ERROR['trace']?>
+    </ol>
+</div>
+
+<?endif?>
+<?endif?>

@@ -68,3 +68,23 @@ All code was written in **C for GCC version 4.8.5**.
 <br></br>
 
 ### YEAR III
+
+### COMP3207
+
+Cloud Application Development course in my first semester. Contains 5 labs, 2 individual courseworks building the quiplash game and a team based final coursework that is a Tinder style dating app with cats called Kissa. Code is containerized and includes infrastructure setup for Azure cloud services using Terraform.
+
+Code was written in **Python version 3.10**, **Node version 21.4** and containerized in **Docker version 3.8**. All documents are in PDF format.
+
+### COMP2222
+
+Machine Learning Technologies course in my first semester. Contains 8 labs and a coursework that showcases a machine learning pipleline for the MediaEval dataset.
+
+Code was written in **Python version 3.10** with **Jupyter Notebook**. All documents are in PDF format.
+
+### COMP2207
+
+Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java. All code needs compilation.
+
+Web and Cloud Based Security in my first semester. Contains an individual coursework that describes the penetration testing of a unsecure web application call RobBank and a pair coursework that secures one such web application called RobPress.
+
+Code was written in **PHP**. All documents are in PDF format.

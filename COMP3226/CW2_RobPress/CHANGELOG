@@ -1,0 +1,103 @@
+0.6v
+Added DOS protection with rate limiting
+Cleaned api input
+
+0.6u
+Removed traces from errors
+Secured profile editor
+Secured posts content
+
+0.6t
+Removed ability to create pages with empty names
+Upgraded to latest ckeditor and JQuery
+Added content policy
+
+0.6s
+Fixed input validation for edit functions
+Fixed invalid input when viewing users
+Fixed page display issues
+
+0.6r
+Fixed XSS in comments
+Fixed cookie security options
+Fixed access control
+
+0.6q
+Added CSRF protection on POST
+Added CSRF protection on GET
+
+0.6p
+Fixed File Upload
+Added password hashing
+Added password validation
+Adjusted user behaviours
+
+0.6o
+Fixed SQL injection issues
+Fixed XSS issues
+
+0.6n
+Updated to latest version of CKEditor 4.22.1
+Removed insecure blog info page which
+
+0.6m
+Updated to latest version of FatFree (3.8.2)
+Updated to PHP 8.2 compatability
+Updated error handling
+
+0.6l
+Fixed selftest on Docker and to use vendor
+Updated to latest version of CKEditor 4.20.1
+Updated to latest version of FatFree (3.8.1)
+
+0.6k
+Updated to latest version of CKEditor 4.17.1
+Updated to latest version of FatFree (3.7.3)
+Fixed issue with exportusers where file is left behind
+
+0.6j
+Updated to latest version of CKEditor 4.15.1
+Added admin functionality for exporting users
+
+0.6i
+Updated to latest version of FatFree (3.6.7)
+Added PHP 7.4 compatability
+
+0.6h
+Updated TinyMCE editor
+Connect to DB in Bootstrap
+Change to SQL Sessions
+
+0.6g
+Updated page handling and deletion
+Updated to latest version of FatFree (3.6.5)
+
+0.6f
+Added template parameter for controllers
+Improved error handling
+Updated to latest version of FatFree (3.6.4)
+
+0.6e
+Changed to use composer
+Fixed new line issues
+Fixed typoes
+Updated to latest version of FatFree
+
+0.6d
+Improved validation in creating posts
+Updated to latest version of FatFree
+
+0.6c
+DEBUG mode constant is defined in debug mode (check for DEBUG being set)
+Bootstrap introduced to set up logging and debug mode
+Bug fix: Crash with error on failed DB
+
+0.6b
+Security fix: Don't display peoples passwords in their profiles
+Anti-caching technology enabled
+
+0.6a
+Some bugs were introduced
+
+0.6
+Lost the tides of time

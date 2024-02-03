@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.ico">
+
+  <!-- Content Policy to accept JS and Styles only from trusted sources -->
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com;
+script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.ckeditor.com https://maxcdn.bootstrapcdn.com">
+
+  <?if($site['debug']):?>
+  <meta name="debug" content="Debug mode is enabled" />
+  <?endif?>
+
+  <title>
+    <?=$site['name']?>:
+    <?=$title?>
+  </title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    integrity="sha256-tf1yN1B2PrtzH5Ih5BPn1k1Y1RktwEDkIpLtPczMpzI=" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    integrity="sha256-D7G7ynNkbo4rk8gujYshlkexPUtEDEjjOCkLmmhbjeE=" crossorigin="anonymous">
+
+  <!-- Site theme -->
+  <link rel="stylesheet" href="<?= $site['base'] ?>/css/site.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+  <!-- CKEditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"
+    integrity="sha256-tX/ZML0TqwAr6tsqZJVrN92oqDYrsRAMVUlOnSTnR9c=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+    integrity="sha256-JMwpUzWY+WKCPEIpvCgEh2RqJ6QqlSV8Md4bmxjzcQ8=" crossorigin="anonymous"></script>
+</head>
+
+<body role="document" style="margin-top: 50px">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?=$site['base']?>/">
+          <?= $site['name'] ?>
+        </a>
+      </div>
+    </div><!--/.nav-collapse -->
+  </div>
+  </div>
+
+  <div class="container" role="main">
+
+    <h2>Error
+      <?= $ERROR['code'] ?>:
+      <?= $ERROR['status'] ?>
+    </h2>
+
+    <!-- Check debug status to show details and trace -->
+    <?if($site['debug']):?>
+    <div class="alert alert-danger"><strong>Error</strong>:
+      <?= $ERROR['text'] ?>
+    </div>
+    
+    <hr />
+    
+    <?if(isset($ERROR['trace']) && !empty($ERROR['trace'])):?>
+    <h4>Stack Trace</h4>
+    
+    <div class="well">
+      <ol>
+        <?=$ERROR['trace']?>
+      </ol>
+    </div>
+    
+    <?endif?>
+    <?endif?>
+
+    <div style="margin-top: 100px; text-align: center"><img src="<?=$site['base']?>/img/footer.png"
+        style="width: 300px; height: auto;"></div>
+
+</body>
+
+</html>

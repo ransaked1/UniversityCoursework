@@ -1,0 +1,12 @@
+<? include("header.htm"); ?>
+<? include("robpress.htm"); ?>
+<div class="container" role="main">
+	<? foreach(StatusMessage::get() as $message): ?>
+	<div class="alert alert-<?=$message['type']?>">
+		<?=$message['message']?>
+	</div>
+	<? endforeach; ?>
+	<?= $content ?>
+
+</div>
+<? include("footer.htm"); ?>

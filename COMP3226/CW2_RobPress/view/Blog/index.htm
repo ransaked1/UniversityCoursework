@@ -1,0 +1,39 @@
+<?if(!isset($category)):?>
+<h2>
+	<?=$site['front_title']?>
+</h2>
+<?else:?>
+<h2><?=$category->title ?></h2>
+<?endif;?>
+
+<?foreach($blogs as $blog):?>
+<? $post = $blog['Posts']; ?>
+<? 
+
+if(!empty($blog['Users'])) {
+	$author = $blog['Users']; 
+} else {
+	$author = new stdClass();
+	$author->displayname = 'Guest';
+	$author->id = -1;
+	$author->username = 'guest';
+}
+
+?>
+<h3><a href="<?=$site['base']?>/blog/view/<?=$post->id?>"><?=$post->title?></a></h3>
+<h4>Posted by <a href="<?=$site['base']?>/user/view/<?=$author->id?>"><?=$author->displayname?></a> on
+	<?=nicedate($post->created)?></h4>
+<? if(sizeof($blog['Categories']) > 0): ?>
+<p><em>Posted in:
+		<? foreach($blog['Categories'] as $num=>$category): ?>
+		<a href="<?=$site['base']?>/blog/index/<?=$category->id?>">
+			<?= $category->title ?>
+		</a>
+		<? if(($num + 1) < sizeof($blog['Categories'])) { echo ', '; } ?>
+		<? endforeach; ?>
+	</em></p>
+<? endif; ?>
+
+<?=$post->summary?>
+<hr />
+<?endforeach;?>

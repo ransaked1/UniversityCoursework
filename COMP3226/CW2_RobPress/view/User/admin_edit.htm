@@ -1,0 +1,18 @@
+<h2>Edit User</h2>
+<h3><?=$u->username?></h3>
+
+<?php
+
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken);
+	echo $form->start();
+	echo $form->add('username');
+	echo $form->add('displayname',array('label' => 'Display Name'));
+	echo $form->add('password',array('type' => 'password'));
+	echo $form->add('level',array('type' => 'select', 'items' => array(1 => 'Normal User', 2 => 'Administrator')));
+	echo $form->add('bio',array('type' => 'wysiwyg'));
+	echo $form->add('avatar');
+	echo $form->add('Update',array('type' => 'submit'));
+	echo $form->end();
+
+?>

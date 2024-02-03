@@ -1,0 +1,37 @@
+<? include("header.htm"); ?>
+<style type="text/css">
+	.adminicon {
+		margin-right: 10px;
+		color: black;
+	}
+
+	.active .adminicon {
+		color: white;
+	}
+</style>
+<div class="container-fluid" role="main" style="margin-top: 50px;">
+	<div class="row">
+		<div class="col-sm-3 col-md-2 sidebar">
+			<ul class="nav nav-sidebar">
+
+				<? foreach($adminmenu as $id=>$item): ?>
+				<? $class = (stripos($site['path'],$item['link']) !== false) ? 'active' : ''; ?>
+				<? if($id == 0 && ($site['path'] != '/admin')) { $class = ''; } ?>
+				<li class="<?=$class?>"><a href="<?= $site['base'] ?>/<?= $item['link']?>"><i
+							class="fa fa-<?=$item['icon']?> adminicon"></i>
+						<?= $item['label']?>
+					</a></li>
+				<? endforeach; ?>
+			</ul>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<? foreach(StatusMessage::get() as $message): ?>
+			<div class="alert alert-<?=$message['type']?>">
+				<?=$message['message']?>
+			</div>
+			<? endforeach; ?>
+			<?= $content ?>
+		</div>
+
+	</div>
+	<? include("footer.htm"); ?>

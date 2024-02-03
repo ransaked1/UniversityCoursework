@@ -1,0 +1,23 @@
+<h2>Edit Profile</h2>
+<?php
+	$avatar = empty($u->avatar) ? '/img/avatar.png' : $u->avatar;
+?>
+<img class="avatar" style="float: right" src="<?=$site['base']?><?=$avatar?>" />
+<h3><?=$u->username?></h3>
+
+<?php
+
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken);
+	echo $form->start(array('type' => 'file'));
+	echo $form->add('displayname',array('label' => 'Display Name'));
+	echo $form->add('password',array('type' => 'password', 'label' => 'Change Password','value' => ''));
+	echo $form->add('bio',array('type' => 'wysiwyg'));
+	echo $form->add('avatar',array('type' => 'file'));
+	if(!empty($u->avatar)) {
+		echo $form->add('reset',array('type' => 'checkbox','label' => 'Reset Avatar'));
+	}
+	echo $form->add('Update',array('type' => 'submit'));
+	echo $form->end();
+
+?>

@@ -1,0 +1,37 @@
+<h2>Self Test</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Test Number</th>
+            <th>Test Name</th>
+            <th>Notes</th>
+            <th>Test Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?foreach($tests as $test_number=>$test):?>
+        <tr class="<?if($test['result']) { echo 'success'; } else { echo 'danger'; } ?>">
+            <td>
+                <?=($test_number+1)?>
+            </td>
+            <td>
+                <?=$test['name']?>
+            </td>
+            <td>
+                <? if(empty($test['errors'])) { echo ''; } else { echo $test['errors']; } ?>
+            </td>
+            <td>
+                <? if($test['result']) { echo '<i class="fa fa-check"></i>'; } else { echo '<i class="fa fa-times"></i>'; } ?>
+            </td>
+        </tr>
+        <?endforeach?>
+</table>
+
+<p>You need to ensure all the tests on the self test page are green before submitting. If you have broken any core
+    functionality, you will lose significant marks or may not be marked at all.</p>
+
+<p>Remember, that in debug mode, any brute force protection and CSRF protection must be <strong>disabled</strong>.</p>
+
+<p>If you have any questions or issues regarding the self test, please contact the <a
+        href="https://secure.ecs.soton.ac.uk/noteswiki/w/COMP3201">RobPress support</a></p>

@@ -1,0 +1,39 @@
+# Enable rewrite engine and route requests to framework
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI}::$1 ^(.*?/)(.*)::\2$
+RewriteRule ^(.*)$ - [E=BASE:%1]
+
+RewriteCond %{REQUEST_URI} \.ini$
+RewriteRule \.ini$ - [R=404]
+
+# Added rate limitting
+<IfModule mod_ratelimit.c>
+    <Location "/">
+        SetOutputFilter RATE_LIMIT
+        SetEnv rate-limit 1
+        SetEnv rate-limit-burst 5
+        SetEnv rate-limit-dry-run 0
+    </Location>
+</IfModule>
+
+# Deny access to specific file types
+<FilesMatch "\.(CHANGELOG|VERSION|htaccess|htpasswd|ini|phps|fla|psd|log|sh|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Custom error document for 403 Forbidden
+ErrorDocument 403 /errorer.php
+
+# Disable server signature
+ServerSignature Off
+
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* %{ENV:BASE}/index.php [L,QSA]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

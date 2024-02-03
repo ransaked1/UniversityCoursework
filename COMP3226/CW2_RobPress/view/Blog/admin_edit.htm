@@ -1,0 +1,29 @@
+<h2>Edit Blog Post</h2>
+
+<?
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken);
+	echo $form->start();
+?>
+<div class="row">
+	<div class="col-md-8">
+		<?
+	echo $form->add('title',array('placeholder' => 'Enter Title'));
+	echo $form->add('summary',array('type' => 'textarea'));
+	echo $form->add('content',array('type' => 'wysiwyg'));
+?>
+	</div>
+	<div class="col-md-4">
+		<?	
+	echo $form->add('published',array('type' => 'datetime', 'default' => date('Y-m-d H:i'), 'label' => 'Publish Date'));
+	echo $form->add('categories',array('type' => 'checkboxes', 'label' => 'Categories', 'items' => $categories));
+	echo '<hr/>';
+	echo $form->add('Save Draft',array('type' => 'submit','class' => 'btn-success'));
+	echo ' ';
+	echo $form->add('Publish',array('type' => 'submit'));
+?>
+	</div>
+</div>
+<?php	
+echo $form->end();
+?>

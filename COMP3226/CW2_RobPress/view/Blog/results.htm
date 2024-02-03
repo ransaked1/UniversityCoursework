@@ -1,0 +1,40 @@
+<?
+	$csrfToken = isset($_COOKIE['csrf_token']) ? $_COOKIE['csrf_token'] : '';
+	$form = new Form($csrfToken); 
+	echo $form->start();
+	echo $form->add('search');
+	echo $form->add('Search',array('type' => 'submit', 'value' => $search));
+	echo $form->end();
+?>
+
+<h2>Search Results</h2>
+
+<?foreach($blogs as $blog):?>
+<? $post = $blog['Posts']; ?>
+<?
+if(!empty($blog['Users'])) {
+	$author = $blog['Users']; 
+} else {
+	$author = new stdClass();
+	$author->displayname = 'Guest';
+	$author->id = -1;
+	$author->username = 'guest';
+}
+?>
+
+<h3><a href="<?=$site['base']?>/blog/view/<?=$post->id?>"><?=$post->title?></a></h3>
+<h4>Posted by <?=$author->username?> on <?=nicedate($post->created)?></h4>
+<? if(sizeof($blog['Categories']) > 0): ?>
+<p><em>Posted in:
+		<? foreach($blog['Categories'] as $num=>$category): ?>
+		<a href="<?=$site['base']?>/blog/index/<?=$category->id?>">
+			<?= $category->title ?>
+		</a>
+		<? if(($num + 1) < sizeof($blog['Categories'])) { echo ', '; } ?>
+		<? endforeach; ?>
+	</em></p>
+<? endif; ?>
+
+<?=$post->summary?>
+<hr />
+<?endforeach;?>
