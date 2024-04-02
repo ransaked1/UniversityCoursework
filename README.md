@@ -75,13 +75,13 @@ Cloud Application Development course in my first semester. Contains 5 labs, 2 in
 
 Code was written in **Python version 3.10**, **Node version 21.4** and containerized in **Docker version 3.8**. All documents are in PDF format.
 
-### COMP2222
+### COMP3222
 
 Machine Learning Technologies course in my first semester. Contains 8 labs and a coursework that showcases a machine learning pipleline for the MediaEval dataset.
 
 Code was written in **Python version 3.10** with **Jupyter Notebook**. All documents are in PDF format.
 
-### COMP2207
+### COMP3207
 
 Distributed Systems course in my second semester. Contains a small lab and a final coursework that implements a distributed file system written in Java. All code needs compilation.
 
